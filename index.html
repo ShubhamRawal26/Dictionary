@@ -3,46 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#0b0f19">
-  <meta name="description" content="EngiLex — Professional Engineering & Technical Dictionary. Essential vocabulary for Computer Science, Electrical, Mechanical, Civil, AI, and Robotics engineering students.">
-  <title>EngiLex — Engineering & Technical Vocabulary Dictionary</title>
+  <meta name="theme-color" content="#7c3aed">
+  <meta name="description" content="Wordly — Modern English & Technical Dictionary. Learn words from A to Z with audio pronunciation, simple meanings, example sentences, and progress tracking.">
+  <title>Wordly — English & Technical Dictionary (A to Z)</title>
   
-  <!-- High-Tech Typography: Outfit, Inter & JetBrains Mono -->
+  <!-- Premium Modern Typography: Outfit & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- SVG Icon Sprite Definitions -->
+  <!-- SVG Icon Sprite -->
   <svg style="display: none;">
     <defs>
-      <!-- Technical Logo -->
+      <!-- Logo Icon -->
       <g id="icon-logo">
-        <rect width="36" height="36" rx="8" fill="url(#logo-grad)"/>
+        <rect width="36" height="36" rx="10" fill="url(#violet-grad)"/>
         <path d="M10 26L18 10L26 26H21.5L19.5 21.5H16.5L14.5 26H10ZM17.2 18.2H18.8L18 14.5L17.2 18.2Z" fill="#FFFFFF"/>
-        <circle cx="26" cy="10" r="3.5" fill="#38BDF8"/>
-        <path d="M7 18H10M26 18H29" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="26" cy="10" r="3.5" fill="#C084FC"/>
       </g>
-      <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#2563EB"/>
-        <stop offset="100%" stop-color="#0F172A"/>
+      <linearGradient id="violet-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#7C3AED"/>
+        <stop offset="100%" stop-color="#4F46E5"/>
       </linearGradient>
 
-      <!-- Dashboard / Terminal Icon -->
-      <g id="icon-dashboard">
-        <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
-        <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
-        <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
-        <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <!-- Home Icon -->
+      <g id="icon-home">
+        <path d="M3 9.5L12 3L21 9.5V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M9 21V12H15V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </g>
 
-      <!-- Alphabet / Book / Index Icon -->
-      <g id="icon-index">
+      <!-- Book / Learn Icon -->
+      <g id="icon-learn">
         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5V19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <path d="M9 7H15M9 11H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M8 7H16M8 11H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       </g>
 
       <!-- Search Icon -->
@@ -50,19 +47,19 @@
         <path d="M21 21L15.5 15.5M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </g>
 
-      <!-- Analytics / Progress Icon -->
+      <!-- Progress / Chart Icon -->
       <g id="icon-chart">
         <path d="M18 20V10M12 20V4M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </g>
 
-      <!-- Audio / Speaker Icon -->
+      <!-- Speaker / Pronounce Icon -->
       <g id="icon-speaker">
         <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="currentColor"/>
         <path d="M15.54 8.46C16.4774 9.39764 17.004 10.6692 17.004 11.995C17.004 13.3208 16.4774 14.5924 15.54 15.53" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         <path d="M19.07 4.93C20.9447 6.80528 21.9979 9.34842 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </g>
 
-      <!-- Waveform Audio Active Icon -->
+      <!-- Audio Wave Active -->
       <g id="icon-wave">
         <path d="M3 10V14M7 6V18M11 3V21M15 7V17M19 10V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </g>
@@ -80,385 +77,347 @@
         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </g>
 
+      <!-- Star / Bookmark -->
+      <g id="icon-star">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+
       <!-- Refresh / Repeat -->
       <g id="icon-refresh">
         <path d="M1 4V10H7M23 20V14H17M20.49 9A9 9 0 0 0 5.64 5.64L1 10M23 14L18.36 18.36A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </g>
 
-      <!-- Code / Engineering Chip -->
-      <g id="icon-chip">
-        <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
-        <path d="M9 9H15V15H9V9Z" fill="currentColor"/>
-        <path d="M9 1V4M15 1V4M9 20V23M15 20V23M20 9H23M20 15H23M1 9H4M1 15H4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </g>
-
-      <!-- Bookmark / Star -->
-      <g id="icon-star">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      </g>
-
-      <!-- Close / Clear -->
+      <!-- Close -->
       <g id="icon-close">
         <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </g>
     </defs>
   </svg>
 
-  <!-- Full Screen Technical Shell -->
-  <div class="tech-app-wrapper" id="app-wrapper">
+  <!-- App Wrapper -->
+  <div class="app-wrapper" id="app-wrapper">
 
     <!-- ======================================================== -->
-    <!-- 1. ONBOARDING / INTRO MODAL SCREEN                       -->
+    <!-- 1. WELCOME SCREEN / ONBOARDING                           -->
     <!-- ======================================================== -->
-    <section class="onboarding-screen active" id="screen-onboarding" aria-label="Engineering Dictionary Welcome">
-      <div class="onboarding-box">
-        <div class="onboarding-skip-bar">
-          <button type="button" class="btn-text-skip" id="btn-onboarding-skip" aria-label="Skip to terminal">
-            Skip to Dashboard →
-          </button>
+    <section class="onboarding-screen active" id="screen-onboarding" aria-label="Welcome to Wordly">
+      <div class="onboarding-card">
+        <div class="onboarding-top-bar">
+          <button type="button" class="btn-skip-welcome" id="btn-onboarding-skip">Skip Intro →</button>
         </div>
 
-        <div class="onboarding-content">
-          <div class="onboarding-badge-top">
-            <svg viewBox="0 0 24 24" width="16" height="16"><use href="#icon-chip"></use></svg>
-            <span>Engineering & Technical Lexicon • A to Z</span>
+        <div class="onboarding-body">
+          <div class="onboarding-badge">
+            <span>✨ 26 Alphabets • A to Z Learning</span>
           </div>
-
-          <h1 class="onboarding-title">Master Core <span class="highlight-cyan">Engineering Vocabulary</span></h1>
-          <p class="onboarding-desc">
-            An interactive technical dictionary tailored for engineering undergraduates, researchers, and developers. Explore rigorous definitions, IPA pronunciation, discipline classifications, and real-world system applications across Computer Science, Electrical, Mechanical, Civil, Robotics, and Physics.
+          <h1 class="onboarding-heading">Master English & <span class="highlight-violet">Technical Vocabulary</span></h1>
+          <p class="onboarding-subtext">
+            Learn words easily with clear audio pronunciation, simple definitions, and practical examples. Designed for students, professionals, and language learners.
           </p>
-
-          <div class="discipline-tag-preview">
-            <span class="disc-pill disc-cs">Computer Science & AI</span>
-            <span class="disc-pill disc-ee">Electrical & Electronics</span>
-            <span class="disc-pill disc-me">Mechanical & Aerospace</span>
-            <span class="disc-pill disc-ce">Civil & Structural</span>
-            <span class="disc-pill disc-ph">Physics & Materials</span>
+          <div class="onboarding-highlights">
+            <span class="hl-pill">🔊 Audio Pronunciation</span>
+            <span class="hl-pill">🔤 Interactive Spelling</span>
+            <span class="hl-pill">📚 Real-world Examples</span>
+            <span class="hl-pill">📈 Track Progress</span>
           </div>
         </div>
 
-        <div class="onboarding-actions">
+        <div class="onboarding-footer">
           <button type="button" class="btn-primary" id="btn-onboarding-start">
-            <span>Launch Engineering Lexicon</span>
+            <span>Start Learning Now</span>
             <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-chevron-right"></use></svg>
           </button>
           <button type="button" class="btn-secondary" id="btn-onboarding-continue">
-            Continue Previous Session
+            Continue Learning
           </button>
         </div>
       </div>
     </section>
 
     <!-- ======================================================== -->
-    <!-- 2. MAIN TECHNICAL WORKSTATION HEADER                     -->
+    <!-- 2. STICKY TOP APP HEADER                                 -->
     <!-- ======================================================== -->
-    <header class="tech-header" id="tech-header">
-      <div class="header-left">
-        <div class="header-branding" id="header-branding-btn" role="button" tabindex="0" aria-label="Go to Dashboard">
-          <svg viewBox="0 0 36 36" width="34" height="34" class="header-logo-icon">
+    <header class="app-header" id="app-header">
+      <div class="header-container">
+        <div class="header-branding" id="header-branding-btn" role="button" tabindex="0">
+          <svg viewBox="0 0 36 36" width="36" height="36" class="header-logo-icon">
             <use href="#icon-logo"></use>
           </svg>
-          <div class="header-title-group">
-            <div class="brand-line">
-              <span class="brand-name">EngiLex</span>
-              <span class="brand-badge">PRO ENG</span>
-            </div>
-            <span class="brand-subtitle">Engineering & Technical Dictionary</span>
+          <div class="header-brand-text">
+            <span class="brand-title">Wordly</span>
+            <span class="brand-subtitle">Vocabulary & Dictionary</span>
           </div>
         </div>
-      </div>
 
-      <!-- Center Desktop Navigation Tabs -->
-      <nav class="header-nav-tabs" id="header-desktop-nav" aria-label="Main Navigation">
-        <button type="button" class="nav-btn active" data-tab="home">
-          <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-dashboard"></use></svg>
-          <span>Dashboard</span>
-        </button>
-        <button type="button" class="nav-btn" data-tab="learn">
-          <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-index"></use></svg>
-          <span>A–Z Index</span>
-        </button>
-        <button type="button" class="nav-btn" data-tab="search">
-          <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-search"></use></svg>
-          <span>Technical Search</span>
-        </button>
-        <button type="button" class="nav-btn" data-tab="progress">
-          <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-chart"></use></svg>
-          <span>Mastery Metrics</span>
-        </button>
-      </nav>
+        <!-- Desktop Navigation Tabs -->
+        <nav class="desktop-nav-tabs" aria-label="Main Navigation">
+          <button type="button" class="nav-tab-btn active" data-tab="home">
+            <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-home"></use></svg>
+            <span>Home</span>
+          </button>
+          <button type="button" class="nav-tab-btn" data-tab="learn">
+            <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-learn"></use></svg>
+            <span>A–Z Alphabet</span>
+          </button>
+          <button type="button" class="nav-tab-btn" data-tab="search">
+            <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-search"></use></svg>
+            <span>Search</span>
+          </button>
+          <button type="button" class="nav-tab-btn" data-tab="progress">
+            <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-chart"></use></svg>
+            <span>Progress</span>
+          </button>
+        </nav>
 
-      <div class="header-right">
-        <button type="button" class="btn-header-search" id="btn-header-search" aria-label="Open search">
-          <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-search"></use></svg>
-          <span class="search-key-hint">Search (Ctrl+K)</span>
-        </button>
+        <div class="header-actions">
+          <button type="button" class="btn-search-header" id="btn-header-search" aria-label="Search dictionary">
+            <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-search"></use></svg>
+            <span>Search</span>
+          </button>
+        </div>
       </div>
     </header>
 
-    <!-- Quick A-Z Alphabet Strip -->
-    <nav class="alphabet-ribbon" id="alphabet-ribbon" aria-label="Quick Alphabet Selector">
-      <div class="ribbon-inner" id="ribbon-letters-container">
-        <!-- Rendered A through Z dynamically -->
+    <!-- Quick A-Z Ribbon -->
+    <nav class="az-ribbon-bar" id="az-ribbon" aria-label="Alphabet Jump Bar">
+      <div class="az-ribbon-inner" id="ribbon-letters-container">
+        <!-- Rendered A through Z -->
       </div>
     </nav>
 
     <!-- ======================================================== -->
-    <!-- 3. MAIN FULL-SCREEN CONTENT AREA                         -->
+    <!-- 3. MAIN APPLICATION SCREENS                              -->
     <!-- ======================================================== -->
-    <main class="tech-main-content" id="tech-main-content">
+    <main class="app-main-content" id="app-main-content">
 
       <!-- ==================================================== -->
-      <!-- VIEW A: ENGINEERING DASHBOARD (HOME)                 -->
+      <!-- SCREEN 1: HOME DASHBOARD                             -->
       <!-- ==================================================== -->
-      <section class="screen-view active" id="view-home" aria-label="Engineering Dashboard">
-        <div class="view-container">
+      <section class="screen-view active" id="view-home" aria-label="Home Dashboard">
+        <div class="view-content-wrapper">
           
-          <!-- Hero Banner -->
-          <div class="dashboard-hero-banner">
-            <div class="hero-text-content">
-              <div class="hero-status-tag">
-                <span class="pulse-dot"></span>
-                <span id="hero-greeting-text">System Active • Engineering Lexicon Ready</span>
-              </div>
-              <h2 class="hero-heading">Technical Vocabulary & System Concepts</h2>
-              <p class="hero-description">
-                Explore definitions, phonetic pronunciation, mathematical principles, and practical hardware/software applications across 26 engineering alphabets.
-              </p>
+          <!-- Friendly Hero Greeting Card -->
+          <div class="home-hero-card">
+            <div class="hero-left">
+              <span class="hero-welcome-badge" id="hero-greeting-badge">Good Day • Ready to Learn</span>
+              <h2 class="hero-title">Expand Your Vocabulary</h2>
+              <p class="hero-subtitle">Learn words from A to Z with audio pronunciation, simple meanings, and real examples.</p>
             </div>
           </div>
 
-          <!-- 2-Column Hero Grid: Resume Learning + Metrics -->
-          <div class="dashboard-grid-row">
+          <!-- Continue Card & Quick Stats Grid -->
+          <div class="home-top-grid">
             
-            <!-- Resume Learning Technical Card -->
-            <div class="dashboard-card resume-card" id="home-continue-card">
-              <div class="card-header-line">
-                <div class="card-tag">Resume Module</div>
-                <span class="active-letter-tag" id="home-continue-letter-badge">Letter A Section</span>
+            <!-- Continue Learning Card -->
+            <div class="clean-card continue-card" id="home-continue-card">
+              <div class="card-head">
+                <span class="card-label-badge">Continue Learning</span>
+                <span class="card-section-tag" id="home-continue-letter-badge">Letter A</span>
               </div>
-              <div class="resume-body">
-                <div class="resume-term-info">
-                  <span class="resume-sub-label">CURRENT KEYWORD:</span>
-                  <h3 class="resume-term-title" id="home-continue-word-preview">Algorithm</h3>
-                  <div class="resume-term-meta">
-                    <span class="term-counter" id="home-continue-counter">Term 1</span>
-                    <span class="term-disc-pill" id="home-continue-discipline">Computer Science</span>
-                  </div>
+              <div class="continue-main">
+                <div class="continue-info">
+                  <span class="continue-sub">CURRENT WORD</span>
+                  <h3 class="continue-word" id="home-continue-word-preview">Algorithm</h3>
+                  <span class="continue-counter" id="home-continue-counter">Word 1 of 10</span>
                 </div>
-                <button type="button" class="btn-action-primary" id="btn-home-continue-action" aria-label="Continue technical term">
-                  <span>Resume Keyword</span>
+                <button type="button" class="btn-continue-action" id="btn-home-continue-action">
+                  <span>Learn Word</span>
                   <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-chevron-right"></use></svg>
                 </button>
               </div>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar-fill" id="home-continue-progress-bar" style="width: 1%;"></div>
+              <div class="clean-progress-track">
+                <div class="clean-progress-fill" id="home-continue-progress-bar" style="width: 5%;"></div>
               </div>
             </div>
 
-            <!-- Discipline Mastery Stats -->
-            <div class="dashboard-card metrics-card">
-              <div class="card-header-line">
-                <div class="card-tag">Mastery Overview</div>
-                <span class="metrics-total-tag">26 Sections (A–Z)</span>
+            <!-- Quick Stats Card -->
+            <div class="clean-card stats-card">
+              <div class="card-head">
+                <span class="card-label-badge">Your Learning Stats</span>
+                <span class="card-section-tag">26 Letters (A–Z)</span>
               </div>
-              <div class="metrics-grid">
-                <div class="metric-block">
-                  <span class="metric-num text-cyan" id="home-stat-learned">0</span>
-                  <span class="metric-label">Mastered Terms</span>
+              <div class="stats-row">
+                <div class="stat-box">
+                  <span class="stat-num text-violet" id="home-stat-learned">0</span>
+                  <span class="stat-lbl">Learned Words</span>
                 </div>
-                <div class="metric-block">
-                  <span class="metric-num text-slate" id="home-stat-remaining">260</span>
-                  <span class="metric-label">Remaining Terms</span>
+                <div class="stat-box">
+                  <span class="stat-num text-slate" id="home-stat-remaining">260</span>
+                  <span class="stat-lbl">Remaining</span>
                 </div>
-                <div class="metric-block">
-                  <span class="metric-num text-emerald" id="home-stat-percent">0%</span>
-                  <span class="metric-label">Overall Index</span>
+                <div class="stat-box">
+                  <span class="stat-num text-emerald" id="home-stat-percent">0%</span>
+                  <span class="stat-lbl">Overall</span>
                 </div>
               </div>
             </div>
 
           </div>
 
-          <!-- A to Z Alphabet Matrix Grid -->
-          <div class="section-title-row">
-            <h3 class="section-heading">Engineering Alphabet Matrix (A–Z)</h3>
-            <button type="button" class="btn-text-link" id="btn-home-see-all-learn">View Complete Index →</button>
+          <!-- Alphabet A to Z Section Header -->
+          <div class="section-title-line">
+            <h3 class="section-title-text">Select an Alphabet to Learn (A–Z)</h3>
+            <button type="button" class="btn-link-action" id="btn-home-see-all-learn">View All →</button>
           </div>
 
-          <div class="alphabet-matrix-grid" id="home-alphabet-quick-grid">
-            <!-- Dynamically populated 26 alphabet cards (A-Z) -->
+          <!-- A to Z Alphabet Cards Grid -->
+          <div class="alphabet-cards-grid" id="home-alphabet-quick-grid">
+            <!-- Rendered 26 Alphabet Cards (A to Z) -->
           </div>
 
         </div>
       </section>
 
       <!-- ==================================================== -->
-      <!-- VIEW B: A–Z ALPHABET HUB                             -->
+      <!-- SCREEN 2: A–Z ALPHABET HUB                           -->
       <!-- ==================================================== -->
-      <section class="screen-view" id="view-learn" aria-label="Alphabet Index A to Z">
-        <div class="view-container">
-          <div class="page-heading-block">
-            <h2 class="page-title">Engineering Alphabet Index</h2>
-            <p class="page-subtitle">Select any letter from A to Z to access specialized technical terminology across core disciplines.</p>
+      <section class="screen-view" id="view-learn" aria-label="Alphabet Hub">
+        <div class="view-content-wrapper">
+          <div class="page-title-group">
+            <h2 class="page-main-title">A to Z Alphabet Index</h2>
+            <p class="page-subtitle-text">Choose any letter from A to Z to explore words, audio pronunciations, and examples.</p>
           </div>
 
-          <div class="alphabet-full-grid" id="learn-alphabet-cards-list">
-            <!-- 26 Alphabet Cards (A to Z) -->
+          <div class="alphabet-hub-grid" id="learn-alphabet-cards-list">
+            <!-- 26 Alphabet Cards -->
           </div>
         </div>
       </section>
 
       <!-- ==================================================== -->
-      <!-- VIEW C: WORD LIST / TECHNICAL INDEX                  -->
+      <!-- SCREEN 3: WORD LIST SCREEN                           -->
       <!-- ==================================================== -->
-      <section class="screen-view" id="view-word-list" aria-label="Technical terms for selected letter">
-        <div class="view-container">
-          <!-- Back Bar & Header -->
-          <div class="view-sub-bar">
-            <button type="button" class="btn-back-nav" id="btn-wordlist-back" aria-label="Back to alphabet index">
+      <section class="screen-view" id="view-word-list" aria-label="Word List">
+        <div class="view-content-wrapper">
+          
+          <div class="list-nav-bar">
+            <button type="button" class="btn-back-clean" id="btn-wordlist-back">
               <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-chevron-left"></use></svg>
-              <span>Alphabet Index</span>
+              <span>Back to Alphabets</span>
             </button>
-            <div class="sub-bar-center">
-              <h2 class="sub-bar-title" id="wordlist-title">Letter A Keywords</h2>
-              <span class="sub-bar-count" id="wordlist-progress-badge">0 / 10 Mastered</span>
+            <div class="list-nav-center">
+              <h2 class="list-nav-title" id="wordlist-title">Letter A Words</h2>
+              <span class="list-nav-subtitle" id="wordlist-progress-badge">0 of 10 Learned</span>
             </div>
-            <button type="button" class="btn-action-primary btn-sm" id="btn-wordlist-start-learning">
-              <span>Start Review</span>
+            <button type="button" class="btn-start-learn" id="btn-wordlist-start-learning">
+              <span>Start</span>
               <svg viewBox="0 0 24 24" width="16" height="16"><use href="#icon-chevron-right"></use></svg>
             </button>
           </div>
 
-          <!-- Discipline Filter Bar -->
-          <div class="discipline-filter-bar">
-            <button type="button" class="filter-tab active" data-filter="all">All Disciplines</button>
-            <button type="button" class="filter-tab" data-filter="CS">Computer Science / AI</button>
-            <button type="button" class="filter-tab" data-filter="EE">Electrical & Electronics</button>
-            <button type="button" class="filter-tab" data-filter="ME">Mechanical & Aero</button>
-            <button type="button" class="filter-tab" data-filter="CORE">Civil / Physics / Core</button>
+          <!-- Word Cards Grid -->
+          <div class="words-list-grid" id="word-items-container">
+            <!-- Rendered word items -->
           </div>
 
-          <!-- Word Cards Container -->
-          <div class="tech-words-grid" id="word-items-container">
-            <!-- Populated dynamically with technical word cards -->
-          </div>
         </div>
       </section>
 
       <!-- ==================================================== -->
-      <!-- VIEW D: TECHNICAL WORD LEARNING (FOCUS EXPERIENCE)   -->
+      <!-- SCREEN 4: WORD LEARNING FOCUS SCREEN                 -->
       <!-- ==================================================== -->
-      <section class="screen-view" id="view-word-learn" aria-label="Technical term learning interface">
-        <div class="view-container focus-view-container">
+      <section class="screen-view" id="view-word-learn" aria-label="Word Learning">
+        <div class="view-content-wrapper focus-wrapper">
           
-          <!-- Top Navigation Controls -->
-          <div class="focus-top-bar">
-            <button type="button" class="btn-back-nav" id="btn-learn-screen-back" aria-label="Back to keyword list">
+          <!-- Top Step Header -->
+          <div class="learn-step-bar">
+            <button type="button" class="btn-back-clean" id="btn-learn-screen-back">
               <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-chevron-left"></use></svg>
-              <span>Keyword List</span>
+              <span>Word List</span>
             </button>
-            
-            <div class="focus-counter-block">
-              <span class="focus-counter-text" id="learn-counter-text">Section A — Keyword 1 of 10</span>
-              <div class="focus-progress-track">
-                <div class="focus-progress-fill" id="learn-progress-fill" style="width: 10%;"></div>
+            <div class="learn-step-center">
+              <span class="step-text" id="learn-counter-text">Letter A — Word 1 of 10</span>
+              <div class="step-progress-track">
+                <div class="step-progress-fill" id="learn-progress-fill" style="width: 10%;"></div>
               </div>
             </div>
-
-            <button type="button" class="btn-bookmark-action" id="btn-learn-bookmark" aria-label="Bookmark keyword">
-              <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-star"></use></svg>
+            <button type="button" class="btn-bookmark-icon" id="btn-learn-bookmark" aria-label="Bookmark word">
+              <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-star"></use></svg>
             </button>
           </div>
 
-          <!-- Main Technical Term Focus Card -->
-          <div class="technical-focus-card" id="word-focus-card">
+          <!-- Main Word Learning Focus Card -->
+          <div class="word-focus-clean-card" id="word-focus-card">
             
-            <div class="term-header-row">
-              <div class="badge-group">
-                <span class="letter-badge-tag" id="learn-letter-pill">Letter A</span>
-                <span class="discipline-badge-tag" id="learn-discipline-pill">Computer Science</span>
-              </div>
-              <span class="mastery-status-pill unmastered" id="learn-status-pill">To Master</span>
+            <div class="word-card-top-row">
+              <span class="letter-badge-pill" id="learn-letter-pill">Letter A</span>
+              <span class="learned-status-badge unlearned" id="learn-status-pill">To Learn</span>
             </div>
 
-            <!-- Technical Term & Phonetics -->
-            <div class="term-title-block">
-              <h1 class="term-title" id="learn-word-heading">ALGORITHM</h1>
-              <div class="term-phonetic-row">
-                <span class="term-phonetic" id="learn-phonetic">/ˈæl.ɡə.rɪð.əm/</span>
-                <span class="phonetic-tag">IPA PHONETIC</span>
+            <!-- Big Word Heading & Phonetics -->
+            <div class="word-title-area">
+              <h1 class="main-word-heading" id="learn-word-heading">ALGORITHM</h1>
+              <div class="phonetic-pill">
+                <span class="phonetic-text" id="learn-phonetic">/ˈæl.ɡə.rɪð.əm/</span>
+                <span class="phonetic-sub">Pronunciation</span>
               </div>
             </div>
 
-            <!-- Pronunciation Engine -->
-            <div class="audio-action-row">
-              <button type="button" class="btn-audio-pronounce" id="btn-learn-pronounce" aria-label="Pronounce Algorithm">
-                <span class="audio-icon-wrap">
-                  <svg viewBox="0 0 24 24" width="22" height="22" class="speaker-svg"><use href="#icon-speaker"></use></svg>
-                  <svg viewBox="0 0 24 24" width="22" height="22" class="wave-svg"><use href="#icon-wave"></use></svg>
+            <!-- Audio Pronunciation Button -->
+            <div class="audio-pronounce-box">
+              <button type="button" class="btn-pronounce-big" id="btn-learn-pronounce">
+                <span class="btn-speaker-icon">
+                  <svg viewBox="0 0 24 24" width="24" height="24" class="speaker-svg"><use href="#icon-speaker"></use></svg>
+                  <svg viewBox="0 0 24 24" width="24" height="24" class="wave-svg"><use href="#icon-wave"></use></svg>
                 </span>
-                <span class="audio-btn-text" id="learn-pronounce-label">Synthesize Audio</span>
+                <span class="pronounce-label" id="learn-pronounce-label">Listen to Pronunciation</span>
               </button>
-              <button type="button" class="btn-audio-repeat" id="btn-learn-listen-again" aria-label="Listen Again">
+              <button type="button" class="btn-listen-again" id="btn-learn-listen-again">
                 <svg viewBox="0 0 24 24" width="16" height="16"><use href="#icon-refresh"></use></svg>
                 <span>Replay</span>
               </button>
             </div>
 
-            <!-- Engineering Definition Box -->
-            <div class="tech-spec-box definition-box">
-              <div class="spec-label">
-                <svg viewBox="0 0 24 24" width="14" height="14"><use href="#icon-chip"></use></svg>
-                <span>Engineering Definition & Principle</span>
+            <!-- Simple Meaning Card -->
+            <div class="word-info-card meaning-card">
+              <div class="info-card-label">
+                <span>📖 Meaning & Definition</span>
               </div>
-              <p class="spec-content definition-content" id="learn-meaning-text">
-                A finite, deterministic sequence of unambiguous instructions or computational steps designed to solve a specific class of problems or perform computation efficiently.
+              <p class="info-card-text" id="learn-meaning-text">
+                A step-by-step set of clear rules or instructions designed to solve a specific problem or complete a task.
               </p>
             </div>
 
-            <!-- Practical Engineering Application & Formula -->
-            <div class="tech-spec-box application-box">
-              <div class="spec-label">
-                <svg viewBox="0 0 24 24" width="14" height="14"><use href="#icon-dashboard"></use></svg>
-                <span>System Application & Industry Example</span>
+            <!-- Practical Example Card -->
+            <div class="word-info-card example-card">
+              <div class="info-card-label">
+                <span>💡 Example in a Sentence</span>
               </div>
-              <p class="spec-content application-content" id="learn-example-text">
-                "Dijkstra's shortest-path algorithm is deployed in autonomous navigation systems and OSPF network packet routing protocols."
+              <p class="info-card-text example-quote" id="learn-example-text">
+                "Google uses a search algorithm to show you the best results in less than a second."
               </p>
             </div>
 
-            <!-- Interactive Technical Spelling & Character Matrix -->
-            <div class="spelling-interactive-block">
-              <div class="spelling-header-row">
-                <span class="spelling-title">Character Sequence & Pronunciation</span>
-                <span class="spelling-hint">Tap any character to analyze phonetic audio</span>
+            <!-- Interactive Spelling Section -->
+            <div class="interactive-spelling-card">
+              <div class="spelling-top-line">
+                <span class="spelling-heading">Spell It Out</span>
+                <span class="spelling-instruction">Tap any letter to hear its sound</span>
               </div>
-              <div class="spelling-tiles-grid" id="learn-spelling-tiles">
+              <div class="spelling-letters-row" id="learn-spelling-tiles">
                 <!-- Interactive Letter Tiles -->
               </div>
             </div>
 
-            <!-- Mastered Toggle Button -->
-            <div class="mastery-action-bar">
-              <button type="button" class="btn-mark-mastered" id="btn-mark-learned" aria-label="Mark term as mastered">
+            <!-- Mark as Learned Button -->
+            <div class="learn-action-row">
+              <button type="button" class="btn-mark-learned-toggle" id="btn-mark-learned">
                 <svg viewBox="0 0 24 24" width="20" height="20" class="check-icon"><use href="#icon-check"></use></svg>
-                <span id="btn-mark-learned-text">Mark Keyword as Mastered</span>
+                <span id="btn-mark-learned-text">Mark as Learned</span>
               </button>
             </div>
 
           </div>
 
-          <!-- Bottom Navigation Step Controls -->
-          <div class="focus-nav-controls">
-            <button type="button" class="btn-step-nav btn-step-prev" id="btn-learn-prev" aria-label="Previous Keyword">
+          <!-- Bottom Navigation Controls -->
+          <div class="learn-bottom-buttons">
+            <button type="button" class="btn-step-button btn-prev" id="btn-learn-prev">
               <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-chevron-left"></use></svg>
-              <span>Previous Keyword</span>
+              <span>Previous Word</span>
             </button>
             
-            <button type="button" class="btn-step-nav btn-step-next" id="btn-learn-next" aria-label="Next Keyword">
-              <span>Next Keyword</span>
+            <button type="button" class="btn-step-button btn-next" id="btn-learn-next">
+              <span>Next Word</span>
               <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-chevron-right"></use></svg>
             </button>
           </div>
@@ -467,101 +426,88 @@
       </section>
 
       <!-- ==================================================== -->
-      <!-- VIEW E: TECHNICAL SEARCH ENGINE                      -->
+      <!-- SCREEN 5: SEARCH SCREEN                              -->
       <!-- ==================================================== -->
-      <section class="screen-view" id="view-search" aria-label="Engineering search engine">
-        <div class="view-container">
-          <div class="page-heading-block">
-            <h2 class="page-title">Technical Lexicon Search</h2>
-            <p class="page-subtitle">Instant lookup across all A–Z engineering terminology, mathematical concepts, and system architectures.</p>
+      <section class="screen-view" id="view-search" aria-label="Search Dictionary">
+        <div class="view-content-wrapper">
+          <div class="page-title-group">
+            <h2 class="page-main-title">Dictionary Search</h2>
+            <p class="page-subtitle-text">Search through all 260 words across A to Z instantly.</p>
           </div>
 
-          <!-- Search Input Bar -->
-          <div class="tech-search-bar">
-            <svg viewBox="0 0 24 24" width="22" height="22" class="search-input-icon"><use href="#icon-search"></use></svg>
-            <input type="text" id="search-input-field" class="search-field-input" placeholder="Search technical keywords, systems, or definitions (e.g. Diode, Kinematics, Bandwidth)..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-            <button type="button" class="btn-clear-search" id="btn-search-clear" aria-label="Clear search input">
+          <!-- Search Input Box -->
+          <div class="search-input-box">
+            <svg viewBox="0 0 24 24" width="22" height="22" class="search-box-icon"><use href="#icon-search"></use></svg>
+            <input type="text" id="search-input-field" class="search-text-input" placeholder="Type any word or meaning (e.g., Algorithm, Bandwidth, Diode)..." autocomplete="off">
+            <button type="button" class="btn-clear-input" id="btn-search-clear" aria-label="Clear search">
               <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-close"></use></svg>
             </button>
           </div>
 
-          <!-- Quick Discipline Filter Chips -->
-          <div class="search-discipline-chips" id="search-discipline-chips">
-            <button type="button" class="chip-filter active" data-discipline="ALL">All Disciplines</button>
-            <button type="button" class="chip-filter" data-discipline="Computer Science">Computer Science & AI</button>
-            <button type="button" class="chip-filter" data-discipline="Electrical">Electrical & Electronics</button>
-            <button type="button" class="chip-filter" data-discipline="Mechanical">Mechanical & Aero</button>
-            <button type="button" class="chip-filter" data-discipline="Civil">Civil / Core</button>
-            <button type="button" class="chip-filter" data-discipline="Physics">Physics & Materials</button>
-          </div>
-
-          <!-- Search Results Header -->
-          <div class="search-meta-row">
-            <span id="search-results-count">260 keywords indexed across A–Z</span>
+          <div class="search-count-line">
+            <span id="search-results-count">260 words indexed in dictionary</span>
           </div>
 
           <!-- Search Results List -->
           <div class="search-results-grid" id="search-results-list">
-            <!-- Dynamically populated search cards -->
+            <!-- Results populated here -->
           </div>
         </div>
       </section>
 
       <!-- ==================================================== -->
-      <!-- VIEW F: MASTERY METRICS & ANALYTICS                  -->
+      <!-- SCREEN 6: PROGRESS & STATS SCREEN                    -->
       <!-- ==================================================== -->
-      <section class="screen-view" id="view-progress" aria-label="Engineering mastery analytics">
-        <div class="view-container">
-          <div class="page-heading-block">
-            <h2 class="page-title">Engineering Mastery Analytics</h2>
-            <p class="page-subtitle">Track your technical vocabulary retention and discipline coverage across 26 engineering sections.</p>
+      <section class="screen-view" id="view-progress" aria-label="My Progress">
+        <div class="view-content-wrapper">
+          <div class="page-title-group">
+            <h2 class="page-main-title">Your Learning Progress</h2>
+            <p class="page-subtitle-text">Track how many words you have mastered across all 26 alphabet sections.</p>
           </div>
 
-          <!-- Hero Metrics Card -->
-          <div class="analytics-hero-card">
-            <div class="analytics-hero-left">
-              <div class="radial-gauge-container">
-                <svg class="radial-gauge-svg" width="130" height="130" viewBox="0 0 130 130">
-                  <circle class="gauge-bg" cx="65" cy="65" r="54" fill="none" stroke-width="10"/>
-                  <circle class="gauge-fill" id="progress-circle-fill" cx="65" cy="65" r="54" fill="none" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292"/>
-                </svg>
-                <div class="gauge-value-box">
-                  <span class="gauge-percent" id="progress-total-percent">0%</span>
-                  <span class="gauge-label">Mastery</span>
-                </div>
+          <!-- Big Progress Card -->
+          <div class="progress-hero-box">
+            <div class="progress-circle-area">
+              <svg class="progress-ring-svg" width="130" height="130" viewBox="0 0 130 130">
+                <circle class="ring-bg" cx="65" cy="65" r="54" fill="none" stroke-width="10"/>
+                <circle class="ring-fill" id="progress-circle-fill" cx="65" cy="65" r="54" fill="none" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292"/>
+              </svg>
+              <div class="ring-center-content">
+                <span class="ring-percent" id="progress-total-percent">0%</span>
+                <span class="ring-label">Completed</span>
               </div>
             </div>
 
-            <div class="analytics-hero-right">
-              <div class="analytics-stat-row">
-                <span class="stat-title">Total Indexed Terms</span>
-                <span class="stat-data" id="prog-stat-total">260</span>
+            <div class="progress-stats-column">
+              <div class="stat-item-line">
+                <span class="stat-item-name">Total Vocabulary Words</span>
+                <span class="stat-item-val" id="prog-stat-total">260</span>
               </div>
-              <div class="analytics-stat-row">
-                <span class="stat-title">Mastered Terms</span>
-                <span class="stat-data text-emerald" id="prog-stat-learned">0</span>
+              <div class="stat-item-line">
+                <span class="stat-item-name">Words Mastered</span>
+                <span class="stat-item-val text-emerald" id="prog-stat-learned">0</span>
               </div>
-              <div class="analytics-stat-row">
-                <span class="stat-title">Remaining to Master</span>
-                <span class="stat-data text-amber" id="prog-stat-remaining">260</span>
+              <div class="stat-item-line">
+                <span class="stat-item-name">Words Remaining</span>
+                <span class="stat-item-val text-violet" id="prog-stat-remaining">260</span>
               </div>
             </div>
           </div>
 
-          <!-- A-Z Alphabet Breakdown Matrix -->
-          <div class="section-title-row">
-            <h3 class="section-heading">Section Breakdown (A through Z)</h3>
+          <!-- Section by Section Breakdown -->
+          <div class="section-title-line">
+            <h3 class="section-title-text">Alphabet Progress (A to Z)</h3>
           </div>
 
           <div class="progress-breakdown-grid" id="progress-alphabet-breakdown">
-            <!-- 26 Section Breakdown Cards -->
+            <!-- 26 Alphabet Progress Cards -->
           </div>
 
-          <!-- Reset Zone -->
-          <div class="reset-action-zone">
-            <button type="button" class="btn-reset-metrics" id="btn-reset-progress" aria-label="Reset all mastery data">
+          <!-- Reset Button -->
+          <div class="reset-zone">
+            <button type="button" class="btn-reset-data" id="btn-reset-progress">
               <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-refresh"></use></svg>
-              <span>Reset All Mastery Progress</span>
+              <span>Reset Learning Progress</span>
             </button>
           </div>
 
@@ -571,59 +517,59 @@
     </main>
 
     <!-- ======================================================== -->
-    <!-- 4. MOBILE BOTTOM NAVIGATION (HIDDEN ON DESKTOP)          -->
+    <!-- 4. MOBILE BOTTOM NAVIGATION (SHOWN ON MOBILE)            -->
     <!-- ======================================================== -->
-    <nav class="mobile-bottom-nav" id="bottom-nav-bar" aria-label="Mobile Navigation">
-      <button type="button" class="mobile-nav-tab active" data-tab="home" id="tab-nav-home">
-        <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-dashboard"></use></svg>
-        <span>Dashboard</span>
+    <nav class="mobile-bottom-bar" id="bottom-nav-bar" aria-label="Mobile Navigation">
+      <button type="button" class="mobile-tab-btn active" data-tab="home">
+        <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-home"></use></svg>
+        <span>Home</span>
       </button>
 
-      <button type="button" class="mobile-nav-tab" data-tab="learn" id="tab-nav-learn">
-        <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-index"></use></svg>
-        <span>A–Z Index</span>
+      <button type="button" class="mobile-tab-btn" data-tab="learn">
+        <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-learn"></use></svg>
+        <span>A–Z</span>
       </button>
 
-      <button type="button" class="mobile-nav-tab" data-tab="search" id="tab-nav-search">
+      <button type="button" class="mobile-tab-btn" data-tab="search">
         <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-search"></use></svg>
         <span>Search</span>
       </button>
 
-      <button type="button" class="mobile-nav-tab" data-tab="progress" id="tab-nav-progress">
+      <button type="button" class="mobile-tab-btn" data-tab="progress">
         <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-chart"></use></svg>
-        <span>Metrics</span>
+        <span>Progress</span>
       </button>
     </nav>
 
     <!-- ======================================================== -->
-    <!-- 5. SECTION COMPLETION MILESTONE MODAL                    -->
+    <!-- 5. MILESTONE CELEBRATION MODAL                           -->
     <!-- ======================================================== -->
-    <div class="modal-overlay" id="modal-completion" aria-hidden="true" role="dialog">
-      <div class="modal-dialog-tech">
-        <div class="modal-badge-tech">MILESTONE ACHIEVED</div>
-        <h2 class="modal-title-tech" id="completion-title">Section Completed!</h2>
-        <p class="modal-desc-tech" id="completion-message">You have mastered all engineering terms in this section.</p>
-        <div class="modal-actions-tech">
-          <button type="button" class="btn-primary" id="btn-completion-review">Review Section Terms</button>
-          <button type="button" class="btn-secondary" id="btn-completion-choose-letter">Select Next Alphabet</button>
+    <div class="modal-backdrop" id="modal-completion" aria-hidden="true" role="dialog">
+      <div class="modal-dialog-box">
+        <div class="modal-celebration-icon">🎉</div>
+        <h2 class="modal-dialog-title" id="completion-title">Alphabet Completed!</h2>
+        <p class="modal-dialog-text" id="completion-message">You have completed all words in this section.</p>
+        <div class="modal-buttons-row">
+          <button type="button" class="btn-secondary" id="btn-completion-review">Review Again</button>
+          <button type="button" class="btn-primary" id="btn-completion-choose-letter">Next Alphabet</button>
         </div>
       </div>
     </div>
 
     <!-- Reset Confirmation Dialog -->
-    <div class="modal-overlay" id="modal-reset-confirm" aria-hidden="true" role="dialog">
-      <div class="modal-dialog-tech">
-        <h3 class="modal-title-tech">Reset Technical Progress?</h3>
-        <p class="modal-desc-tech">This will reset all mastered keywords back to zero. This action cannot be undone.</p>
-        <div class="modal-actions-row-tech">
+    <div class="modal-backdrop" id="modal-reset-confirm" aria-hidden="true" role="dialog">
+      <div class="modal-dialog-box">
+        <h3 class="modal-dialog-title">Reset Your Progress?</h3>
+        <p class="modal-dialog-text">This will reset all your learned words back to 0. Are you sure?</p>
+        <div class="modal-buttons-row">
           <button type="button" class="btn-secondary" id="btn-modal-cancel-reset">Cancel</button>
-          <button type="button" class="btn-danger-tech" id="btn-modal-confirm-reset">Confirm Reset</button>
+          <button type="button" class="btn-danger" id="btn-modal-confirm-reset">Yes, Reset</button>
         </div>
       </div>
     </div>
 
     <!-- Toast Notification -->
-    <div class="tech-toast" id="app-toast" role="status" aria-live="polite"></div>
+    <div class="app-toast" id="app-toast" role="status" aria-live="polite"></div>
 
   </div>
 
