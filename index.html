@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="description" content="Wordly — Mobile-first English Dictionary & Word Learning App. Learn 400 essential vocabulary words with pronunciation, spelling, and interactive lessons.">
+  <title>Wordly — Learn English, One Word at a Time</title>
+  
+  <!-- Google Fonts: Outfit & Inter for high readability -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SVG Icon Sprite Definitions -->
+  <svg style="display: none;">
+    <defs>
+      <!-- App Brand Logo -->
+      <g id="icon-logo">
+        <rect width="36" height="36" rx="10" fill="url(#logo-grad)"/>
+        <path d="M10 26L18 10L26 26H22L20 22H16L14 26H10ZM17 19H19L18 15.5L17 19Z" fill="#FFFFFF"/>
+        <circle cx="25" cy="11" r="3" fill="#FBBF24"/>
+      </g>
+      <!-- Linear Gradient for Logo -->
+      <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#6366F1"/>
+        <stop offset="100%" stop-color="#4338CA"/>
+      </linearGradient>
+
+      <!-- Home Icon -->
+      <g id="icon-home">
+        <path d="M3 10.5L12 3L21 10.5V20C21 20.5523 20.5523 21 20 21H15V14H9V21H4C3.44772 21 3 20.5523 3 20V10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+
+      <!-- Learn / Book Icon -->
+      <g id="icon-book">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5V19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+
+      <!-- Search Icon -->
+      <g id="icon-search">
+        <path d="M21 21L15.5 15.5M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+
+      <!-- Progress / Chart Icon -->
+      <g id="icon-chart">
+        <path d="M18 20V10M12 20V4M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+
+      <!-- Speaker / Volume Icon -->
+      <g id="icon-speaker">
+        <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="currentColor"/>
+        <path d="M15.54 8.46C16.4774 9.39764 17.004 10.6692 17.004 11.995C17.004 13.3208 16.4774 14.5924 15.54 15.53" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M19.07 4.93C20.9447 6.80528 21.9979 9.34842 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+
+      <!-- Waveform Audio Active Icon -->
+      <g id="icon-wave">
+        <path d="M3 10V14M7 6V18M11 3V21M15 7V17M19 10V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+
+      <!-- Chevron Left -->
+      <g id="icon-chevron-left">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+
+      <!-- Chevron Right -->
+      <g id="icon-chevron-right">
+        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+
+      <!-- Checkmark -->
+      <g id="icon-check">
+        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+
+      <!-- Refresh / Repeat -->
+      <g id="icon-refresh">
+        <path d="M1 4V10H7M23 20V14H17M20.49 9A9 9 0 0 0 5.64 5.64L1 10M23 14L18.36 18.36A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+
+      <!-- Sparkle / Star -->
+      <g id="icon-sparkle">
+        <path d="M12 2L14.4 8.6L21 11L14.4 13.4L12 20L9.6 13.4L3 11L9.6 8.6L12 2Z" fill="currentColor"/>
+      </g>
+
+      <!-- Trophy -->
+      <g id="icon-trophy">
+        <path d="M8 21H16M12 17V21M6 4H18V9C18 12.3137 15.3137 15 12 15C8.68629 15 6 12.3137 6 9V4ZM6 6H3C2.44772 6 2 6.44772 2 7V9C2 10.6569 3.34315 12 5 12H6.2M18 6H21C21.5523 6 22 6.44772 22 7V9C22 10.6569 20.6569 12 19 12H17.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+
+      <!-- Sun / Greeting Icon -->
+      <g id="icon-sun">
+        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+        <path d="M12 2V4M12 20V22M4 12H2M22 12H20M5.64 5.64L4.22 4.22M19.78 19.78L18.36 18.36M5.64 18.36L4.22 19.78M19.78 4.22L18.36 5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </g>
+
+      <!-- Clear / Close -->
+      <g id="icon-close">
+        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+
+      <!-- Bookmark / Star -->
+      <g id="icon-star">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+    </defs>
+  </svg>
+
+  <!-- Mobile App Wrapper (Centered on Desktop) -->
+  <div class="app-container" id="app-container">
+
+    <!-- ======================================================== -->
+    <!-- 1. ONBOARDING / WELCOME SCREEN                           -->
+    <!-- ======================================================== -->
+    <section class="onboarding-screen active" id="screen-onboarding" aria-label="Welcome screen">
+      <div class="onboarding-skip-bar">
+        <button type="button" class="btn-text-skip" id="btn-onboarding-skip" aria-label="Skip onboarding">
+          Skip
+        </button>
+      </div>
+
+      <div class="onboarding-content">
+        <!-- Hero Graphic (Custom SVG Mobile Illustration) -->
+        <div class="onboarding-hero-illustration">
+          <div class="hero-circle-pulse"></div>
+          <div class="hero-icon-card">
+            <svg class="hero-icon-svg" viewBox="0 0 36 36" width="68" height="68">
+              <use href="#icon-logo"></use>
+            </svg>
+          </div>
+          <div class="floating-badge badge-a">A • Apple</div>
+          <div class="floating-badge badge-b">B • Brave</div>
+          <div class="floating-badge badge-c">C • Clever</div>
+          <div class="floating-badge badge-d">D • Dream</div>
+        </div>
+
+        <div class="onboarding-text">
+          <span class="onboarding-tag">
+            <svg viewBox="0 0 24 24" width="14" height="14" class="tag-sparkle"><use href="#icon-sparkle"></use></svg>
+            400 Curated Words
+          </span>
+          <h1 class="onboarding-title">Learn English,<br><span class="highlight-text">One Word at a Time</span></h1>
+          <p class="onboarding-desc">
+            Build your vocabulary with simple words, natural pronunciation, spelling practice, and interactive daily learning.
+          </p>
+        </div>
+
+        <div class="onboarding-features-preview">
+          <div class="feat-pill">
+            <svg viewBox="0 0 24 24" width="16" height="16"><use href="#icon-speaker"></use></svg>
+            <span>Audio Voice</span>
+          </div>
+          <div class="feat-pill">
+            <svg viewBox="0 0 24 24" width="16" height="16"><use href="#icon-check"></use></svg>
+            <span>Offline Saved</span>
+          </div>
+          <div class="feat-pill">
+            <svg viewBox="0 0 24 24" width="16" height="16"><use href="#icon-chart"></use></svg>
+            <span>Track Progress</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="onboarding-actions">
+        <button type="button" class="btn-primary btn-large" id="btn-onboarding-start">
+          <span>Let's Learn</span>
+          <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-chevron-right"></use></svg>
+        </button>
+        <button type="button" class="btn-secondary" id="btn-onboarding-continue">
+          Continue
+        </button>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- 2. MAIN APP SHELL                                        -->
+    <!-- ======================================================== -->
+    <div class="app-shell" id="app-shell">
+
+      <!-- Top Application Header -->
+      <header class="app-header" id="app-header">
+        <div class="header-branding" id="header-branding-btn" role="button" tabindex="0" aria-label="Go to Home">
+          <svg viewBox="0 0 36 36" width="34" height="34" class="header-logo-icon">
+            <use href="#icon-logo"></use>
+          </svg>
+          <div class="header-titles">
+            <h1 class="header-app-name">Wordly</h1>
+            <span class="header-subtitle">Learn • Listen • Remember</span>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button type="button" class="btn-icon-header" id="btn-header-search" aria-label="Search words">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <use href="#icon-search"></use>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Scrollable Content Area -->
+      <main class="app-main-content" id="app-main-content">
+
+        <!-- ==================================================== -->
+        <!-- SCREEN A: HOME SCREEN                                -->
+        <!-- ==================================================== -->
+        <section class="screen-view active" id="view-home" aria-label="Home Dashboard">
+          <div class="screen-inner">
+            
+            <!-- Greeting Banner -->
+            <div class="home-greeting-card">
+              <div class="greeting-text-area">
+                <div class="greeting-time-badge">
+                  <svg viewBox="0 0 24 24" width="16" height="16" class="greeting-sun-icon"><use href="#icon-sun"></use></svg>
+                  <span id="home-greeting-time">Good Morning</span>
+                </div>
+                <h2 class="greeting-heading">Ready to learn?</h2>
+                <p class="greeting-sub">Expand your English vocabulary step by step today.</p>
+              </div>
+            </div>
+
+            <!-- Continue Learning Card -->
+            <div class="continue-learning-card" id="home-continue-card">
+              <div class="continue-header">
+                <span class="continue-badge">Continue Learning</span>
+                <span class="continue-letter-tag" id="home-continue-letter-badge">A Words</span>
+              </div>
+              <div class="continue-body">
+                <div class="continue-info">
+                  <h3 class="continue-word-title" id="home-continue-word-preview">Apple</h3>
+                  <span class="continue-counter" id="home-continue-counter">Word 1 of 100</span>
+                </div>
+                <button type="button" class="btn-continue-action" id="btn-home-continue-action" aria-label="Continue learning word">
+                  <span>Continue</span>
+                  <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-chevron-right"></use></svg>
+                </button>
+              </div>
+              <div class="continue-progress-track">
+                <div class="continue-progress-fill" id="home-continue-progress-bar" style="width: 1%;"></div>
+              </div>
+            </div>
+
+            <!-- Quick Stats Row -->
+            <div class="quick-stats-grid">
+              <div class="stat-card">
+                <div class="stat-value highlight-num" id="home-stat-learned">0</div>
+                <div class="stat-label">Words Learned</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value" id="home-stat-remaining">400</div>
+                <div class="stat-label">Remaining</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value" id="home-stat-percent">0%</div>
+                <div class="stat-label">Mastery</div>
+              </div>
+            </div>
+
+            <!-- Alphabet Progress Section -->
+            <div class="home-section-header">
+              <h3 class="section-title">Alphabet Progress</h3>
+              <button type="button" class="btn-section-link" id="btn-home-see-all-learn">See All</button>
+            </div>
+
+            <div class="alphabet-quick-grid" id="home-alphabet-quick-grid">
+              <!-- Alphabet Cards rendered dynamically via JS -->
+            </div>
+
+            <!-- App Minimal Footer -->
+            <footer class="app-subtle-footer">
+              <div class="footer-logo-line">
+                <svg viewBox="0 0 36 36" width="18" height="18"><use href="#icon-logo"></use></svg>
+                <strong>Wordly</strong>
+              </div>
+              <p class="footer-tagline">Learn English. Build Confidence.</p>
+              <p class="footer-copy">© 2026 Wordly • Mobile Learning</p>
+            </footer>
+          </div>
+        </section>
+
+        <!-- ==================================================== -->
+        <!-- SCREEN B: LEARN / ALPHABET HUB                       -->
+        <!-- ==================================================== -->
+        <section class="screen-view" id="view-learn" aria-label="Learn Alphabet Hub">
+          <div class="screen-inner">
+            <div class="section-hero-header">
+              <h2 class="page-title">Choose your learning path</h2>
+              <p class="page-subtitle">Select an alphabet section to practice 100 essential words.</p>
+            </div>
+
+            <div class="alphabet-cards-list" id="learn-alphabet-cards-list">
+              <!-- Rendered dynamically for A, B, C, D -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================== -->
+        <!-- SCREEN C: WORD LIST SCREEN                           -->
+        <!-- ==================================================== -->
+        <section class="screen-view" id="view-word-list" aria-label="Word list for selected letter">
+          <div class="screen-inner">
+            <!-- Back & Header Bar -->
+            <div class="view-sub-header">
+              <button type="button" class="btn-back-nav" id="btn-wordlist-back" aria-label="Back to letters">
+                <svg viewBox="0 0 24 24" width="22" height="22"><use href="#icon-chevron-left"></use></svg>
+              </button>
+              <div class="sub-header-titles">
+                <h2 class="sub-header-main" id="wordlist-title">A Words</h2>
+                <span class="sub-header-progress" id="wordlist-progress-badge">0 / 100 learned</span>
+              </div>
+              <button type="button" class="btn-icon-sub" id="btn-wordlist-start-learning" aria-label="Start learning from first word">
+                <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-book"></use></svg>
+              </button>
+            </div>
+
+            <!-- Filter tabs: All, Learned, Unlearned -->
+            <div class="wordlist-filter-bar">
+              <button type="button" class="filter-chip active" data-filter="all" id="filter-all">All (100)</button>
+              <button type="button" class="filter-chip" data-filter="unlearned" id="filter-unlearned">To Learn</button>
+              <button type="button" class="filter-chip" data-filter="learned" id="filter-learned">Learned</button>
+            </div>
+
+            <!-- List Container -->
+            <div class="word-items-list" id="word-items-container">
+              <!-- Dynamically populated 100 word cards -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================== -->
+        <!-- SCREEN D: WORD LEARNING SCREEN (Core Experience)     -->
+        <!-- ==================================================== -->
+        <section class="screen-view" id="view-word-learn" aria-label="Word learning interface">
+          <div class="screen-inner learning-screen-inner">
+            
+            <!-- Learning Top Navigation & Progress Bar -->
+            <div class="learning-top-nav">
+              <button type="button" class="btn-back-nav" id="btn-learn-screen-back" aria-label="Back to word list">
+                <svg viewBox="0 0 24 24" width="22" height="22"><use href="#icon-chevron-left"></use></svg>
+              </button>
+              
+              <div class="learning-counter-container">
+                <span class="learning-counter-text" id="learn-counter-text">A — Word 1 of 100</span>
+                <div class="learning-progress-track">
+                  <div class="learning-progress-fill" id="learn-progress-fill" style="width: 1%;"></div>
+                </div>
+              </div>
+
+              <button type="button" class="btn-bookmark" id="btn-learn-bookmark" aria-label="Bookmark word">
+                <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-star"></use></svg>
+              </button>
+            </div>
+
+            <!-- Main Word Display Card -->
+            <div class="word-focus-card" id="word-focus-card">
+              
+              <div class="word-header-row">
+                <span class="word-letter-pill" id="learn-letter-pill">Letter A</span>
+                <span class="learned-status-pill unlearned" id="learn-status-pill">To Learn</span>
+              </div>
+
+              <h1 class="focused-word" id="learn-word-heading">APPLE</h1>
+              <div class="focused-phonetic" id="learn-phonetic">/ˈæp.əl/</div>
+
+              <!-- Pronunciation Action Button -->
+              <div class="pronounce-action-area">
+                <button type="button" class="btn-pronounce-main" id="btn-learn-pronounce" aria-label="Pronounce Apple">
+                  <span class="pronounce-icon-wrapper">
+                    <svg viewBox="0 0 24 24" width="26" height="26" class="speaker-svg"><use href="#icon-speaker"></use></svg>
+                    <svg viewBox="0 0 24 24" width="26" height="26" class="wave-svg"><use href="#icon-wave"></use></svg>
+                  </span>
+                  <span class="pronounce-btn-label" id="learn-pronounce-label">Listen</span>
+                </button>
+                <button type="button" class="btn-pronounce-secondary" id="btn-learn-listen-again" aria-label="Listen Again">
+                  <svg viewBox="0 0 24 24" width="16" height="16"><use href="#icon-refresh"></use></svg>
+                  <span>Listen Again</span>
+                </button>
+              </div>
+
+              <!-- Meaning Box -->
+              <div class="info-section meaning-box">
+                <div class="info-label">
+                  <span>Meaning</span>
+                </div>
+                <p class="meaning-text" id="learn-meaning-text">
+                  An apple is a round fruit that is usually red, green or yellow.
+                </p>
+              </div>
+
+              <!-- Example Sentence Box -->
+              <div class="info-section example-box">
+                <div class="info-label">
+                  <span>Example</span>
+                </div>
+                <p class="example-text" id="learn-example-text">
+                  "I eat an apple every morning."
+                </p>
+              </div>
+
+              <!-- Spelling Interactive Section -->
+              <div class="spelling-interactive-section">
+                <div class="spelling-header">
+                  <h3 class="spelling-title">Spell It</h3>
+                  <span class="spelling-hint">Tap letters to hear sounds</span>
+                </div>
+                <div class="spelling-tiles-row" id="learn-spelling-tiles">
+                  <!-- Generated interactive tiles e.g. [A] [P] [P] [L] [E] -->
+                </div>
+              </div>
+
+              <!-- Mark as Learned Action Button -->
+              <div class="learned-action-container">
+                <button type="button" class="btn-mark-learned" id="btn-mark-learned" aria-label="Mark word as learned">
+                  <svg viewBox="0 0 24 24" width="20" height="20" class="check-icon"><use href="#icon-check"></use></svg>
+                  <span id="btn-mark-learned-text">Mark as Learned</span>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- Bottom Learning Controls: Previous & Next Word -->
+            <div class="learning-bottom-controls">
+              <button type="button" class="btn-nav-word btn-nav-prev" id="btn-learn-prev" aria-label="Previous Word">
+                <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-chevron-left"></use></svg>
+                <span>Previous</span>
+              </button>
+              
+              <button type="button" class="btn-nav-word btn-nav-next" id="btn-learn-next" aria-label="Next Word">
+                <span>Next Word</span>
+                <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-chevron-right"></use></svg>
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==================================================== -->
+        <!-- SCREEN E: SEARCH SCREEN                              -->
+        <!-- ==================================================== -->
+        <section class="screen-view" id="view-search" aria-label="Search all 400 dictionary words">
+          <div class="screen-inner">
+            <div class="search-header-area">
+              <h2 class="page-title">Dictionary Search</h2>
+              <p class="page-subtitle">Instant lookup across all 400 vocabulary words.</p>
+              
+              <!-- Search Bar -->
+              <div class="search-input-wrapper">
+                <svg viewBox="0 0 24 24" width="20" height="20" class="search-field-icon"><use href="#icon-search"></use></svg>
+                <input type="text" id="search-input-field" class="search-input" placeholder="Search a word or meaning..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                <button type="button" class="btn-search-clear" id="btn-search-clear" aria-label="Clear search">
+                  <svg viewBox="0 0 24 24" width="16" height="16"><use href="#icon-close"></use></svg>
+                </button>
+              </div>
+
+              <!-- Quick letter filter chips -->
+              <div class="search-letter-filters" id="search-letter-filters">
+                <button type="button" class="letter-filter-chip active" data-letter="ALL">All (400)</button>
+                <button type="button" class="letter-filter-chip" data-letter="A">A</button>
+                <button type="button" class="letter-filter-chip" data-letter="B">B</button>
+                <button type="button" class="letter-filter-chip" data-letter="C">C</button>
+                <button type="button" class="letter-filter-chip" data-letter="D">D</button>
+              </div>
+            </div>
+
+            <!-- Search Results Summary & List -->
+            <div class="search-results-meta">
+              <span id="search-results-count">400 words available</span>
+            </div>
+
+            <div class="search-results-list" id="search-results-list">
+              <!-- Dynamically populated search cards -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================== -->
+        <!-- SCREEN F: PROGRESS SCREEN                            -->
+        <!-- ==================================================== -->
+        <section class="screen-view" id="view-progress" aria-label="Learning progress dashboard">
+          <div class="screen-inner">
+            <div class="section-hero-header">
+              <h2 class="page-title">Your Learning Progress</h2>
+              <p class="page-subtitle">Keep going! Consistency is the key to vocabulary mastery.</p>
+            </div>
+
+            <!-- Big Progress Overview Card -->
+            <div class="progress-hero-card">
+              <div class="progress-hero-top">
+                <div class="progress-circle-wrap">
+                  <svg class="progress-ring-svg" width="120" height="120" viewBox="0 0 120 120">
+                    <circle class="progress-ring-bg" cx="60" cy="60" r="50" fill="none" stroke-width="10"/>
+                    <circle class="progress-ring-circle" id="progress-circle-fill" cx="60" cy="60" r="50" fill="none" stroke-width="10" stroke-dasharray="314.159" stroke-dashoffset="314.159"/>
+                  </svg>
+                  <div class="progress-circle-content">
+                    <span class="progress-circle-num" id="progress-total-percent">0%</span>
+                    <span class="progress-circle-label">Done</span>
+                  </div>
+                </div>
+
+                <div class="progress-stats-summary">
+                  <div class="stat-summary-item">
+                    <span class="stat-sum-num" id="prog-stat-total">400</span>
+                    <span class="stat-sum-label">Total Words</span>
+                  </div>
+                  <div class="stat-summary-item">
+                    <span class="stat-sum-num learned-green" id="prog-stat-learned">0</span>
+                    <span class="stat-sum-label">Learned</span>
+                  </div>
+                  <div class="stat-summary-item">
+                    <span class="stat-sum-num remaining-amber" id="prog-stat-remaining">400</span>
+                    <span class="stat-sum-label">Remaining</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Alphabet Breakdown Cards -->
+            <div class="home-section-header">
+              <h3 class="section-title">Alphabet Breakdown</h3>
+            </div>
+
+            <div class="progress-alphabet-breakdown" id="progress-alphabet-breakdown">
+              <!-- Dynamically populated breakdown items -->
+            </div>
+
+            <!-- Reset Progress Option -->
+            <div class="progress-danger-zone">
+              <button type="button" class="btn-reset-progress" id="btn-reset-progress" aria-label="Reset all learning progress">
+                <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-refresh"></use></svg>
+                <span>Reset All Progress</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Fixed Mobile Bottom Navigation Bar -->
+      <nav class="bottom-nav-bar" id="bottom-nav-bar" aria-label="Bottom Navigation">
+        <button type="button" class="nav-tab-item active" data-tab="home" id="tab-nav-home" aria-label="Home Tab">
+          <div class="nav-tab-icon-wrap">
+            <svg viewBox="0 0 24 24" width="22" height="22"><use href="#icon-home"></use></svg>
+          </div>
+          <span class="nav-tab-label">Home</span>
+        </button>
+
+        <button type="button" class="nav-tab-item" data-tab="learn" id="tab-nav-learn" aria-label="Learn Tab">
+          <div class="nav-tab-icon-wrap">
+            <svg viewBox="0 0 24 24" width="22" height="22"><use href="#icon-book"></use></svg>
+          </div>
+          <span class="nav-tab-label">Learn</span>
+        </button>
+
+        <button type="button" class="nav-tab-item" data-tab="search" id="tab-nav-search" aria-label="Search Tab">
+          <div class="nav-tab-icon-wrap">
+            <svg viewBox="0 0 24 24" width="22" height="22"><use href="#icon-search"></use></svg>
+          </div>
+          <span class="nav-tab-label">Search</span>
+        </button>
+
+        <button type="button" class="nav-tab-item" data-tab="progress" id="tab-nav-progress" aria-label="Progress Tab">
+          <div class="nav-tab-icon-wrap">
+            <svg viewBox="0 0 24 24" width="22" height="22"><use href="#icon-chart"></use></svg>
+          </div>
+          <span class="nav-tab-label">Progress</span>
+        </button>
+      </nav>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- 3. LETTER COMPLETION CELEBRATION MODAL                   -->
+    <!-- ======================================================== -->
+    <div class="modal-overlay" id="modal-completion" aria-hidden="true" role="dialog" aria-labelledby="completion-title">
+      <div class="modal-dialog celebration-modal-dialog">
+        
+        <div class="celebration-trophy-container">
+          <div class="trophy-glow-bg"></div>
+          <svg viewBox="0 0 24 24" width="70" height="70" class="trophy-svg">
+            <use href="#icon-trophy"></use>
+          </svg>
+          <div class="confetti-particle c1"></div>
+          <div class="confetti-particle c2"></div>
+          <div class="confetti-particle c3"></div>
+          <div class="confetti-particle c4"></div>
+          <div class="confetti-particle c5"></div>
+          <div class="confetti-particle c6"></div>
+        </div>
+
+        <div class="celebration-content">
+          <div class="celebration-badge">
+            <svg viewBox="0 0 24 24" width="14" height="14"><use href="#icon-sparkle"></use></svg>
+            Milestone Achieved!
+          </div>
+          <h2 class="celebration-title" id="completion-title">Letter Completed!</h2>
+          <p class="celebration-message" id="completion-message">
+            You've completed all 100 words in A.
+          </p>
+        </div>
+
+        <div class="celebration-actions">
+          <button type="button" class="btn-primary" id="btn-completion-review">
+            Review Words
+          </button>
+          <button type="button" class="btn-secondary" id="btn-completion-choose-letter">
+            Choose Another Letter
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- 4. CONFIRMATION MODAL FOR RESET                          -->
+    <!-- ======================================================== -->
+    <div class="modal-overlay" id="modal-reset-confirm" aria-hidden="true" role="dialog" aria-labelledby="reset-modal-title">
+      <div class="modal-dialog">
+        <h3 class="modal-title" id="reset-modal-title">Reset Learning Progress?</h3>
+        <p class="modal-desc">This will reset all your learned words counter back to zero. This action cannot be undone.</p>
+        <div class="modal-actions-row">
+          <button type="button" class="btn-secondary" id="btn-modal-cancel-reset">Cancel</button>
+          <button type="button" class="btn-danger" id="btn-modal-confirm-reset">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification for feedback -->
+    <div class="toast-notification" id="app-toast" role="status" aria-live="polite"></div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
