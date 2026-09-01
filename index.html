@@ -194,6 +194,13 @@
           </div>
         </div>
 
+        <nav class="header-desktop-nav" id="header-desktop-nav" aria-label="Desktop Navigation">
+          <button type="button" class="desktop-nav-link active" data-tab="home">Home</button>
+          <button type="button" class="desktop-nav-link" data-tab="learn">Learn</button>
+          <button type="button" class="desktop-nav-link" data-tab="search">Search</button>
+          <button type="button" class="desktop-nav-link" data-tab="progress">Progress</button>
+        </nav>
+
         <div class="header-actions">
           <button type="button" class="btn-icon-header" id="btn-header-search" aria-label="Search words">
             <svg viewBox="0 0 24 24" width="20" height="20">
@@ -224,40 +231,43 @@
               </div>
             </div>
 
-            <!-- Continue Learning Card -->
-            <div class="continue-learning-card" id="home-continue-card">
-              <div class="continue-header">
-                <span class="continue-badge">Continue Learning</span>
-                <span class="continue-letter-tag" id="home-continue-letter-badge">A Words</span>
-              </div>
-              <div class="continue-body">
-                <div class="continue-info">
-                  <h3 class="continue-word-title" id="home-continue-word-preview">Apple</h3>
-                  <span class="continue-counter" id="home-continue-counter">Word 1 of 100</span>
+            <!-- Home Hero 2-Column Responsive Grid -->
+            <div class="home-hero-grid">
+              <!-- Continue Learning Card -->
+              <div class="continue-learning-card" id="home-continue-card">
+                <div class="continue-header">
+                  <span class="continue-badge">Continue Learning</span>
+                  <span class="continue-letter-tag" id="home-continue-letter-badge">A Words</span>
                 </div>
-                <button type="button" class="btn-continue-action" id="btn-home-continue-action" aria-label="Continue learning word">
-                  <span>Continue</span>
-                  <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-chevron-right"></use></svg>
-                </button>
+                <div class="continue-body">
+                  <div class="continue-info">
+                    <h3 class="continue-word-title" id="home-continue-word-preview">Apple</h3>
+                    <span class="continue-counter" id="home-continue-counter">Word 1 of 100</span>
+                  </div>
+                  <button type="button" class="btn-continue-action" id="btn-home-continue-action" aria-label="Continue learning word">
+                    <span>Continue</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-chevron-right"></use></svg>
+                  </button>
+                </div>
+                <div class="continue-progress-track">
+                  <div class="continue-progress-fill" id="home-continue-progress-bar" style="width: 1%;"></div>
+                </div>
               </div>
-              <div class="continue-progress-track">
-                <div class="continue-progress-fill" id="home-continue-progress-bar" style="width: 1%;"></div>
-              </div>
-            </div>
 
-            <!-- Quick Stats Row -->
-            <div class="quick-stats-grid">
-              <div class="stat-card">
-                <div class="stat-value highlight-num" id="home-stat-learned">0</div>
-                <div class="stat-label">Words Learned</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value" id="home-stat-remaining">400</div>
-                <div class="stat-label">Remaining</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value" id="home-stat-percent">0%</div>
-                <div class="stat-label">Mastery</div>
+              <!-- Quick Stats Grid -->
+              <div class="quick-stats-grid">
+                <div class="stat-card">
+                  <div class="stat-value highlight-num" id="home-stat-learned">0</div>
+                  <div class="stat-label">Words Learned</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-value" id="home-stat-remaining">400</div>
+                  <div class="stat-label">Remaining</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-value" id="home-stat-percent">0%</div>
+                  <div class="stat-label">Mastery</div>
+                </div>
               </div>
             </div>
 

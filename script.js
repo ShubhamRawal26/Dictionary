@@ -611,9 +611,10 @@ const DOM = {
   viewSearch: document.getElementById('view-search'),
   viewProgress: document.getElementById('view-progress'),
 
-  // Bottom Nav
+  // Navigation
   bottomNav: document.getElementById('bottom-nav-bar'),
   navTabs: document.querySelectorAll('.nav-tab-item'),
+  desktopNavTabs: document.querySelectorAll('.desktop-nav-link'),
 
   // Header
   headerBranding: document.getElementById('header-branding-btn'),
@@ -713,6 +714,14 @@ function navigateTo(screenId, options = {}) {
   else if (screenId === 'progress') tabId = 'progress';
 
   DOM.navTabs.forEach(tab => {
+    if (tab.dataset.tab === tabId) {
+      tab.classList.add('active');
+    } else {
+      tab.classList.remove('active');
+    }
+  });
+
+  DOM.desktopNavTabs.forEach(tab => {
     if (tab.dataset.tab === tabId) {
       tab.classList.add('active');
     } else {
@@ -1341,8 +1350,15 @@ function bindEvents() {
   DOM.btnOnboardingContinue.addEventListener('click', completeOnboarding);
   DOM.btnOnboardingSkip.addEventListener('click', completeOnboarding);
 
-  // --- Bottom Navigation Tabs ---
+  // --- Navigation Tabs (Mobile & Desktop) ---
   DOM.navTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetTab = tab.dataset.tab;
+      navigateTo(targetTab);
+    });
+  });
+
+  DOM.desktopNavTabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const targetTab = tab.dataset.tab;
       navigateTo(targetTab);
