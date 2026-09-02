@@ -1150,7 +1150,7 @@ function renderWordListScreen() {
     card.addEventListener('click', (e) => {
       if (e.target.closest('.btn-speaker-pill')) {
         e.stopPropagation();
-        audioEngine.speak(item.word);
+        showToast(`🔊 Audio Pronunciation is coming soon for "${item.word}"! ✨`);
         return;
       }
       navigateTo('word-learn', { letter, index });
@@ -1197,10 +1197,6 @@ function renderWordLearnScreen() {
   DOM.learnPhonetic.textContent = wordObj.pronunciation;
   DOM.learnPhonetic.style.color = theme.primary;
 
-  DOM.btnLearnPronounce.style.backgroundColor = theme.primary;
-  DOM.btnLearnPronounce.classList.remove('speaking');
-  DOM.learnPronounceLabel.textContent = 'Pronounce Word';
-
   DOM.learnMeaningText.textContent = wordObj.meaning;
   DOM.learnExampleText.textContent = `"${wordObj.example}"`;
 
@@ -1216,16 +1212,16 @@ function renderWordLearnScreen() {
     tile.textContent = char;
     tile.style.borderColor = theme.border;
     tile.style.color = theme.primary;
-    tile.setAttribute('aria-label', `Pronounce letter ${char}`);
+    tile.setAttribute('aria-label', `Letter ${char}`);
 
     tile.addEventListener('click', () => {
       tile.style.backgroundColor = theme.primary;
       tile.style.color = '#ffffff';
-      audioEngine.speakLetter(char);
+      showToast(`Letter "${char}" • Spelling`);
       setTimeout(() => {
         tile.style.backgroundColor = 'var(--surface-white)';
         tile.style.color = theme.primary;
-      }, 350);
+      }, 300);
     });
 
     DOM.learnSpellingTiles.appendChild(tile);
@@ -1261,19 +1257,8 @@ function renderWordLearnScreen() {
 function handlePronounceWord() {
   const words = TECHNICAL_VOCABULARY[state.currentLetter];
   const wordObj = words[state.currentIndex];
-  if (!wordObj) return;
-
-  DOM.btnLearnPronounce.classList.add('speaking');
-  DOM.learnPronounceLabel.textContent = 'Speaking...';
-
-  audioEngine.speak(
-    wordObj.word,
-    () => { DOM.btnLearnPronounce.classList.add('speaking'); },
-    () => {
-      DOM.btnLearnPronounce.classList.remove('speaking');
-      DOM.learnPronounceLabel.textContent = 'Pronounce Word';
-    }
-  );
+  const wordName = wordObj ? `"${wordObj.word}"` : 'this word';
+  showToast(`🔊 Audio Pronunciation for ${wordName} is coming soon! ✨`);
 }
 
 function toggleMasteredStatus() {
@@ -1398,7 +1383,7 @@ function renderSearchResults() {
     card.addEventListener('click', (e) => {
       if (e.target.closest('.btn-speaker-pill')) {
         e.stopPropagation();
-        audioEngine.speak(res.word);
+        showToast(`🔊 Audio Pronunciation is coming soon for "${res.word}"! ✨`);
         return;
       }
       navigateTo('word-learn', { letter: res.letter, index: res.index });
