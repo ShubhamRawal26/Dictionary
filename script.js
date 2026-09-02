@@ -712,7 +712,6 @@ const DOM = {
   learnPhonetic: document.getElementById('learn-phonetic'),
   btnLearnPronounce: document.getElementById('btn-learn-pronounce'),
   learnPronounceLabel: document.getElementById('learn-pronounce-label'),
-  btnLearnListenAgain: document.getElementById('btn-learn-listen-again'),
   learnMeaningText: document.getElementById('learn-meaning-text'),
   learnExampleText: document.getElementById('learn-example-text'),
   learnSpellingTiles: document.getElementById('learn-spelling-tiles'),
@@ -1548,35 +1547,50 @@ function bindEvents() {
     }
   });
 
-  DOM.btnWordlistBack.addEventListener('click', () => navigateTo('learn'));
-  DOM.btnWordlistStartLearning.addEventListener('click', () => {
-    navigateTo('word-learn', { letter: state.currentLetter, index: 0 });
-  });
+  if (DOM.btnWordlistBack) {
+    DOM.btnWordlistBack.addEventListener('click', () => navigateTo('learn'));
+  }
+  if (DOM.btnWordlistStartLearning) {
+    DOM.btnWordlistStartLearning.addEventListener('click', () => {
+      navigateTo('word-learn', { letter: state.currentLetter, index: 0 });
+    });
+  }
 
-  DOM.btnLearnScreenBack.addEventListener('click', () => {
-    navigateTo('word-list', { letter: state.currentLetter });
-  });
+  if (DOM.btnLearnScreenBack) {
+    DOM.btnLearnScreenBack.addEventListener('click', () => {
+      navigateTo('word-list', { letter: state.currentLetter });
+    });
+  }
 
-  DOM.btnLearnPronounce.addEventListener('click', handlePronounceWord);
-  DOM.btnLearnListenAgain.addEventListener('click', handlePronounceWord);
-  DOM.btnMarkLearned.addEventListener('click', toggleMasteredStatus);
+  if (DOM.btnLearnPronounce) {
+    DOM.btnLearnPronounce.addEventListener('click', handlePronounceWord);
+  }
+  if (DOM.btnMarkLearned) {
+    DOM.btnMarkLearned.addEventListener('click', toggleMasteredStatus);
+  }
 
-  DOM.btnLearnNext.addEventListener('click', handleNextWord);
-  DOM.btnLearnPrev.addEventListener('click', handlePrevWord);
+  if (DOM.btnLearnNext) {
+    DOM.btnLearnNext.addEventListener('click', handleNextWord);
+  }
+  if (DOM.btnLearnPrev) {
+    DOM.btnLearnPrev.addEventListener('click', handlePrevWord);
+  }
 
-  DOM.btnLearnBookmark.addEventListener('click', () => {
-    const key = `${state.currentLetter}_${state.currentIndex}`;
-    if (state.bookmarks.has(key)) {
-      state.bookmarks.delete(key);
-      DOM.btnLearnBookmark.classList.remove('active');
-      showToast('Bookmark removed');
-    } else {
-      state.bookmarks.add(key);
-      DOM.btnLearnBookmark.classList.add('active');
-      showToast('Saved to bookmarks! ⭐');
-    }
-    saveState();
-  });
+  if (DOM.btnLearnBookmark) {
+    DOM.btnLearnBookmark.addEventListener('click', () => {
+      const key = `${state.currentLetter}_${state.currentIndex}`;
+      if (state.bookmarks.has(key)) {
+        state.bookmarks.delete(key);
+        DOM.btnLearnBookmark.classList.remove('active');
+        showToast('Bookmark removed');
+      } else {
+        state.bookmarks.add(key);
+        DOM.btnLearnBookmark.classList.add('active');
+        showToast('Saved to bookmarks! ⭐');
+      }
+      saveState();
+    });
+  }
 
   window.addEventListener('keydown', (e) => {
     if (state.currentScreen === 'word-learn' && !DOM.modalCompletion.classList.contains('active')) {
