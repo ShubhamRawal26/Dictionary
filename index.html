@@ -279,12 +279,17 @@
               </div>
             </div>
 
-            <!-- Prominent Audio Button -->
+            <!-- Prominent Audio Button with Apple Motion Waveform -->
             <div class="audio-button-wrap">
               <button type="button" class="btn-audio-main" id="btn-learn-pronounce">
                 <span class="audio-icon-box">
                   <svg viewBox="0 0 24 24" width="22" height="22" class="speaker-svg"><use href="#icon-speaker"></use></svg>
-                  <svg viewBox="0 0 24 24" width="22" height="22" class="wave-svg"><use href="#icon-wave"></use></svg>
+                  <div class="live-equalizer" id="live-equalizer-anim">
+                    <span class="eq-bar eq-bar-1"></span>
+                    <span class="eq-bar eq-bar-2"></span>
+                    <span class="eq-bar eq-bar-3"></span>
+                    <span class="eq-bar eq-bar-4"></span>
+                  </div>
                 </span>
                 <span class="audio-text" id="learn-pronounce-label">Pronounce Word</span>
               </button>
@@ -409,6 +414,38 @@
             </div>
           </div>
 
+          <!-- Apple Style Motion Graphics Bar Chart Card -->
+          <div class="motion-chart-card">
+            <div class="motion-chart-header">
+              <div>
+                <span class="chart-subtitle">ACTIVITY SPECTRUM</span>
+                <h3 class="chart-title">Alphabet Mastery Chart</h3>
+              </div>
+              <span class="chart-badge" id="chart-active-summary">A–Z Distribution</span>
+            </div>
+            
+            <div class="motion-bars-scroll">
+              <div class="motion-bars-container" id="motion-bars-container">
+                <!-- 26 Animated Apple Health Style Vertical Bars -->
+              </div>
+            </div>
+
+            <div class="chart-footer-metrics">
+              <div class="metric-item">
+                <span class="metric-label">Completed Letters</span>
+                <b class="metric-val text-emerald" id="metric-mastered-letters">0 / 26</b>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">Average Score</span>
+                <b class="metric-val text-violet" id="metric-avg-score">0%</b>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">Streak Status</span>
+                <b class="metric-val text-slate" id="metric-study-status">Active</b>
+              </div>
+            </div>
+          </div>
+
           <!-- A to Z Breakdown Grid -->
           <div class="section-title-wrap">
             <h3 class="section-title">Alphabet Breakdown</h3>
@@ -430,6 +467,9 @@
       </section>
 
     </main>
+
+    <!-- Fullscreen Celebration Particles Canvas -->
+    <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
 
     <!-- ======================================================== -->
     <!-- 4. MOBILE BOTTOM NAVIGATION                              -->

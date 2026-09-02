@@ -775,6 +775,13 @@ const DOM = {
   searchResultsCount: document.getElementById('search-results-count'),
   searchResultsList: document.getElementById('search-results-list'),
 
+  wordFocusCard: document.getElementById('word-focus-card'),
+  motionBarsContainer: document.getElementById('motion-bars-container'),
+  metricMasteredLetters: document.getElementById('metric-mastered-letters'),
+  metricAvgScore: document.getElementById('metric-avg-score'),
+  metricStudyStatus: document.getElementById('metric-study-status'),
+  confettiCanvas: document.getElementById('confetti-canvas'),
+
   progressCircleFill: document.getElementById('progress-circle-fill'),
   progressTotalPercent: document.getElementById('progress-total-percent'),
   progStatTotal: document.getElementById('prog-stat-total'),
@@ -793,6 +800,110 @@ const DOM = {
   btnModalConfirmReset: document.getElementById('btn-modal-confirm-reset'),
   appToast: document.getElementById('app-toast')
 };
+
+/* ==========================================================================
+   CONFETTI CELEBRATION PARTICLE ENGINE
+   ========================================================================== */
+class ConfettiEngine {
+  constructor(canvas) {
+    this.canvas = canvas;
+    this.ctx = (canvas && typeof canvas.getContext === 'function') ? canvas.getContext('2d') : null;
+    this.particles = [];
+    this.animationId = null;
+    this.colors = ['#2563eb', '#7c3aed', '#10b981', '#f59e0b', '#ec4899', '#06b6d4', '#f43f5e', '#6366f1'];
+    this.resize();
+    window.addEventListener('resize', () => this.resize());
+  }
+
+  resize() {
+    if (!this.canvas) return;
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
+  }
+
+  burst(count = 65) {
+    if (!this.canvas || !this.ctx) return;
+    this.resize();
+    const startX = this.canvas.width / 2;
+    const startY = this.canvas.height / 2 + 60;
+
+    for (let i = 0; i < count; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 4 + Math.random() * 8;
+      this.particles.push({
+        x: startX,
+        y: startY,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed - 4,
+        size: 5 + Math.random() * 6,
+        color: this.colors[Math.floor(Math.random() * this.colors.length)],
+        rotation: Math.random() * 360,
+        rotationSpeed: (Math.random() - 0.5) * 12,
+        gravity: 0.22,
+        opacity: 1,
+        life: 0.9 + Math.random() * 0.4
+      });
+    }
+
+    if (!this.animationId) {
+      this.render();
+    }
+  }
+
+  render() {
+    if (!this.ctx || this.particles.length === 0) {
+      if (this.ctx) this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      this.animationId = null;
+      return;
+    }
+
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+    for (let i = this.particles.length - 1; i >= 0; i--) {
+      const p = this.particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += p.gravity;
+      p.rotation += p.rotationSpeed;
+      p.opacity -= 0.015;
+
+      if (p.opacity <= 0 || p.y > this.canvas.height + 20) {
+        this.particles.splice(i, 1);
+        continue;
+      }
+
+      this.ctx.save();
+      this.ctx.globalAlpha = Math.max(0, p.opacity);
+      this.ctx.translate(p.x, p.y);
+      this.ctx.rotate((p.rotation * Math.PI) / 180);
+      this.ctx.fillStyle = p.color;
+      this.ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+      this.ctx.restore();
+    }
+
+    this.animationId = requestAnimationFrame(() => this.render());
+  }
+}
+
+let confettiEngine = null;
+setTimeout(() => {
+  if (DOM.confettiCanvas) {
+    confettiEngine = new ConfettiEngine(DOM.confettiCanvas);
+  }
+}, 100);
+
+/**
+ * Trigger Flashcard Slide Animation
+ */
+function triggerCardSlide(direction = 'next') {
+  if (!DOM.wordFocusCard) return;
+  DOM.wordFocusCard.classList.remove('slide-next', 'slide-prev');
+  void DOM.wordFocusCard.offsetWidth; // Trigger reflow
+  DOM.wordFocusCard.classList.add(direction === 'next' ? 'slide-next' : 'slide-prev');
+  setTimeout(() => {
+    if (DOM.wordFocusCard) DOM.wordFocusCard.classList.remove('slide-next', 'slide-prev');
+  }, 360);
+}
 
 /**
  * Universal Navigation
@@ -1224,6 +1335,7 @@ function toggleMasteredStatus() {
     showToast(`Removed "${wordObj.word}"`);
   } else {
     state.masteredWords.add(wordKey);
+    if (confettiEngine) confettiEngine.burst(45);
     showToast(`Marked "${wordObj.word}" as learned! ⭐`);
   }
 
@@ -1236,6 +1348,7 @@ function handleNextWord() {
   if (state.currentIndex < words.length - 1) {
     state.currentIndex++;
     saveState();
+    triggerCardSlide('next');
     renderWordLearnScreen();
   } else {
     showCompletionCelebration();
@@ -1246,11 +1359,13 @@ function handlePrevWord() {
   if (state.currentIndex > 0) {
     state.currentIndex--;
     saveState();
+    triggerCardSlide('prev');
     renderWordLearnScreen();
   }
 }
 
 function showCompletionCelebration() {
+  if (confettiEngine) confettiEngine.burst(85);
   DOM.completionTitle.textContent = `Letter ${state.currentLetter} Done!`;
   DOM.completionMessage.textContent = `You have learned all words in Letter ${state.currentLetter}.`;
   DOM.modalCompletion.classList.add('active');
@@ -1343,7 +1458,7 @@ function renderSearchResults() {
 }
 
 /* ==========================================================================
-   13. PROGRESS DASHBOARD
+   13. PROGRESS DASHBOARD & APPLE MOTION GRAPHICS SPECTRUM BARS
    ========================================================================== */
 function renderProgressDashboard() {
   const totalProg = getTotalProgress();
@@ -1356,6 +1471,9 @@ function renderProgressDashboard() {
   const circumference = 2 * Math.PI * 50;
   const offset = circumference - (totalProg.percent / 100) * circumference;
   DOM.progressCircleFill.style.strokeDashoffset = offset;
+
+  // Render Apple-style Motion Spectrum Bar Chart
+  renderMotionBarsChart();
 
   DOM.progressAlphabetBreakdown.innerHTML = '';
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -1385,6 +1503,58 @@ function renderProgressDashboard() {
 
     DOM.progressAlphabetBreakdown.appendChild(tile);
   });
+}
+
+function renderMotionBarsChart() {
+  if (!DOM.motionBarsContainer) return;
+  DOM.motionBarsContainer.innerHTML = '';
+
+  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  let completedCount = 0;
+  let sumPercent = 0;
+
+  letters.forEach(char => {
+    const theme = getTheme(char);
+    const p = getLetterProgress(char);
+
+    if (p.learned === p.total && p.total > 0) completedCount++;
+    sumPercent += p.percent;
+
+    const col = document.createElement('div');
+    col.className = `motion-bar-col ${char === state.currentLetter ? 'active' : ''}`;
+    col.setAttribute('role', 'button');
+    col.setAttribute('tabindex', '0');
+    col.setAttribute('aria-label', `Letter ${char}: ${p.percent}%`);
+
+    col.innerHTML = `
+      <div class="motion-bar-tooltip">${char}: ${p.learned}/${p.total} (${p.percent}%)</div>
+      <div class="motion-bar-track">
+        <div class="motion-bar-fill" style="height: ${Math.max(6, p.percent)}%; background: linear-gradient(180deg, ${theme.primary} 0%, ${theme.primary}bb 100%);"></div>
+      </div>
+      <span class="motion-bar-label">${char}</span>
+    `;
+
+    col.addEventListener('click', () => {
+      state.currentLetter = char;
+      navigateTo('word-list', { letter: char });
+    });
+
+    DOM.motionBarsContainer.appendChild(col);
+  });
+
+  const avgScore = Math.round(sumPercent / letters.length);
+  if (DOM.metricMasteredLetters) DOM.metricMasteredLetters.textContent = `${completedCount} / 26`;
+  if (DOM.metricAvgScore) DOM.metricAvgScore.textContent = `${avgScore}%`;
+  if (DOM.metricStudyStatus) {
+    if (completedCount === 26) DOM.metricStudyStatus.textContent = 'Mastery Achieved! 🏆';
+    else if (completedCount > 5) DOM.metricStudyStatus.textContent = 'Consistent Growth 🚀';
+    else if (totalProgLearned() > 0) DOM.metricStudyStatus.textContent = 'In Progress ⚡';
+    else DOM.metricStudyStatus.textContent = 'Ready to Learn 📚';
+  }
+}
+
+function totalProgLearned() {
+  return state.masteredWords.size;
 }
 
 /* ==========================================================================
