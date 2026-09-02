@@ -1,350 +1,350 @@
 /**
- * WORDLY — PREMIUM WHITE & VIOLET ENGLISH & TECHNICAL DICTIONARY
- * Simple, intuitive UI for students and learners across all 26 alphabets (A to Z)
+ * WORDLY — SIMPLE & CLEAN ENGLISH & TECHNICAL VOCABULARY DICTIONARY
+ * Simple, focused, lightweight user interface for mobile & desktop
  */
 
 'use strict';
 
 /* ==========================================================================
-   1. VOCABULARY DATABASE (A to Z • 260 Words with Plain, Clear Meanings)
+   1. VOCABULARY DATABASE (A to Z • 260 Words with Plain, Concise Meanings)
    ========================================================================== */
 const TECHNICAL_VOCABULARY = {
   A: [
-    { word: "Algorithm", pronunciation: "/ˈæl.ɡə.rɪð.əm/", meaning: "A step-by-step set of clear instructions or rules designed to solve a problem or perform a calculation.", example: "Google uses a smart algorithm to deliver search results in milliseconds." },
-    { word: "Asynchronous", pronunciation: "/eɪˈsɪŋ.krə.nəs/", meaning: "Processes or communications that occur independently without waiting for each other to finish.", example: "Asynchronous web requests let pages load background data without freezing the screen." },
-    { word: "Actuator", pronunciation: "/ˈæk.tʃu.eɪ.tər/", meaning: "A mechanical component that uses energy to create physical motion or movement in a machine.", example: "Electric actuators move the robot's mechanical arm with pinpoint precision." },
-    { word: "Amplitude", pronunciation: "/ˈæm.plɪ.tʃuːd/", meaning: "The maximum height or strength of a wave measured from its center position.", example: "Turning up the volume dial increases the sound wave amplitude." },
-    { word: "Architecture", pronunciation: "/ˈɑː.kɪ.tek.tʃər/", meaning: "The fundamental structure and organization of a computer system or software application.", example: "ARM architecture powers the microprocessors inside most modern smartphones." },
-    { word: "Anodize", pronunciation: "/ˈæn.ə.daɪz/", meaning: "An electrochemical coating process that makes metal surfaces resistant to corrosion and scratches.", example: "Laptop aluminum cases are anodized to protect against everyday wear and tear." },
-    { word: "Aerodynamics", pronunciation: "/ˌeə.rəʊ.daɪˈnæm.ɪks/", meaning: "The study of how air moves around moving objects like cars, planes, and rockets.", example: "Sports cars have sleek aerodynamic shapes to reduce wind drag and improve speed." },
-    { word: "Abstraction", pronunciation: "/æbˈstræk.ʃən/", meaning: "Simplifying complex reality by focusing only on essential features rather than low-level details.", example: "A car's steering wheel is an abstraction that lets you steer without knowing the mechanical gears." },
-    { word: "Acceleration", pronunciation: "/əkˌsel.əˈreɪ.ʃən/", meaning: "The rate at which an object increases its velocity or speed over time.", example: "Electric vehicles achieve rapid acceleration because motors deliver instant power." },
-    { word: "Attenuation", pronunciation: "/əˌten.juˈeɪ.ʃən/", meaning: "The gradual reduction or loss of signal strength as it travels through a cable or air.", example: "Wi-Fi signal attenuation occurs when radio waves pass through thick concrete walls." }
+    { word: "Algorithm", pronunciation: "/ˈæl.ɡə.rɪð.əm/", meaning: "A step-by-step set of clear instructions or rules to solve a problem or complete a task.", example: "Google uses a smart algorithm to deliver search results in milliseconds." },
+    { word: "Asynchronous", pronunciation: "/eɪˈsɪŋ.krə.nəs/", meaning: "Tasks running in the background without freezing or waiting for each other.", example: "Asynchronous requests load website data in the background smoothly." },
+    { word: "Actuator", pronunciation: "/ˈæk.tʃu.eɪ.tər/", meaning: "A motor or mechanical device that creates physical movement in a machine.", example: "Electric actuators move the robotic arm with millimeter precision." },
+    { word: "Amplitude", pronunciation: "/ˈæm.plɪ.tʃuːd/", meaning: "The height or strength of a wave measured from its middle resting position.", example: "Turning up the volume dial increases the sound wave amplitude." },
+    { word: "Architecture", pronunciation: "/ˈɑː.kɪ.tek.tʃər/", meaning: "The fundamental design and organization of a computer or software system.", example: "ARM architecture powers the microprocessors inside modern phones." },
+    { word: "Anodize", pronunciation: "/ˈæn.ə.daɪz/", meaning: "An electrochemical coating process that prevents metal surfaces from rusting.", example: "Smartphone metal frames are anodized to resist daily scratches." },
+    { word: "Aerodynamics", pronunciation: "/ˌeə.rəʊ.daɪˈnæm.ɪks/", meaning: "The science of how air moves around moving vehicles like cars and airplanes.", example: "Sports cars have sleek aerodynamic curves to reduce wind drag." },
+    { word: "Abstraction", pronunciation: "/æbˈstræk.ʃən/", meaning: "Hiding complicated inner workings to provide a simple, easy interface.", example: "The car steering wheel is an abstraction that lets you steer easily." },
+    { word: "Acceleration", pronunciation: "/əkˌsel.əˈreɪ.ʃən/", meaning: "The rate at which an object increases its speed over time.", example: "Electric cars achieve rapid acceleration thanks to instant electric torque." },
+    { word: "Attenuation", pronunciation: "/əˌten.juˈeɪ.ʃən/", meaning: "The natural loss of signal strength as it travels through a cable or air.", example: "Wi-Fi signal attenuation occurs when waves pass through concrete walls." }
   ],
 
   B: [
-    { word: "Bandwidth", pronunciation: "/ˈbænd.wɪtθ/", meaning: "The maximum amount of data that can travel through an internet connection in a given time.", example: "Fiber-optic broadband provides huge bandwidth for streaming 4K video." },
-    { word: "Binary", pronunciation: "/ˈbaɪ.nər.i/", meaning: "A number system using only two digits (0 and 1) that forms the foundation of all computers.", example: "All computer software and digital files are stored internally as binary code." },
-    { word: "Backpropagation", pronunciation: "/ˌbæk.prɒp.əˈɡeɪ.ʃən/", meaning: "A machine learning algorithm that teaches artificial neural networks by correcting mistakes.", example: "Backpropagation helps AI image models learn to recognize objects accurately." },
-    { word: "Buckling", pronunciation: "/ˈbʌk.lɪŋ/", meaning: "The sudden bending or collapse of a structural column when pushed under heavy pressure.", example: "Engineers added steel cross-beams to prevent the bridge towers from buckling." },
-    { word: "Boolean", pronunciation: "/ˈbuː.li.ən/", meaning: "A type of logic or data type that has only two possible values: True or False.", example: "The login check returns a boolean value to confirm if your password is correct." },
-    { word: "Bus", pronunciation: "/bʌs/", meaning: "An internal communication pathway that transfers data between different parts of a computer.", example: "The memory bus transfers data rapidly between the CPU and RAM chips." },
-    { word: "Baud", pronunciation: "/bɔːd/", meaning: "A unit measuring the speed of data transmission in electronic communication channels.", example: "The serial port was configured to communicate with the sensor at 9600 baud." },
-    { word: "Bernoulli", pronunciation: "/bɜːˈnuː.li/", meaning: "A physical principle explaining how faster moving air creates lower pressure.", example: "Bernoulli's principle helps explain how airplane wings create lift to fly." },
-    { word: "Bias", pronunciation: "/ˈbaɪ.əs/", meaning: "A steady electrical voltage applied to an electronic component to set its operating state.", example: "Transistors require a small forward bias voltage to turn on and conduct electricity." },
-    { word: "Blockchain", pronunciation: "/ˈblɒk.tʃeɪn/", meaning: "A secure, decentralized digital record of transactions shared across a network of computers.", example: "Cryptocurrencies use blockchain technology to prevent unauthorized modification of records." }
+    { word: "Bandwidth", pronunciation: "/ˈbænd.wɪtθ/", meaning: "The maximum amount of data that can travel across an internet connection.", example: "Fiber optic broadband gives plenty of bandwidth for 4K video streaming." },
+    { word: "Binary", pronunciation: "/ˈbaɪ.nər.i/", meaning: "A number system using only 0s and 1s that all computers use to operate.", example: "Computer software is converted into binary code for the CPU to run." },
+    { word: "Backpropagation", pronunciation: "/ˌbæk.prɒp.əˈɡeɪ.ʃən/", meaning: "A machine learning method that trains neural networks by correcting mistakes.", example: "Backpropagation helps AI vision models learn to recognize objects." },
+    { word: "Buckling", pronunciation: "/ˈbʌk.lɪŋ/", meaning: "The sudden bending or collapse of a structural beam under heavy load.", example: "Engineers added support beams to prevent the steel column from buckling." },
+    { word: "Boolean", pronunciation: "/ˈbuː.li.ən/", meaning: "A data type that has only two possible values: True or False.", example: "The password check returns a boolean confirming if it matches." },
+    { word: "Bus", pronunciation: "/bʌs/", meaning: "An internal digital pathway that carries data between computer components.", example: "The system bus transfers data fast between the processor and memory." },
+    { word: "Baud", pronunciation: "/bɔːd/", meaning: "A unit measuring the speed of data transmission in communication channels.", example: "The GPS module sends sensor coordinates at 9600 baud." },
+    { word: "Bernoulli", pronunciation: "/bɜːˈnuː.li/", meaning: "A physical principle showing that moving air creates lower pressure.", example: "Bernoulli's principle helps explain how airplane wings create upward lift." },
+    { word: "Bias", pronunciation: "/ˈbaɪ.əs/", meaning: "A steady electrical voltage applied to an electronic chip to set its operating state.", example: "Transistors require a small bias voltage to switch on and conduct current." },
+    { word: "Blockchain", pronunciation: "/ˈblɒk.tʃeɪn/", meaning: "A tamper-proof digital ledger shared across a network of computers.", example: "Blockchain technology guarantees that digital records cannot be changed." }
   ],
 
   C: [
-    { word: "Capacitance", pronunciation: "/kəˈpæs.ɪ.təns/", meaning: "The ability of an electronic component to store electrical energy in an electrostatic field.", example: "Capacitors smooth out voltage spikes in power supplies using their capacitance." },
-    { word: "Compiler", pronunciation: "/kəmˈpaɪ.lər/", meaning: "A computer program that translates human-written code into machine language the computer can run.", example: "The compiler turned the C++ program into an executable file for Windows." },
-    { word: "Concurrency", pronunciation: "/kənˈkʌr.ən.si/", meaning: "The ability of a computer program to handle multiple tasks at the same time efficiently.", example: "Web servers use concurrency to answer thousands of user requests at the same moment." },
-    { word: "Cantilever", pronunciation: "/ˈkæn.tɪ.liː.vər/", meaning: "A beam or structure that extends horizontally and is supported at only one end.", example: "Diving boards and balcony decks are common examples of cantilever structures." },
-    { word: "Combustion", pronunciation: "/kəmˈbʌs.tʃən/", meaning: "A rapid chemical reaction between fuel and oxygen that produces heat and light (burning).", example: "Car engines burn gasoline through controlled combustion to create mechanical power." },
-    { word: "Calibration", pronunciation: "/ˌkæl.ɪˈbreɪ.ʃən/", meaning: "Adjusting a measuring tool to make sure its readings are completely accurate against a standard.", example: "The digital kitchen scale needed calibration with a 100g standard weight." },
-    { word: "Circuit", pronunciation: "/ˈsɜː.kɪt/", meaning: "A complete closed path through which electric current can flow from a power source and return.", example: "Flipping the wall switch closes the circuit and turns on the ceiling lights." },
-    { word: "Corrosion", pronunciation: "/kəˈrəʊ.ʒən/", meaning: "The gradual breakdown and rusting of metals caused by exposure to moisture, oxygen, or chemicals.", example: "Stainless steel contains chromium to prevent surface corrosion and rust." },
-    { word: "Cryptography", pronunciation: "/krɪpˈtɒɡ.rə.fi/", meaning: "The art and science of protecting sensitive information by converting it into secure codes.", example: "Online banking relies on modern cryptography to keep credit card numbers safe." },
-    { word: "Centrifugal", pronunciation: "/senˈtrɪf.jʊ.ɡəl/", meaning: "An outward force experienced by an object moving in a curved or spinning path.", example: "Washing machines use centrifugal force during the spin cycle to extract water from clothes." }
+    { word: "Capacitance", pronunciation: "/kəˈpæs.ɪ.təns/", meaning: "The ability of an electronic component to store electrical charge.", example: "Capacitors smooth out electrical noise in power supply circuits." },
+    { word: "Compiler", pronunciation: "/kəmˈpaɪ.lər/", meaning: "A program that translates human code into machine code that computers run.", example: "The compiler turns your source code into an executable application." },
+    { word: "Concurrency", pronunciation: "/kənˈkʌr.ən.si/", meaning: "The ability of software to process multiple tasks at the same time.", example: "Web servers use concurrency to handle thousands of users simultaneously." },
+    { word: "Cantilever", pronunciation: "/ˈkæn.tɪ.liː.vər/", meaning: "A rigid beam or structure supported at only one fixed end.", example: "Balcony decks and diving boards are classic cantilever structures." },
+    { word: "Combustion", pronunciation: "/kəmˈbʌs.tʃən/", meaning: "A fast chemical reaction between fuel and oxygen producing heat and power.", example: "Car engines burn fuel through controlled internal combustion." },
+    { word: "Calibration", pronunciation: "/ˌkæl.ɪˈbreɪ.ʃən/", meaning: "Adjusting a measuring tool to make sure its readings are completely accurate.", example: "Digital weighing scales require periodic calibration against standard weights." },
+    { word: "Circuit", pronunciation: "/ˈsɜː.kɪt/", meaning: "A closed electrical loop through which current flows from a source and returns.", example: "Closing the wall switch completes the circuit to illuminate the room." },
+    { word: "Corrosion", pronunciation: "/kəˈrəʊ.ʒən/", meaning: "The natural rusting and breakdown of metal caused by moisture and oxygen.", example: "Stainless steel contains protective chromium to resist corrosion." },
+    { word: "Cryptography", pronunciation: "/krɪpˈtɒɡ.rə.fi/", meaning: "The science of securing data by converting it into encrypted codes.", example: "Online banking uses modern cryptography to keep payments safe." },
+    { word: "Centrifugal", pronunciation: "/senˈtrɪf.jʊ.ɡəl/", meaning: "The outward force felt by an object when moving in a curved or spinning path.", example: "Washing machines use centrifugal force to spin water out of clothes." }
   ],
 
   D: [
-    { word: "Diode", pronunciation: "/ˈdaɪ.əʊd/", meaning: "A semiconductor device that allows electric current to flow in only one direction.", example: "Light-Emitting Diodes (LEDs) produce bright light while using very little electricity." },
-    { word: "Deadlock", pronunciation: "/ˈded.lɒk/", meaning: "A situation where two computer programs are stuck waiting for each other to release resources.", example: "Good software design prevents deadlocks so programs never freeze indefinitely." },
-    { word: "Dynamics", pronunciation: "/daɪˈnæm.ɪks/", meaning: "The branch of physical science that studies how forces affect the motion of moving objects.", example: "Vehicle dynamics engineers test how cars handle sharp turns on wet roads." },
-    { word: "Damping", pronunciation: "/ˈdæm.pɪŋ/", meaning: "The reduction or absorption of vibrations and oscillations in a mechanical system.", example: "Car shock absorbers use oil damping to smooth out bumpy road impacts." },
-    { word: "Deflection", pronunciation: "/dɪˈflek.ʃən/", meaning: "The degree to which a structural beam bends or flexes downward under heavy weight.", example: "The floor beam was designed for minimal deflection so the ceiling wouldn't sag." },
-    { word: "Decryption", pronunciation: "/diːˈkrɪp.ʃən/", meaning: "The process of converting encrypted secret code back into readable plain text.", example: "Entering your passcode triggers decryption of your encrypted smartphone storage." },
-    { word: "Differential", pronunciation: "/ˌdɪf.əˈren.ʃəl/", meaning: "A set of gears that allows drive wheels on a car to turn at different speeds when cornering.", example: "The rear differential lets the outside wheel spin faster than the inside wheel during turns." },
-    { word: "Demodulation", pronunciation: "/diːˌmɒd.jʊˈleɪ.ʃən/", meaning: "Extracting the original sound or data signal from a high-frequency radio carrier wave.", example: "The FM radio receiver performs demodulation to play music through the speakers." },
-    { word: "Database", pronunciation: "/ˈdeɪ.tə.beɪs/", meaning: "An organized electronic collection of structured data that can be easily searched and updated.", example: "Hospital databases store patient medical records securely for instant lookup." },
-    { word: "Distortion", pronunciation: "/dɪˈstɔː.ʃən/", meaning: "An unwanted alteration or warping in the original shape of an audio or electronic waveform.", example: "Turning the speaker volume past its limit causes harsh audio distortion." }
+    { word: "Diode", pronunciation: "/ˈdaɪ.əʊd/", meaning: "A one-way valve for electricity that allows current to flow in one direction.", example: "LED light bulbs are energy-efficient semiconductor diodes." },
+    { word: "Deadlock", pronunciation: "/ˈded.lɒk/", meaning: "A freeze where two programs wait on each other and neither can proceed.", example: "Smart database engines prevent deadlocks so transactions never hang." },
+    { word: "Dynamics", pronunciation: "/daɪˈnæm.ɪks/", meaning: "The study of forces and how they affect the motion of physical bodies.", example: "Vehicle dynamics tests ensure cars steer safely on slippery roads." },
+    { word: "Damping", pronunciation: "/ˈdæm.pɪŋ/", meaning: "Absorbing and reducing mechanical vibrations and shaking in a system.", example: "Car shock absorbers use fluid damping to smooth out bumpy roads." },
+    { word: "Deflection", pronunciation: "/dɪˈflek.ʃən/", meaning: "The distance a structural beam bends or flexes downward under weight.", example: "Floor beams are built for minimal deflection to prevent ceilings from sagging." },
+    { word: "Decryption", pronunciation: "/diːˈkrɪp.ʃən/", meaning: "Converting scrambled secret code back into clear, readable text.", example: "Entering your passcode triggers instant decryption of your device files." },
+    { word: "Differential", pronunciation: "/ˌdɪf.əˈren.ʃəl/", meaning: "Gears that let drive wheels spin at different speeds when cornering.", example: "Car differentials allow the outside wheel to turn faster on sharp curves." },
+    { word: "Demodulation", pronunciation: "/diːˌmɒd.jʊˈleɪ.ʃən/", meaning: "Extracting original sound or data from a high-frequency radio wave.", example: "The radio receiver performs demodulation to play audio through speakers." },
+    { word: "Database", pronunciation: "/ˈdeɪ.tə.beɪs/", meaning: "An organized electronic collection of data that can be searched quickly.", example: "Medical databases store patient records for immediate lookup." },
+    { word: "Distortion", pronunciation: "/dɪˈstɔː.ʃən/", meaning: "An unwanted warping or change in an audio sound or electrical signal.", example: "Turning the speaker past max volume causes harsh sound distortion." }
   ],
 
   E: [
-    { word: "Entropy", pronunciation: "/ˈen.trə.pi/", meaning: "A measure of disorder, randomness, or unavailable energy in a closed physical system.", example: "The Second Law of Thermodynamics states that entropy in the universe naturally increases." },
-    { word: "Encryption", pronunciation: "/ɪnˈkrɪp.ʃən/", meaning: "The process of scrambling readable data into secret code so unauthorized people cannot read it.", example: "WhatsApp uses end-to-end encryption so only you and the recipient can read your messages." },
-    { word: "Elasticity", pronunciation: "/ˌiː.læsˈtɪs.ə.ti/", meaning: "The property of a material to stretch under force and return to its original shape when released.", example: "Rubber bands demonstrate high elasticity by snapping back after being stretched." },
-    { word: "Electrolyte", pronunciation: "/iˈlek.trə.laɪt/", meaning: "A chemical liquid or gel containing ions that conducts electricity inside a battery.", example: "Lithium-ion batteries contain chemical electrolytes that carry charge between terminals." },
-    { word: "Ethernet", pronunciation: "/ˈiː.θə.net/", meaning: "A widely used standard system for connecting computers together in a local area network via cables.", example: "Plugging in an Ethernet cable gives a faster and more stable connection than Wi-Fi." },
-    { word: "Equilibrium", pronunciation: "/ˌek.wɪˈlɪb.ri.əm/", meaning: "A balanced state where all opposing forces or influences cancel each other out completely.", example: "When an airplane cruises at a constant altitude, lift and gravity are in equilibrium." },
-    { word: "Emulation", pronunciation: "/ˌem.jʊˈleɪ.ʃən/", meaning: "Software that allows one computer system to mimic and run programs built for another system.", example: "Retro console emulators let you play classic arcade games on a modern PC." },
-    { word: "Enthalpy", pronunciation: "/ˈen.θəl.pi/", meaning: "A thermodynamic property representing the total heat content of a physical system.", example: "Chemical engineers calculate enthalpy changes to find out how much heat a reaction releases." },
-    { word: "Eigenvalue", pronunciation: "/ˈaɪ.ɡənˌvæl.juː/", meaning: "A special mathematical scalar number showing how a vector transforms in linear algebra.", example: "Facial recognition systems use eigenvalues to identify key facial proportions." },
-    { word: "Extrusion", pronunciation: "/ɪkˈstruː.ʒən/", meaning: "Shaping material by pushing it through a specially shaped opening or nozzle (like 3D printing).", example: "Aluminum window frames and plastic pipes are manufactured using continuous extrusion." }
+    { word: "Entropy", pronunciation: "/ˈen.trə.pi/", meaning: "A measure of randomness, disorder, or unusable energy in a physical system.", example: "Thermodynamics shows that entropy in closed systems naturally increases." },
+    { word: "Encryption", pronunciation: "/ɪnˈkrɪp.ʃən/", meaning: "Scrambling readable data into secret code to protect it from snooping.", example: "End-to-end encryption keeps your private chat messages secure." },
+    { word: "Elasticity", pronunciation: "/ˌiː.læsˈtɪs.ə.ti/", meaning: "The ability of a material to spring back to its shape after being stretched.", example: "Rubber bands show high elasticity by snapping back when released." },
+    { word: "Electrolyte", pronunciation: "/iˈlek.trə.laɪt/", meaning: "A liquid or gel containing ions that carries electric charge in batteries.", example: "Lithium battery electrolytes allow electric charge to flow between terminals." },
+    { word: "Ethernet", pronunciation: "/ˈiː.θə.net/", meaning: "A standard wired system for connecting computers in a fast local network.", example: "Connecting with an Ethernet cable provides stable, lag-free gaming." },
+    { word: "Equilibrium", pronunciation: "/ˌek.wɪˈlɪb.ri.əm/", meaning: "A balanced state where all opposing forces cancel each other out.", example: "When a drone hovers motionless in the air, lift and gravity are in equilibrium." },
+    { word: "Emulation", pronunciation: "/ˌem.jʊˈleɪ.ʃən/", meaning: "Software allowing a computer to imitate and run games from another console.", example: "Retro emulators let you play classic arcade games on a PC." },
+    { word: "Enthalpy", pronunciation: "/ˈen.θəl.pi/", meaning: "The total heat and energy content of a thermodynamic system.", example: "Chemical engineers calculate enthalpy to measure heat in chemical reactions." },
+    { word: "Eigenvalue", pronunciation: "/ˈaɪ.ɡənˌvæl.juː/", meaning: "A special scaling number in matrix math used in engineering and AI.", example: "Face recognition algorithms use eigenvalues to map key facial landmarks." },
+    { word: "Extrusion", pronunciation: "/ɪkˈstruː.ʒən/", meaning: "Shaping material by pushing it through a shaped nozzle (like 3D printing).", example: "Aluminum window frames are manufactured using continuous metal extrusion." }
   ],
 
   F: [
-    { word: "Feedback", pronunciation: "/ˈfiːd.bæk/", meaning: "Using a system's output information to automatically adjust and control its future actions.", example: "Thermostats use temperature feedback to turn home heating on or off automatically." },
-    { word: "Friction", pronunciation: "/ˈfrɪk.ʃən/", meaning: "The resistive force that opposes the sliding motion of two surfaces touching each other.", example: "Bicycle brakes press pads against the wheel rim to create friction and stop the bike." },
-    { word: "Firmware", pronunciation: "/ˈfɜːm.weər/", meaning: "Permanent low-level software programmed directly into a hardware chip to control basic functions.", example: "Smart TVs receive occasional firmware updates to add features and fix system bugs." },
-    { word: "Fluid", pronunciation: "/ˈfluː.ɪd/", meaning: "Any substance that flows easily and takes the shape of its container (both liquids and gases).", example: "Water, air, and hydraulic oil are all classified scientifically as fluids." },
-    { word: "Frequency", pronunciation: "/ˈfriː.kwən.si/", meaning: "The number of times a repeating wave or event happens in one second, measured in Hertz (Hz).", example: "Household wall outlets supply electricity at a standard frequency of 50 or 60 Hz." },
-    { word: "Fatigue", pronunciation: "/fəˈtiːɡ/", meaning: "Structural weakening and microscopic cracking of materials caused by repeated back-and-forth stress.", example: "Airplane wings are tested for metal fatigue after thousands of flight takeoff cycles." },
-    { word: "Framework", pronunciation: "/ˈfreɪm.wɜːk/", meaning: "A structured set of reusable software tools and libraries that makes building applications easier.", example: "Developers use web frameworks to build responsive, modern websites quickly." },
-    { word: "Flux", pronunciation: "/flʌks/", meaning: "The total amount of magnetic field or energy passing through a given surface area.", example: "Electric generators create electricity by rotating copper coils through magnetic flux." },
-    { word: "Frontend", pronunciation: "/ˈfrʌnt.end/", meaning: "The visual, interactive part of a website or app that users directly see and touch.", example: "HTML, CSS, and JavaScript are the three core technologies for building frontends." },
-    { word: "Fracture", pronunciation: "/ˈfræk.tʃər/", meaning: "The breaking or separation of a solid material into pieces when stressed beyond its limit.", example: "Cast iron is brittle and will fracture suddenly if struck hard with a hammer." }
+    { word: "Feedback", pronunciation: "/ˈfiːd.bæk/", meaning: "Using output results to automatically adjust and improve future performance.", example: "Thermostats use temperature feedback to regulate heating automatically." },
+    { word: "Friction", pronunciation: "/ˈfrɪk.ʃən/", meaning: "The force that resists the sliding movement of two touching surfaces.", example: "Bicycle brakes create friction against the wheel to slow down safely." },
+    { word: "Firmware", pronunciation: "/ˈfɜːm.weər/", meaning: "Permanent low-level code stored inside a chip to control hardware basics.", example: "Wireless earbuds receive firmware updates to enhance noise canceling." },
+    { word: "Fluid", pronunciation: "/ˈfluː.ɪd/", meaning: "Any substance that flows easily, including both liquids and gases.", example: "Hydraulic oil and compressed air are both categorized as fluids." },
+    { word: "Frequency", pronunciation: "/ˈfriː.kwən.si/", meaning: "The number of wave cycles that happen per second, measured in Hertz (Hz).", example: "Wall power outlets deliver electricity at a frequency of 50 or 60 Hz." },
+    { word: "Fatigue", pronunciation: "/fəˈtiːɡ/", meaning: "Material weakening and tiny cracks caused by repeated bending stress.", example: "Airplane wings undergo regular inspection for metal fatigue." },
+    { word: "Framework", pronunciation: "/ˈfreɪm.wɜːk/", meaning: "A pre-built library of coding tools that speeds up software development.", example: "Developers use frameworks to build responsive mobile apps quickly." },
+    { word: "Flux", pronunciation: "/flʌks/", meaning: "The total amount of magnetic field passing through a specific surface area.", example: "Electric generators produce electricity by rotating coils through magnetic flux." },
+    { word: "Frontend", pronunciation: "/ˈfrʌnt.end/", meaning: "The visual, interactive interface of an app that users touch and see.", example: "HTML, CSS, and JavaScript form the foundation of frontend web design." },
+    { word: "Fracture", pronunciation: "/ˈfræk.tʃər/", meaning: "The breaking or snapping of a solid material under excessive load.", example: "Cast iron will fracture rather than bend if struck with a heavy hammer." }
   ],
 
   G: [
-    { word: "Gateway", pronunciation: "/ˈɡeɪt.weɪ/", meaning: "A network device or server that connects two different computer networks together.", example: "Your home Wi-Fi router acts as a gateway connecting your devices to the wider internet." },
-    { word: "Gearbox", pronunciation: "/ˈɡɪə.bɒks/", meaning: "A mechanical casing containing gears that changes speed, direction, and torque from a motor.", example: "Car gearboxes change gear ratios to provide strong hill climbing or fast highway cruising." },
-    { word: "Generator", pronunciation: "/ˈdʒen.ər.eɪ.tər/", meaning: "A machine that converts physical mechanical motion into useful electrical energy.", example: "Wind turbines turn massive generator coils to produce clean renewable electricity." },
-    { word: "Gradient", pronunciation: "/ˈɡreɪ.di.ənt/", meaning: "The rate of change or steepness of a curve, temperature, or mathematical function.", example: "AI algorithms use gradient descent to gradually step down toward the lowest error rate." },
-    { word: "Gyroscope", pronunciation: "/ˈdʒaɪ.rə.skəʊp/", meaning: "A sensor or spinning wheel device used to measure orientation and rotation in 3D space.", example: "Smartphones use microscopic gyroscopes to detect when you rotate screen orientation." },
-    { word: "Grid", pronunciation: "/ɡrɪd/", meaning: "An interconnected regional network that distributes electrical power across cities and states.", example: "Solar panels can feed extra generated power back into the public electrical grid." },
-    { word: "Grounding", pronunciation: "/ˈɡraʊn.dɪŋ/", meaning: "Connecting an electrical circuit safely to the physical earth to prevent dangerous electric shocks.", example: "All three-prong electrical appliances have a grounding pin for home safety." },
-    { word: "Graph", pronunciation: "/ɡrɑːf/", meaning: "A data structure made of interconnected points (nodes) and connecting lines (edges).", example: "Mapping apps use graphs to calculate the quickest driving route between locations." },
-    { word: "Gasket", pronunciation: "/ˈɡæs.kɪt/", meaning: "A rubber or metal seal placed between two joined surfaces to stop liquids or gases from leaking.", example: "The rubber gasket on your refrigerator door keeps cool air sealed inside." },
-    { word: "Galvanize", pronunciation: "/ˈɡæl.və.naɪz/", meaning: "Coating iron or steel with a protective zinc layer to stop it from rusting outdoors.", example: "Galvanized steel fences stay rust-free even after years in heavy rain." }
+    { word: "Gateway", pronunciation: "/ˈɡeɪt.weɪ/", meaning: "A networking hub that links two different computer networks together.", example: "Your Wi-Fi router serves as a gateway to the global internet." },
+    { word: "Gearbox", pronunciation: "/ˈɡɪə.bɒks/", meaning: "A casing containing gears that changes motor speed, direction, and torque.", example: "Car gearboxes change gear ratios for climbing steep hills easily." },
+    { word: "Generator", pronunciation: "/ˈdʒen.ər.eɪ.tər/", meaning: "A machine that turns spinning motion into useful electrical energy.", example: "Wind turbines spin giant generators to produce clean electricity." },
+    { word: "Gradient", pronunciation: "/ˈɡreɪ.di.ənt/", meaning: "The rate of change, slope, or steepness of a mathematical curve.", example: "AI optimization uses gradient descent to minimize prediction errors." },
+    { word: "Gyroscope", pronunciation: "/ˈdʒaɪ.rə.skəʊp/", meaning: "A sensor that measures rotation, tilt, and orientation in 3D space.", example: "Smartphones use gyroscopes to detect when you rotate screen orientation." },
+    { word: "Grid", pronunciation: "/ɡrɪd/", meaning: "An interconnected network that delivers electricity across whole regions.", example: "Rooftop solar panels send extra power back to the electrical grid." },
+    { word: "Grounding", pronunciation: "/ˈɡraʊn.dɪŋ/", meaning: "Connecting an electrical circuit to the physical earth for safety.", example: "Grounding wires protect home appliances from hazardous power surges." },
+    { word: "Graph", pronunciation: "/ɡrɑːf/", meaning: "A data structure of connected points (nodes) and connecting lines (edges).", example: "Navigation apps use graph algorithms to find the fastest driving route." },
+    { word: "Gasket", pronunciation: "/ˈɡæs.kɪt/", meaning: "A rubber or metal seal placed between joined parts to prevent leaks.", example: "Rubber door gaskets keep the refrigerator cold air tightly sealed." },
+    { word: "Galvanize", pronunciation: "/ˈɡæl.və.naɪz/", meaning: "Coating iron with protective zinc to prevent outdoor rusting.", example: "Galvanized steel fences stay rust-free in rain for decades." }
   ],
 
   H: [
-    { word: "Hardware", pronunciation: "/ˈhɑːd.weər/", meaning: "The physical electronic parts and components of a computer that you can touch.", example: "Monitors, keyboards, memory chips, and hard drives are all computer hardware." },
-    { word: "Hydraulics", pronunciation: "/haɪˈdrɔː.lɪks/", meaning: "Using pressurized liquids to move heavy machinery and multiply lifting power.", example: "Excavators and cranes use hydraulic fluid pistons to lift tons of heavy rock." },
-    { word: "Heuristic", pronunciation: "/hjʊəˈrɪs.tɪk/", meaning: "A practical shortcut rule or method used to find a good solution quickly when perfection isn't needed.", example: "Antivirus software uses heuristic rules to spot suspicious unknown files." },
-    { word: "Harmonic", pronunciation: "/hɑːˈmɒn.ɪk/", meaning: "A wave frequency that is an exact multiple of a base fundamental frequency.", example: "Musical instruments produce different sound tones because of their rich harmonic vibrations." },
-    { word: "Hashing", pronunciation: "/ˈhæʃ.ɪŋ/", meaning: "Converting any text into a fixed-length scrambled code to protect passwords and verify files.", example: "Websites store hashed versions of passwords so even employees cannot read them." },
-    { word: "Heatmap", pronunciation: "/ˈhiːt.mæp/", meaning: "A color-coded visual chart that shows where values or user activity are highest.", example: "Website heatmaps show which buttons visitors click on the most." },
-    { word: "Hydrodynamics", pronunciation: "/ˌhaɪ.drəʊ.daɪˈnæm.ɪks/", meaning: "The science of how liquids behave when moving and interacting with solid surfaces.", example: "Boat hulls are designed with hydrodynamics in mind to glide smoothly through waves." },
-    { word: "Harness", pronunciation: "/ˈhɑː.nəs/", meaning: "A neatly organized bundle of insulated electrical wires and connectors inside a machine.", example: "Cars have a master wiring harness that connects all lights and sensors to the computer." },
-    { word: "Holography", pronunciation: "/hɒlˈɒɡ.rə.fi/", meaning: "A 3D photographic technique that uses lasers to create realistic freestanding 3D images.", example: "Credit cards feature small holographic security seals that change appearance when tilted." },
-    { word: "Hybrid", pronunciation: "/ˈhaɪ.brɪd/", meaning: "A system that combines two different technologies together to get the best of both.", example: "Hybrid cars combine a gasoline engine with an electric battery to save fuel." }
+    { word: "Hardware", pronunciation: "/ˈhɑːd.weər/", meaning: "The physical electronic parts of a computer system that you can touch.", example: "Keyboards, hard drives, and circuit boards are all computer hardware." },
+    { word: "Hydraulics", pronunciation: "/haɪˈdrɔː.lɪks/", meaning: "Using pressurized liquids to move heavy machinery and multiply force.", example: "Excavators use hydraulic pistons to dig and lift heavy boulders." },
+    { word: "Heuristic", pronunciation: "/hjʊəˈrɪs.tɪk/", meaning: "A practical rule of thumb used to find quick solutions to problems.", example: "Antivirus software uses heuristic rules to spot suspicious files." },
+    { word: "Harmonic", pronunciation: "/hɑːˈmɒn.ɪk/", meaning: "A wave frequency that is an exact multiple of a base sound tone.", example: "Musical instruments produce distinct tones because of their harmonics." },
+    { word: "Hashing", pronunciation: "/ˈhæʃ.ɪŋ/", meaning: "Converting any text into a fixed scrambled code to secure passwords.", example: "Websites store hashed passwords so nobody can read user credentials." },
+    { word: "Heatmap", pronunciation: "/ˈhiːt.mæp/", meaning: "A color-coded visual map showing where activity or values are highest.", example: "App heatmaps show which buttons users tap on most frequently." },
+    { word: "Hydrodynamics", pronunciation: "/ˌhaɪ.drəʊ.daɪˈnæm.ɪks/", meaning: "The physics of how liquids move and flow around solid objects.", example: "Boat hulls are sculpted with hydrodynamics to glide smoothly over waves." },
+    { word: "Harness", pronunciation: "/ˈhɑː.nəs/", meaning: "An organized bundle of insulated electrical wires inside a vehicle.", example: "The car's wiring harness connects all sensors to the dashboard." },
+    { word: "Holography", pronunciation: "/hɒlˈɒɡ.rə.fi/", meaning: "A 3D image technique using laser beams to produce freestanding visuals.", example: "Credit cards feature small holographic security seals to prevent forgery." },
+    { word: "Hybrid", pronunciation: "/ˈhaɪ.brɪd/", meaning: "A system combining two different technologies to maximize efficiency.", example: "Hybrid cars pair a gasoline engine with an electric battery to save fuel." }
   ],
 
   I: [
-    { word: "Impedance", pronunciation: "/ɪmˈpiː.dəns/", meaning: "The total opposition that an electrical circuit presents to the flow of alternating current (AC).", example: "Headphones with 32-ohm impedance work well with smartphones and laptops." },
-    { word: "Inductor", pronunciation: "/ɪnˈdʌk.tər/", meaning: "A coil of wire that stores electrical energy inside a magnetic field when current passes through.", example: "Inductors filter out electrical noise and stabilize power supplies." },
-    { word: "Interface", pronunciation: "/ˈɪn.tə.feɪs/", meaning: "The boundary, menu, or connector where two different systems meet and exchange information.", example: "The touchscreen interface makes operating modern tablets easy and intuitive." },
-    { word: "Iteration", pronunciation: "/ˌɪt.ərˈeɪ.ʃən/", meaning: "Repeating a process or design cycle multiple times to gradually improve the final result.", example: "Engineers built several prototype iterations before releasing the final phone." },
-    { word: "Inertia", pronunciation: "/ɪˈnɜː.ʃə/", meaning: "The natural tendency of an object to resist changes to its speed or direction of movement.", example: "Seatbelts protect passengers from inertia when a car stops suddenly." },
-    { word: "Insulation", pronunciation: "/ˌɪn.sjəˈleɪ.ʃən/", meaning: "A protective barrier material that prevents the escape of electricity, heat, or sound.", example: "Rubber insulation surrounds electrical cords so you don't get shocked." },
-    { word: "Impulse", pronunciation: "/ˈɪm.pʌls/", meaning: "A sudden burst of force applied over a short time that changes an object's momentum.", example: "Hitting a golf ball delivers an instant force impulse that sends it flying." },
-    { word: "Inheritance", pronunciation: "/ɪnˈher.ɪ.təns/", meaning: "A programming feature where new code can reuse and build upon properties from existing code.", example: "In object-oriented code, an 'ElectricCar' class inherits traits from a general 'Car' class." },
-    { word: "Infrastructure", pronunciation: "/ˈɪn.frəˌstrʌk.tʃər/", meaning: "The fundamental physical systems like roads, water pipes, power lines, and internet cables.", example: "High-speed internet infrastructure connects rural communities to global opportunities." },
-    { word: "Injection", pronunciation: "/ɪnˈdʒek.ʃən/", meaning: "Forcing a liquid or material under pressure into a chamber, engine cylinder, or mold.", example: "Electronic fuel injection delivers the exact mist of gasoline needed for clean burning." }
+    { word: "Impedance", pronunciation: "/ɪmˈpiː.dəns/", meaning: "The total resistance an electrical circuit presents to alternating current.", example: "Matching headphone impedance ensures crystal-clear audio output." },
+    { word: "Inductor", pronunciation: "/ɪnˈdʌk.tər/", meaning: "A wire coil that stores electrical energy inside a magnetic field.", example: "Inductors filter out voltage spikes in sensitive electronics." },
+    { word: "Interface", pronunciation: "/ˈɪn.tə.feɪs/", meaning: "The shared boundary where two systems meet and exchange data.", example: "A clean user interface makes apps pleasant and simple to use." },
+    { word: "Iteration", pronunciation: "/ˌɪt.ərˈeɪ.ʃən/", meaning: "Repeating a design or coding cycle to gradually improve the result.", example: "Engineers built several prototype iterations before launching the final phone." },
+    { word: "Inertia", pronunciation: "/ɪˈnɜː.ʃə/", meaning: "The natural tendency of an object to resist changes in speed or direction.", example: "Seatbelts protect passengers from inertia when a vehicle stops fast." },
+    { word: "Insulation", pronunciation: "/ˌɪn.sjəˈleɪ.ʃən/", meaning: "A protective barrier that prevents the leakage of electricity or heat.", example: "Plastic insulation around electrical cords prevents electric shocks." },
+    { word: "Impulse", pronunciation: "/ˈɪm.pʌls/", meaning: "A sudden burst of force over a brief time that changes an object's speed.", example: "Hitting a tennis ball delivers an instant force impulse." },
+    { word: "Inheritance", pronunciation: "/ɪnˈher.ɪ.təns/", meaning: "A coding mechanism where new code reuses properties from existing code.", example: "An 'ElectricCar' class inherits standard driving traits from a 'Car' class." },
+    { word: "Infrastructure", pronunciation: "/ˈɪn.frəˌstrʌk.tʃər/", meaning: "Fundamental systems like roads, water pipes, power lines, and internet.", example: "High-speed broadband infrastructure powers modern digital economies." },
+    { word: "Injection", pronunciation: "/ɪnˈdʒek.ʃən/", meaning: "Forcing pressurized liquid or material into a mold or engine chamber.", example: "Electronic fuel injection sprays exact fuel mists for efficient burning." }
   ],
 
   J: [
-    { word: "Jitter", pronunciation: "/ˈdʒɪt.ər/", meaning: "Small, unwanted timing delays and fluctuations in digital signal transmission.", example: "High network jitter causes video calls to stutter and audio to sound robotic." },
-    { word: "Joule", pronunciation: "/dʒuːl/", meaning: "The standard international unit used to measure energy and work performed.", example: "A standard 60-watt light bulb consumes 60 joules of energy every second." },
-    { word: "Junction", pronunciation: "/ˈdʒʌŋk.ʃən/", meaning: "A point where two or more electrical wires, pipes, or semiconductor layers meet.", example: "Solar panels produce electricity at the internal silicon P-N junction." },
-    { word: "Joint", pronunciation: "/dʒɔɪnt/", meaning: "The physical connection point joining two or more mechanical or structural parts together.", example: "Robotic arm joints rotate smoothly on precision ball bearings." },
-    { word: "JavaScript", pronunciation: "/ˈdʒɑː.və.skrɪpt/", meaning: "The primary programming language used to make websites interactive, dynamic, and responsive.", example: "This entire dictionary application is powered by responsive JavaScript logic." },
-    { word: "Jet", pronunciation: "/dʒet/", meaning: "A high-speed, powerful stream of liquid or gas forced through a narrow nozzle.", example: "Water jet cutters spray high-pressure water to slice through thick steel sheets." },
-    { word: "Journal", pronunciation: "/ˈdʒɜː.nəl/", meaning: "The polished section of a rotating machine shaft that rests inside a bearing.", example: "Engine oil keeps the crankshaft journal floating without touching metal surfaces." },
-    { word: "Jumper", pronunciation: "/ˈdʒʌm.pər/", meaning: "A tiny metal connector clip used to bridge pins and set options on a circuit board.", example: "Technicians move a small jumper clip to reset the computer motherboard settings." },
-    { word: "JSON", pronunciation: "/ˈdʒeɪ.sən/", meaning: "A simple, readable text format used by computers to store and exchange data over the internet.", example: "Weather apps receive hourly forecasts packaged in lightweight JSON format." },
-    { word: "Justification", pronunciation: "/ˌdʒʌs.tɪ.fɪˈkeɪ.ʃən/", meaning: "The technical reasoning and data provided to prove that an engineering design is safe and sound.", example: "The engineer provided stress calculation reports as justification for the bridge design." }
+    { word: "Jitter", pronunciation: "/ˈdʒɪt.ər/", meaning: "Tiny, irregular timing delays in digital signals causing stuttering.", example: "High internet jitter causes video calls to stutter and freeze." },
+    { word: "Joule", pronunciation: "/dʒuːl/", meaning: "The standard international unit measuring physical work and energy.", example: "A 60-watt light bulb uses 60 joules of electrical energy every second." },
+    { word: "Junction", pronunciation: "/ˈdʒʌŋk.ʃən/", meaning: "A point where two or more wires, pipes, or semiconductor layers meet.", example: "Solar cells generate electrical voltage at their internal P-N junction." },
+    { word: "Joint", pronunciation: "/dʒɔɪnt/", meaning: "The connection point joining two or more mechanical parts together.", example: "Robotic arm joints rotate smoothly using precision ball bearings." },
+    { word: "JavaScript", pronunciation: "/ˈdʒɑː.və.skrɪpt/", meaning: "The core programming language that makes websites interactive and alive.", example: "This entire vocabulary app is powered by interactive JavaScript." },
+    { word: "Jet", pronunciation: "/dʒet/", meaning: "A fast, high-pressure stream of liquid or gas forced out through a nozzle.", example: "Water jet cutters spray pressurized water to slice through thick metal." },
+    { word: "Journal", pronunciation: "/ˈdʒɜː.nəl/", meaning: "The polished section of a rotating machine shaft resting inside a bearing.", example: "Motor oil keeps the crankshaft journal floating without metal friction." },
+    { word: "Jumper", pronunciation: "/ˈdʒʌm.pər/", meaning: "A small metal connector clip used to bridge pins on a circuit board.", example: "Technicians move a jumper pin to reset motherboard BIOS settings." },
+    { word: "JSON", pronunciation: "/ˈdʒeɪ.sən/", meaning: "A clean, lightweight text format used by apps to exchange internet data.", example: "Weather apps receive live forecasts packaged in structured JSON format." },
+    { word: "Justification", pronunciation: "/ˌdʒʌs.tɪ.fɪˈkeɪ.ʃən/", meaning: "The technical reasoning provided to prove a design is safe and sound.", example: "The engineer submitted stress calculations as justification for the beam." }
   ],
 
   K: [
-    { word: "Kinematics", pronunciation: "/ˌkɪn.əˈmæt.ɪks/", meaning: "The branch of physics and engineering that studies motion without considering the forces causing it.", example: "Kinematics formulas calculate the robotic arm's position, speed, and trajectory." },
-    { word: "Kernel", pronunciation: "/ˈkɜː.nəl/", meaning: "The central core program of an operating system that manages the CPU, memory, and devices.", example: "The Linux kernel manages hardware access safely for all installed apps." },
-    { word: "Kilowatt", pronunciation: "/ˈkɪl.ə.wɒt/", meaning: "A unit of electrical power equal to 1,000 watts (1 kW).", example: "An electric kettle uses about 1.5 kilowatts of power while boiling water." },
-    { word: "Kinetic", pronunciation: "/kɪˈnet.ɪk/", meaning: "Relating to or resulting from the physical motion of an object (energy of movement).", example: "Brakes convert moving vehicle kinetic energy into harmless heat." },
-    { word: "Karnaugh", pronunciation: "/ˈkɑː.nɔː/", meaning: "A visual grid diagram used in electronics to simplify binary logic expressions easily.", example: "Engineering students use Karnaugh maps to reduce the number of logic chips required." },
-    { word: "Kalman", pronunciation: "/ˈkæl.mən/", meaning: "A mathematical algorithm that combines noisy sensor readings to find the true accurate position.", example: "Drones use Kalman filters to combine GPS, compass, and gyroscope data for smooth flight." },
-    { word: "K-Means", pronunciation: "/ˈkeɪ.miːnz/", meaning: "A machine learning algorithm that groups similar data points into distinct clusters automatically.", example: "Streaming platforms use K-means to group users with similar music tastes." },
-    { word: "Kirchhoff", pronunciation: "/ˈkɪərk.hɒf/", meaning: "Fundamental circuit laws stating that electrical charge and energy are always conserved in circuits.", example: "Kirchhoff's current law states that all current entering an electrical junction must exit it." },
-    { word: "Keyframe", pronunciation: "/ˈkiː.freɪm/", meaning: "A main milestone drawing or marker in video and animation that defines key movement positions.", example: "Video editors place keyframes to smoothly animate a logo across the screen." },
-    { word: "Knot", pronunciation: "/nɒt/", meaning: "A unit measuring speed on water and in the air, equal to one nautical mile per hour (1.85 km/h).", example: "The cargo ship crossed the ocean at a steady cruising speed of 20 knots." }
+    { word: "Kinematics", pronunciation: "/ˌkɪn.əˈmæt.ɪks/", meaning: "The study of motion describing speed and path without considering forces.", example: "Kinematics formulas calculate the robotic arm's position and speed." },
+    { word: "Kernel", pronunciation: "/ˈkɜː.nəl/", meaning: "The central core program of an operating system managing CPU and memory.", example: "The Linux kernel manages hardware access safely for all installed apps." },
+    { word: "Kilowatt", pronunciation: "/ˈkɪl.ə.wɒt/", meaning: "A unit of electrical power equal to 1,000 watts (1 kW).", example: "Electric water heaters consume around 2 kilowatts of electric power." },
+    { word: "Kinetic", pronunciation: "/kɪˈnet.ɪk/", meaning: "Relating to the physical energy that an object possesses due to its motion.", example: "Car brakes turn kinetic energy of movement into harmless heat." },
+    { word: "Karnaugh", pronunciation: "/ˈkɑː.nɔː/", meaning: "A visual grid map used in electronics to simplify binary logic expressions.", example: "Engineering students use Karnaugh maps to reduce required logic gates." },
+    { word: "Kalman", pronunciation: "/ˈkæl.mən/", meaning: "An algorithm combining multiple noisy sensor readings to find true position.", example: "Drones use Kalman filters to combine GPS and compass data for stability." },
+    { word: "K-Means", pronunciation: "/ˈkeɪ.miːnz/", meaning: "A machine learning algorithm grouping similar data points into clusters.", example: "Music streaming services use K-means to group users with similar tastes." },
+    { word: "Kirchhoff", pronunciation: "/ˈkɪərk.hɒf/", meaning: "Circuit laws proving that electric current and voltage are always conserved.", example: "Kirchhoff's current law states all current entering a wire node must exit it." },
+    { word: "Keyframe", pronunciation: "/ˈkiː.freɪm/", meaning: "A main milestone marker in animation that defines a key movement position.", example: "Video editors place keyframes to animate objects smoothly on screen." },
+    { word: "Knot", pronunciation: "/nɒt/", meaning: "A speed unit used on water and air equal to one nautical mile per hour.", example: "The ferry crossed the bay at a steady cruising speed of 18 knots." }
   ],
 
   L: [
-    { word: "Latency", pronunciation: "/ˈleɪ.tən.si/", meaning: "The small time delay between sending a command and receiving the response over a network.", example: "Low latency is essential for smooth online gaming and real-time video calls." },
-    { word: "Logic", pronunciation: "/ˈlɒdʒ.ɪk/", meaning: "The set of mathematical rules and step-by-step reasoning that controls computer software and circuits.", example: "Logic gates combine binary 0s and 1s to perform calculations inside the processor." },
-    { word: "Laser", pronunciation: "/ˈleɪ.zər/", meaning: "A device that emits an intense, focused beam of pure light of a single wavelength.", example: "Barcode scanners in grocery stores use safe laser beams to read item labels." },
-    { word: "Lubrication", pronunciation: "/ˌluː.brɪˈkeɪ.ʃən/", meaning: "Applying oil or grease between touching moving parts to reduce friction and heat.", example: "Regular engine oil lubrication prevents car engine parts from grinding and seizing." },
-    { word: "Linux", pronunciation: "/ˈlɪn.əks/", meaning: "A popular, reliable, open-source computer operating system used on servers and supercomputers.", example: "Android phones are built on top of the open-source Linux kernel." },
-    { word: "Luminescence", pronunciation: "/ˌluː.mɪˈnes.əns/", meaning: "The emission of cool light caused by chemical reactions or electricity rather than heat.", example: "Fireflies and glow sticks produce light through natural chemical luminescence." },
-    { word: "Loadcell", pronunciation: "/ˈləʊd.sel/", meaning: "An electronic weight sensor that converts physical pushing force into an electrical signal.", example: "Bathroom digital scales use load cells to measure your weight accurately." },
-    { word: "Lever", pronunciation: "/ˈliː.vər/", meaning: "A simple mechanical tool consisting of a rigid bar pivoted on a fulcrum to multiply lifting force.", example: "Crowbars and seesaws are classic everyday examples of levers." },
-    { word: "Lithium", pronunciation: "/ˈlɪθ.i.əm/", meaning: "A lightweight metal element that stores significant electrical energy in rechargeable batteries.", example: "Lithium batteries power smartphones, laptops, and electric cars worldwide." },
-    { word: "Loop", pronunciation: "/luːp/", meaning: "A programming command that repeats a block of instructions until a specific goal is achieved.", example: "The music app uses a loop to play all songs in your playlist one by one." }
+    { word: "Latency", pronunciation: "/ˈleɪ.tən.si/", meaning: "The brief time delay between sending a command and receiving a response.", example: "Low network latency is essential for lag-free multiplayer gaming." },
+    { word: "Logic", pronunciation: "/ˈlɒdʒ.ɪk/", meaning: "The systematic rules and reasoning that govern computer programs and chips.", example: "Logic gates combine binary 0s and 1s to execute math calculations." },
+    { word: "Laser", pronunciation: "/ˈleɪ.zər/", meaning: "A device that emits a focused, intense beam of monochromatic light.", example: "Supermarket barcode scanners use safe laser beams to scan item tags." },
+    { word: "Lubrication", pronunciation: "/ˌluː.brɪˈkeɪ.ʃən/", meaning: "Applying oil or grease between moving parts to reduce wear and heat.", example: "Engine oil lubrication keeps car pistons sliding smoothly." },
+    { word: "Linux", pronunciation: "/ˈlɪn.əks/", meaning: "A popular open-source operating system powering servers and Android.", example: "Most cloud servers and supercomputers run on reliable Linux." },
+    { word: "Luminescence", pronunciation: "/ˌluː.mɪˈnes.əns/", meaning: "Light emitted by chemicals or electricity without creating heat.", example: "Glow sticks and fireflies produce cool light through luminescence." },
+    { word: "Loadcell", pronunciation: "/ˈləʊd.sel/", meaning: "An electronic weight sensor turning physical pressure into a digital signal.", example: "Bathroom digital scales use load cells to measure body weight." },
+    { word: "Lever", pronunciation: "/ˈliː.vər/", meaning: "A simple rigid tool pivoting on a fulcrum to multiply lifting power.", example: "Crowbars and bottle openers are simple, effective mechanical levers." },
+    { word: "Lithium", pronunciation: "/ˈlɪθ.i.əm/", meaning: "A lightweight metal storing high electrical energy in rechargeable batteries.", example: "Lithium batteries power modern smartphones and electric vehicles." },
+    { word: "Loop", pronunciation: "/luːp/", meaning: "A programming command repeating instructions until a goal is reached.", example: "A music app uses a loop to play all songs in a playlist sequentially." }
   ],
 
   M: [
-    { word: "Microcontroller", pronunciation: "/ˌmaɪ.krəʊ.kənˈtrəʊ.lər/", meaning: "A single computer chip containing a processor, memory, and input/output pins to control devices.", example: "Microwave ovens and washing machines are controlled by small microcontrollers." },
-    { word: "Modulation", pronunciation: "/ˌmɒd.jʊˈleɪ.ʃən/", meaning: "Encoding voice, music, or data onto a radio frequency carrier wave for wireless broadcasting.", example: "Wi-Fi routers modulate data into radio signals that your laptop receives." },
-    { word: "Multithreading", pronunciation: "/ˌmʌl.tiˈθred.ɪŋ/", meaning: "Allowing a computer processor core to work on multiple tasks at the same time.", example: "Multithreading lets you render a video while continuing to browse the web smoothly." },
-    { word: "Metallurgy", pronunciation: "/məˈtæl.ə.dʒi/", meaning: "The scientific study of metal properties and techniques for making stronger metal alloys.", example: "Metallurgy breakthroughs allowed the creation of super-strong, lightweight titanium alloys." },
-    { word: "Momentum", pronunciation: "/məˈmen.təm/", meaning: "The quantity of motion an object has, calculated by multiplying its mass by its velocity.", example: "A heavy train has huge momentum and takes a long distance to come to a complete stop." },
-    { word: "Middleware", pronunciation: "/ˈmɪd.əl.weər/", meaning: "Software that acts as a bridge helping two different applications communicate with each other.", example: "Middleware connects the website frontend securely to the banking database backend." },
-    { word: "Magnetism", pronunciation: "/ˈmæɡ.nə.tɪ.zəm/", meaning: "The invisible physical force produced by magnets and electrical currents that attracts or repels objects.", example: "Electric motors use magnetism to turn electrical current into spinning mechanical force." },
-    { word: "Mesh", pronunciation: "/meʃ/", meaning: "A network design where multiple devices connect to each other directly to share coverage.", example: "Mesh Wi-Fi systems place multiple small hubs around a house to eliminate dead spots." },
-    { word: "Matrix", pronunciation: "/ˈmeɪ.trɪks/", meaning: "A rectangular grid arrangement of numbers in rows and columns used in math and 3D graphics.", example: "Video game graphics cards multiply 3D matrices millions of times per second." },
-    { word: "Machining", pronunciation: "/məˈʃiː.nɪŋ/", meaning: "Cutting and shaping solid raw metal into a precise final part using tools like drills and mills.", example: "CNC machining carved the aluminum camera body from a solid metal block." }
+    { word: "Microcontroller", pronunciation: "/ˌmaɪ.krəʊ.kənˈtrəʊ.lər/", meaning: "A single computer chip with CPU, memory, and pins to control a device.", example: "Microwaves and washing machines are controlled by microcontrollers." },
+    { word: "Modulation", pronunciation: "/ˌmɒd.jʊˈleɪ.ʃən/", meaning: "Encoding voice or data onto radio carrier waves for wireless broadcast.", example: "Wi-Fi routers modulate digital data into high-speed radio signals." },
+    { word: "Multithreading", pronunciation: "/ˌmʌl.tiˈθred.ɪŋ/", meaning: "Allowing a computer processor to run multiple tasks at the same time.", example: "Multithreading lets you edit a document while music plays smoothly." },
+    { word: "Metallurgy", pronunciation: "/məˈtæl.ə.dʒi/", meaning: "The science of metal properties and creating stronger metal alloys.", example: "Metallurgy innovations created lightweight titanium alloys for planes." },
+    { word: "Momentum", pronunciation: "/məˈmen.təm/", meaning: "The quantity of motion an object has, calculated as mass times velocity.", example: "A heavy truck has high momentum and takes distance to stop completely." },
+    { word: "Middleware", pronunciation: "/ˈmɪd.əl.weər/", meaning: "Bridge software helping two different computer applications talk together.", example: "Middleware connects the website safely to backend banking databases." },
+    { word: "Magnetism", pronunciation: "/ˈmæɡ.nə.tɪ.zəm/", meaning: "The invisible force produced by magnets and currents that attracts metal.", example: "Electric motors use magnetism to turn electrical current into rotation." },
+    { word: "Mesh", pronunciation: "/meʃ/", meaning: "A network design where multiple hubs connect together to share coverage.", example: "Mesh Wi-Fi spreads multiple small hubs to cover an entire house." },
+    { word: "Matrix", pronunciation: "/ˈmeɪ.trɪks/", meaning: "A rectangular grid of numbers in rows and columns used in 3D graphics.", example: "Graphics cards multiply 3D matrices millions of times per second." },
+    { word: "Machining", pronunciation: "/məˈʃiː.nɪŋ/", meaning: "Cutting and carving solid raw metal into a precise finished part.", example: "CNC machining carved the aluminum camera body from a single block." }
   ],
 
   N: [
-    { word: "Network", pronunciation: "/ˈnet.wɜːk/", meaning: "A group of computers and devices linked together to share files, printers, and internet access.", example: "Office computers connect to a local network to share documents and access servers." },
-    { word: "Node", pronunciation: "/nəʊd/", meaning: "Any single connected device or junction point within a larger computer network.", example: "Every computer, phone, and smart light bulb connected to your Wi-Fi is a network node." },
-    { word: "Nanotechnology", pronunciation: "/ˌnæn.əʊ.tekˈnɒl.ə.dʒi/", meaning: "Building and engineering materials at an atomic and molecular scale under 100 nanometers.", example: "Nanotechnology creates ultra-thin water-repellent coatings for waterproof clothing." },
-    { word: "Normalization", pronunciation: "/ˌnɔː.məl.aɪˈzeɪ.ʃən/", meaning: "Organizing database tables to eliminate duplicate data, or scaling numbers into a standard 0 to 1 range.", example: "Data normalization makes search queries faster and keeps customer records tidy." },
-    { word: "Nyquist", pronunciation: "/ˈnaɪ.kwɪst/", meaning: "A digital audio rule stating you must sample sound at least twice its highest frequency for clarity.", example: "CDs sample audio at 44,100 times per second according to the Nyquist theorem." },
-    { word: "Nozzle", pronunciation: "/ˈnɒz.əl/", meaning: "A shaped spout at the end of a pipe that speeds up and directs the flow of liquid or gas.", example: "Fire hose nozzles accelerate water streams to reach high building windows." },
-    { word: "Null", pronunciation: "/nʌl/", meaning: "A special value in programming that represents empty, missing, or unassigned data.", example: "If a user leaves their phone number blank, the database stores it as a null value." },
-    { word: "Newton", pronunciation: "/ˈnjuː.tən/", meaning: "The standard scientific unit for measuring physical force (named after Isaac Newton).", example: "Lifting an average apple takes about one newton of upward force." },
-    { word: "Navigation", pronunciation: "/ˌnæv.ɪˈɡeɪ.ʃən/", meaning: "The art and science of finding your position and directing movement to reach a destination.", example: "GPS satellite navigation gives turn-by-turn directions directly on your phone." },
-    { word: "Nucleation", pronunciation: "/ˌnjuː.kliˈeɪ.ʃən/", meaning: "The initial starting point where crystals, bubbles, or ice first begin to form in a liquid.", example: "Mentos candies trigger rapid bubble nucleation when dropped into a bottle of soda." }
+    { word: "Network", pronunciation: "/ˈnet.wɜːk/", meaning: "A group of linked computers and devices sharing data and internet access.", example: "Office computers connect to a shared network to print and share files." },
+    { word: "Node", pronunciation: "/nəʊd/", meaning: "Any single connected device or junction point within a larger network.", example: "Every phone and smart TV connected to your Wi-Fi is a network node." },
+    { word: "Nanotechnology", pronunciation: "/ˌnæn.əʊ.tekˈnɒl.ə.dʒi/", meaning: "Engineering materials at a microscopic atomic scale under 100 nanometers.", example: "Nanotechnology creates ultra-thin water-repellent coatings on jackets." },
+    { word: "Normalization", pronunciation: "/ˌnɔː.məl.aɪˈzeɪ.ʃən/", meaning: "Organizing database tables neatly to eliminate duplicate entries.", example: "Data normalization keeps customer records organized and searches fast." },
+    { word: "Nyquist", pronunciation: "/ˈnaɪ.kwɪst/", meaning: "A digital rule stating sound must be sampled at least twice its frequency.", example: "Audio CDs sample sound 44,100 times per second for crisp playback." },
+    { word: "Nozzle", pronunciation: "/ˈnɒz.əl/", meaning: "A shaped opening at the end of a pipe that speeds up and directs fluid flow.", example: "Fire hose nozzles accelerate water streams to reach tall building roofs." },
+    { word: "Null", pronunciation: "/nʌl/", meaning: "A special value in programming representing empty or unassigned data.", example: "Leaving an optional form field empty saves it as a null value." },
+    { word: "Newton", pronunciation: "/ˈnjuː.tən/", meaning: "The standard international scientific unit used for measuring physical force.", example: "Lifting an average apple takes about one newton of lifting force." },
+    { word: "Navigation", pronunciation: "/ˌnæv.ɪˈɡeɪ.ʃən/", meaning: "Directing movement and tracking location to reach a target destination.", example: "GPS satellite navigation provides real-time turn-by-turn driving routes." },
+    { word: "Nucleation", pronunciation: "/ˌnjuː.kliˈeɪ.ʃən/", meaning: "The initial starting point where ice crystals or bubbles first form.", example: "Carbonated soda forms bubbles around tiny rough nucleation spots in a glass." }
   ],
 
   O: [
-    { word: "Optimization", pronunciation: "/ˌɒp.tɪ.maɪˈzeɪ.ʃən/", meaning: "Making a system, program, or process as efficient, fast, and effective as possible.", example: "Code optimization made the smartphone app launch in half the previous time." },
-    { word: "Oscillator", pronunciation: "/ˈɒs.ɪ.leɪ.tər/", meaning: "An electronic circuit that generates continuous repeating wave pulses, like a clock heartbeat.", example: "A quartz crystal oscillator keeps precise time inside digital wristwatches." },
-    { word: "Overclock", pronunciation: "/ˌəʊ.vəˈklɒk/", meaning: "Configuring a computer processor to run at a faster speed than its factory default rating.", example: "Gamers sometimes overclock their graphics card to get higher frame rates in games." },
-    { word: "Ontology", pronunciation: "/ɒnˈtɒl.ə.dʒi/", meaning: "A structured dictionary and map showing how different concepts in a subject relate to each other.", example: "Medical ontologies help computers organize disease symptoms and treatments." },
-    { word: "Orthogonal", pronunciation: "/ɔːˈθɒɡ.ən.əl/", meaning: "Meeting at a 90-degree right angle, or being completely independent of each other.", example: "The horizontal and vertical grid lines on graph paper are orthogonal." },
-    { word: "Overfitting", pronunciation: "/ˌəʊ.vəˈfɪt.ɪŋ/", meaning: "When an AI memorizes training examples too closely and fails when given new, unseen data.", example: "Engineers added diverse photos to prevent the AI model from overfitting." },
-    { word: "Optics", pronunciation: "/ˈɒp.tɪks/", meaning: "The branch of science that studies how light travels, bends, reflects, and interacts with lenses.", example: "Eyeglasses and telescope lenses are designed using the principles of optics." },
-    { word: "Osmosis", pronunciation: "/ɒzˈməʊ.sɪs/", meaning: "The natural movement of water molecules through a semi-permeable filter membrane.", example: "Reverse osmosis water purifiers remove impurities to make clean drinking water." },
-    { word: "Output", pronunciation: "/ˈaʊt.pʊt/", meaning: "The resulting information, sound, or action produced by a computer after processing.", example: "The computer's output was displayed on the screen and printed on paper." },
-    { word: "Ohm", pronunciation: "/əʊm/", meaning: "The standard scientific unit for measuring resistance to electric current (named after Georg Ohm).", example: "A standard speaker has an electrical resistance rating of 4 or 8 ohms." }
+    { word: "Optimization", pronunciation: "/ˌɒp.tɪ.maɪˈzeɪ.ʃən/", meaning: "Making a program, system, or process as fast and efficient as possible.", example: "Code optimization made the mobile application launch in half the time." },
+    { word: "Oscillator", pronunciation: "/ˈɒs.ɪ.leɪ.tər/", meaning: "An electronic circuit that creates a steady, repeating electrical wave pulse.", example: "Quartz crystal oscillators keep accurate time inside digital wristwatches." },
+    { word: "Overclock", pronunciation: "/ˌəʊ.vəˈklɒk/", meaning: "Running a computer chip at a faster speed than its factory default rating.", example: "Gamers overclock graphics cards to get smoother frame rates in games." },
+    { word: "Ontology", pronunciation: "/ɒnˈtɒl.ə.dʒi/", meaning: "A structured map showing how different concepts in a subject relate.", example: "Medical ontologies help computers organize health symptoms and treatments." },
+    { word: "Orthogonal", pronunciation: "/ɔːˈθɒɡ.ən.əl/", meaning: "Meeting at a 90-degree right angle, or being completely independent.", example: "The horizontal and vertical grid lines on graph paper are orthogonal." },
+    { word: "Overfitting", pronunciation: "/ˌəʊ.vəˈfɪt.ɪŋ/", meaning: "When an AI memorizes training data too closely and fails on new examples.", example: "Engineers added diverse photos to prevent the AI model from overfitting." },
+    { word: "Optics", pronunciation: "/ˈɒp.tɪks/", meaning: "The branch of science studying how light travels and bends through lenses.", example: "Eyeglasses and camera lenses are designed using the principles of optics." },
+    { word: "Osmosis", pronunciation: "/ɒzˈməʊ.sɪs/", meaning: "The natural movement of water molecules through a semi-permeable filter.", example: "Reverse osmosis water purifiers remove contaminants to create clean water." },
+    { word: "Output", pronunciation: "/ˈaʊt.pʊt/", meaning: "The final information, sound, or action produced by a computer system.", example: "The computer output was shown on the display screen and printed on paper." },
+    { word: "Ohm", pronunciation: "/əʊm/", meaning: "The standard international unit measuring electrical resistance in circuits.", example: "A standard household speaker has a resistance rating of 4 or 8 ohms." }
   ],
 
   P: [
-    { word: "Processor", pronunciation: "/ˈprəʊ.ses.ər/", meaning: "The main electronic chip (CPU) inside a computer that executes all software commands and math.", example: "Multi-core processors allow computers to run dozens of apps at once without slowing down." },
-    { word: "Protocol", pronunciation: "/ˈprəʊ.tə.kɒl/", meaning: "An agreed set of standard rules that computers use to talk and exchange data with each other.", example: "HTTPS is the secure web protocol used to browse websites safely." },
-    { word: "Piezoelectric", pronunciation: "/paɪˌeɪ.zəʊ.ɪˈlek.trɪk/", meaning: "Materials that generate electrical voltage when squeezed or vibrate when voltage is applied.", example: "Electronic barbecue lighters use a piezoelectric crystal to create an ignition spark." },
-    { word: "Pneumatics", pronunciation: "/njuːˈmæt.ɪks/", meaning: "Using compressed air to power tools and mechanical movements in factory machines.", example: "Pneumatic air tools allow mechanics to change race car tires in seconds." },
-    { word: "Polymorphism", pronunciation: "/ˌpɒl.iˈmɔː.fɪ.zəm/", meaning: "A programming principle where different objects can respond to the same command in their own way.", example: "A 'draw' command can draw a circle, a square, or a triangle using polymorphism." },
-    { word: "Photodiode", pronunciation: "/ˌfəʊ.təʊˈdaɪ.əʊd/", meaning: "A light sensor chip that turns incoming light rays directly into an electrical current.", example: "TV remote control receivers use photodiodes to detect infrared click signals." },
-    { word: "Pipeline", pronunciation: "/ˈpaɪp.laɪn/", meaning: "A step-by-step assembly line process where data moves through consecutive processing stages.", example: "CPUs use instruction pipelines to prepare upcoming instructions ahead of time." },
-    { word: "Polymer", pronunciation: "/ˈpɒl.ɪ.mər/", meaning: "A material made of long chains of repeating molecules, including plastics, rubbers, and fibers.", example: "Synthetic polymers make modern motorcycle helmets lightweight and impact-resistant." },
-    { word: "Potentiometer", pronunciation: "/pəˌten.ʃiˈɒm.ɪ.tər/", meaning: "An adjustable dial resistor used to manually control volume or brightness.", example: "Turning the stereo volume knob adjusts an internal rotary potentiometer." },
-    { word: "Pascal", pronunciation: "/pæsˈkæl/", meaning: "The international unit for measuring physical pressure (one newton per square meter).", example: "Car tire pressures are measured in kilopascals (kPa) or PSI." }
+    { word: "Processor", pronunciation: "/ˈprəʊ.ses.ər/", meaning: "The primary computer chip (CPU) executing all software calculations.", example: "Multi-core processors allow computers to run dozens of apps at once." },
+    { word: "Protocol", pronunciation: "/ˈprəʊ.tə.kɒl/", meaning: "An agreed set of digital rules computers follow to exchange information.", example: "HTTPS is the secure protocol used to browse websites safely." },
+    { word: "Piezoelectric", pronunciation: "/paɪˌeɪ.zəʊ.ɪˈlek.trɪk/", meaning: "Materials creating an electric spark when pressed, or vibrating with voltage.", example: "Barbecue lighters use a piezoelectric crystal to generate an ignition spark." },
+    { word: "Pneumatics", pronunciation: "/njuːˈmæt.ɪks/", meaning: "Using pressurized air to power tools and movements in factory machines.", example: "Pneumatic wrenches let mechanics remove race car wheel nuts in seconds." },
+    { word: "Polymorphism", pronunciation: "/ˌpɒl.iˈmɔː.fɪ.zəm/", meaning: "A coding principle where different objects respond to commands in their own way.", example: "A 'render' command can draw a circle or square using polymorphism." },
+    { word: "Photodiode", pronunciation: "/ˌfəʊ.təʊˈdaɪ.əʊd/", meaning: "A light sensor chip that turns incoming light into an electrical current.", example: "TV remote receivers use photodiodes to detect infrared light pulses." },
+    { word: "Pipeline", pronunciation: "/ˈpaɪp.laɪn/", meaning: "An assembly line workflow where data passes through sequential steps.", example: "Processors use instruction pipelines to prepare commands in advance." },
+    { word: "Polymer", pronunciation: "/ˈpɒl.ɪ.mər/", meaning: "A material made of long repeating molecular chains, like plastics and rubber.", example: "Modern polymers make motorcycle helmets lightweight and impact-proof." },
+    { word: "Potentiometer", pronunciation: "/pəˌten.ʃiˈɒm.ɪ.tər/", meaning: "An adjustable rotary dial resistor used to control volume or brightness.", example: "Turning the stereo volume knob adjusts an internal potentiometer." },
+    { word: "Pascal", pronunciation: "/pæsˈkæl/", meaning: "The international unit for measuring physical pressure (N/m²).", example: "Car tire pressures are measured in kilopascals (kPa) or PSI units." }
   ],
 
   Q: [
-    { word: "Quantum", pronunciation: "/ˈkwɒn.təm/", meaning: "The smallest possible individual packet of energy or matter in physics.", example: "Quantum computers use subatomic physics to solve complex calculations at incredible speeds." },
-    { word: "Quenching", pronunciation: "/ˈkwentʃ.ɪŋ/", meaning: "Rapidly cooling hot red metal in water or oil to make it harder and stronger.", example: "Blacksmiths quench forged steel blades in oil to harden the cutting edge." },
-    { word: "Query", pronunciation: "/ˈkwɪə.ri/", meaning: "A specific question or search request sent to a database to look up information.", example: "Typing a name into the search box sends a query to the contact database." },
-    { word: "Queue", pronunciation: "/kjuː/", meaning: "A First-In-First-Out (FIFO) waiting list where the first item to enter is the first to be handled.", example: "Print queues print documents in the exact order they were sent." },
-    { word: "Quadrature", pronunciation: "/ˈkwɒd.rə.tʃər/", meaning: "Two signals that are separated by a 90-degree phase quarter-turn from each other.", example: "Quadrature signals allow computer mice to track both forward and backward rolling." },
-    { word: "Quality", pronunciation: "/ˈkwɒl.ə.ti/", meaning: "How well a product meets safety, durability, and customer performance standards.", example: "Quality assurance testing checks that every smartphone screen is free of defects." },
-    { word: "Quartile", pronunciation: "/ˈkwɔː.taɪl/", meaning: "Dividing a set of numbers into four equal groups (quarters) for statistical study.", example: "Test scores in the top quartile represent the best 25% of all students." },
-    { word: "Quartz", pronunciation: "/kwɔːts/", meaning: "A hard, clear mineral that vibrates at exact frequencies when electricity is applied.", example: "Quartz crystal movements keep clocks ticking with precision accuracy." },
-    { word: "QuickSort", pronunciation: "/ˈkwɪk.sɔːt/", meaning: "A popular, super-fast sorting algorithm that organizes lists of numbers or names quickly.", example: "QuickSort sorts thousands of contact names in alphabetical order in a fraction of a second." },
-    { word: "Quorum", pronunciation: "/ˈkwɔː.rəm/", meaning: "The minimum number of members or server nodes required to agree before a decision is approved.", example: "Cloud database clusters require a majority quorum before saving financial changes." }
+    { word: "Quantum", pronunciation: "/ˈkwɒn.təm/", meaning: "The smallest possible indivisible unit of energy or matter in physics.", example: "Quantum computers use subatomic particles to solve complex math quickly." },
+    { word: "Quenching", pronunciation: "/ˈkwentʃ.ɪŋ/", meaning: "Quickly cooling hot metal in water or oil to make it harder and tougher.", example: "Bladesmiths quench forged steel in oil to harden the sharp edge." },
+    { word: "Query", pronunciation: "/ˈkwɪə.ri/", meaning: "A specific search request sent to a database to look up information.", example: "Typing a keyword into a search box sends a query to the database." },
+    { word: "Queue", pronunciation: "/kjuː/", meaning: "A first-in first-out list where the first item entered is the first served.", example: "Printers manage print queues to print documents in the order received." },
+    { word: "Quadrature", pronunciation: "/ˈkwɒd.rə.tʃər/", meaning: "Two wave signals separated by a 90-degree phase difference.", example: "Quadrature sensors let computer mice track both forward and backward rolling." },
+    { word: "Quality", pronunciation: "/ˈkwɒl.ə.ti/", meaning: "How well a product meets durability, safety, and performance standards.", example: "Quality assurance tests ensure every phone screen is free from defects." },
+    { word: "Quartile", pronunciation: "/ˈkwɔː.taɪl/", meaning: "Dividing a data set into four equal quarters for statistical analysis.", example: "Scores in the top quartile represent the best 25% of all students." },
+    { word: "Quartz", pronunciation: "/kwɔːts/", meaning: "A hard mineral vibrating at exact frequencies when electricity is applied.", example: "Quartz crystal movements keep clocks ticking with precision accuracy." },
+    { word: "QuickSort", pronunciation: "/ˈkwɪk.sɔːt/", meaning: "A fast sorting algorithm organizing lists of numbers or names quickly.", example: "QuickSort organizes thousands of contact names in alphabetical order in seconds." },
+    { word: "Quorum", pronunciation: "/ˈkwɔː.rəm/", meaning: "The minimum number of nodes required to agree before a change is approved.", example: "Cloud database servers require a quorum before saving financial changes." }
   ],
 
   R: [
-    { word: "Resistor", pronunciation: "/rɪˈzɪs.tər/", meaning: "An electronic component that resists and limits the flow of electric current in a circuit.", example: "Resistors prevent LEDs from receiving too much current and burning out." },
-    { word: "Recursion", pronunciation: "/rɪˈkɜː.ʃən/", meaning: "A programming technique where a function calls itself to break down a big task into smaller steps.", example: "Searching through folders inside folders is easily programmed using recursion." },
-    { word: "Robotics", pronunciation: "/rəʊˈbɒt.ɪks/", meaning: "The branch of engineering that designs, builds, and programs automated mechanical robots.", example: "Robotics in car factories assemble and weld vehicle frames automatically." },
-    { word: "Radiation", pronunciation: "/ˌreɪ.diˈeɪ.ʃən/", meaning: "Energy that travels through space or air in the form of waves or high-speed particles.", example: "Sunlight is a natural form of electromagnetic radiation that provides warmth and light." },
-    { word: "Resonance", pronunciation: "/ˈrez.ən.əns/", meaning: "When a system vibrates with much larger amplitude at its natural matching frequency.", example: "Rubbing the wet rim of a wine glass creates a ringing sound through acoustic resonance." },
-    { word: "Relay", pronunciation: "/ˈriː.leɪ/", meaning: "An electrically operated switch that allows a small signal to turn on a heavy-duty electrical load.", example: "Car headlights use relays so small dashboard switches can control powerful lamps." },
-    { word: "Refactoring", pronunciation: "/ˌriːˈfæk.tər.ɪŋ/", meaning: "Cleaning up and improving internal computer code without changing what it does on the outside.", example: "Code refactoring made the software easier for other developers to read and maintain." },
-    { word: "Rigidity", pronunciation: "/rɪˈdʒɪd.ə.ti/", meaning: "The ability of a solid material or building frame to resist bending under heavy weight.", example: "Steel bicycle frames offer high rigidity for efficient pedaling power." },
-    { word: "Router", pronunciation: "/ˈruː.tər/", meaning: "A networking device that directs and forwards internet data packets between networks.", example: "Your Wi-Fi router connects your home devices to the global internet." },
-    { word: "Rotor", pronunciation: "/ˈrəʊ.tər/", meaning: "The rotating part inside an electric motor, helicopter, or turbine that spins.", example: "Helicopter main rotors generate both upward lift and forward flight power." }
+    { word: "Resistor", pronunciation: "/rɪˈzɪs.tər/", meaning: "An electronic part that limits and controls the flow of electrical current.", example: "Resistors prevent LEDs from receiving excessive current and burning out." },
+    { word: "Recursion", pronunciation: "/rɪˈkɜː.ʃən/", meaning: "A coding technique where a function calls itself to solve smaller sub-tasks.", example: "Searching through nested computer folders is easily coded with recursion." },
+    { word: "Robotics", pronunciation: "/rəʊˈbɒt.ɪks/", meaning: "The branch of engineering designing and programming automated robots.", example: "Robotics in car factories assemble and weld vehicle frames automatically." },
+    { word: "Radiation", pronunciation: "/ˌreɪ.diˈeɪ.ʃən/", meaning: "Energy that travels through space or air as waves or fast particles.", example: "Sunlight is a natural form of electromagnetic radiation giving heat." },
+    { word: "Resonance", pronunciation: "/ˈrez.ən.əns/", meaning: "When a system vibrates with large amplitude at its natural frequency.", example: "Rubbing the rim of a wine glass creates sound through acoustic resonance." },
+    { word: "Relay", pronunciation: "/ˈriː.leɪ/", meaning: "An electrically operated switch letting a small signal control high power.", example: "Car headlights use relays so small dashboard switches control bright lights." },
+    { word: "Refactoring", pronunciation: "/ˌriːˈfæk.tər.ɪŋ/", meaning: "Cleaning and restructuring code without changing its outside behavior.", example: "Code refactoring made the software much easier for developers to maintain." },
+    { word: "Rigidity", pronunciation: "/rɪˈdʒɪd.ə.ti/", meaning: "The ability of a solid material or frame to resist bending under weight.", example: "Steel bicycle frames offer high rigidity for efficient pedaling power." },
+    { word: "Router", pronunciation: "/ˈruː.tər/", meaning: "A network device directing and forwarding internet data packets.", example: "Your home Wi-Fi router connects your devices to the wider internet." },
+    { word: "Rotor", pronunciation: "/ˈrəʊ.tər/", meaning: "The rotating component inside an electric motor or helicopter that spins.", example: "Helicopter main rotors create both upward lift and forward flight." }
   ],
 
   S: [
-    { word: "Semiconductor", pronunciation: "/ˌsem.i.kənˈdʌk.tər/", meaning: "A material (like silicon) that can either conduct or block electricity, essential for computer chips.", example: "Silicon microchips contain billions of microscopic semiconductor switches." },
-    { word: "Synchronous", pronunciation: "/ˈsɪŋ.krə.nəs/", meaning: "Happening at the exact same time or locked together in rhythm with a shared clock signal.", example: "Synchronous online classes happen live with teacher and students present together." },
-    { word: "Stress", pronunciation: "/stres/", meaning: "The internal physical pushing or pulling force applied inside a material per unit area.", example: "Bridge cables are engineered to handle high tensile stress during rush hour traffic." },
-    { word: "Strain", pronunciation: "/streɪn/", meaning: "The amount of physical stretching or deformation a material experiences under stress.", example: "Electronic strain gauges measure microscopic bending in airplane wings." },
-    { word: "Socket", pronunciation: "/ˈsɒk.ɪt/", meaning: "A physical connection port on a motherboard or a software connection point for network talk.", example: "Websockets allow live chat apps to send and receive messages instantly." },
-    { word: "Schema", pronunciation: "/ˈskiː.mə/", meaning: "The blueprint layout and organizational structure of a database system.", example: "The database schema defines what information is stored for each user account." },
-    { word: "Solenoid", pronunciation: "/ˈsəʊ.lən.ɔɪd/", meaning: "A coil of wire that turns into a magnet to push a mechanical pin when electricity flows.", example: "Car starter solenoids engage the starter motor gear when you turn the key." },
-    { word: "Subnet", pronunciation: "/ˈsʌb.net/", meaning: "A smaller, logically organized division of a larger computer IP network.", example: "Company office computers are placed on a separate subnet from visitor Wi-Fi." },
-    { word: "Superconductor", pronunciation: "/ˌsuː.pə.kənˈdʌk.tər/", meaning: "A special material that conducts electricity with absolute zero resistance when super cold.", example: "High-speed Maglev bullet trains float on magnetic tracks using superconductor coils." },
-    { word: "Stator", pronunciation: "/ˈsteɪ.tər/", meaning: "The stationary, non-moving outer frame and wire coils inside an electric motor.", example: "Electric motor stators generate a spinning magnetic field that forces the rotor to turn." }
+    { word: "Semiconductor", pronunciation: "/ˌsem.i.kənˈdʌk.tər/", meaning: "A material (like silicon) that can conduct or block electricity as needed.", example: "Silicon microchips pack billions of microscopic semiconductor switches." },
+    { word: "Synchronous", pronunciation: "/ˈsɪŋ.krə.nəs/", meaning: "Happening at the exact same time or locked to a shared clock rhythm.", example: "Synchronous online classes happen live with teacher and students present." },
+    { word: "Stress", pronunciation: "/stres/", meaning: "The internal pulling or pushing force per unit area inside a material.", example: "Bridge cables are designed to handle high tensile stress during traffic." },
+    { word: "Strain", pronunciation: "/streɪn/", meaning: "The amount of stretching or deformation a material undergoes under stress.", example: "Strain gauges detect microscopic bending in airplane wings during flight." },
+    { word: "Socket", pronunciation: "/ˈsɒk.ɪt/", meaning: "A hardware connection port or a software network communication endpoint.", example: "Websockets allow live messaging apps to exchange chat messages instantly." },
+    { word: "Schema", pronunciation: "/ˈskiː.mə/", meaning: "The structural blueprint layout defining how database data is organized.", example: "The database schema outlines what user info is stored in each column." },
+    { word: "Solenoid", pronunciation: "/ˈsəʊ.lən.ɔɪd/", meaning: "A wire coil that becomes an electromagnet to push a pin mechanically.", example: "Car starter solenoids engage the engine starter gear when you turn the key." },
+    { word: "Subnet", pronunciation: "/ˈsʌb.net/", meaning: "A smaller logical subdivision of a larger computer IP network.", example: "Company computers are separated on a different subnet from guest Wi-Fi." },
+    { word: "Superconductor", pronunciation: "/ˌsuː.pə.kənˈdʌk.tər/", meaning: "A material conducting electricity with absolute zero resistance when cold.", example: "Maglev bullet trains hover over tracks using superconductor magnets." },
+    { word: "Stator", pronunciation: "/ˈsteɪ.tər/", meaning: "The stationary, non-moving outer frame and wire coils of an electric motor.", example: "Electric motor stators generate magnetic fields forcing the rotor to spin." }
   ],
 
   T: [
-    { word: "Transistor", pronunciation: "/trænˈzɪs.tər/", meaning: "A tiny electronic component that acts as a switch or amplifier; the building block of all computers.", example: "Modern phone processors pack over 15 billion microscopic transistors on a single chip." },
-    { word: "Thermodynamics", pronunciation: "/ˌθɜː.məʊ.daɪˈnæm.ɪks/", meaning: "The branch of science that studies the relationships between heat, work, temperature, and energy.", example: "Air conditioners and refrigerators operate based on the laws of thermodynamics." },
-    { word: "Torque", pronunciation: "/tɔːk/", meaning: "The rotational twisting force that causes an object or wheel to spin around an axle.", example: "Electric cars accelerate fast because electric motors deliver huge torque immediately." },
-    { word: "Topology", pronunciation: "/təˈpɒl.ə.dʒi/", meaning: "The geometric layout and arrangement of devices and connections in a network.", example: "A star network topology connects all office computers to a central switch." },
-    { word: "Telemetry", pronunciation: "/təˈlem.ə.tri/", meaning: "Automatically collecting sensor data and wirelessly sending it back to a control room.", example: "Space rockets beam telemetry data about fuel, speed, and heat back to launch control." },
-    { word: "Turbine", pronunciation: "/ˈtɜː.baɪn/", meaning: "A machine with rotating blades driven by moving water, steam, or gas to produce power.", example: "Hydroelectric dams use powerful water turbines to generate clean electricity." },
-    { word: "Tensor", pronunciation: "/ˈten.sər/", meaning: "A mathematical multi-dimensional array of numbers used extensively in artificial intelligence.", example: "AI image models represent color photos as 3D number tensors (height, width, color)." },
-    { word: "Tensile", pronunciation: "/ˈten.saɪl/", meaning: "Relating to tension and the ability of a material to withstand pulling or stretching forces.", example: "Steel has high tensile strength, which is why it is used for crane cables." },
-    { word: "Throttle", pronunciation: "/ˈθrɒt.əl/", meaning: "A valve or lever that controls the flow of fuel or power to regulate an engine's speed.", example: "Pressing the car gas pedal opens the throttle to speed up the vehicle." },
-    { word: "Throughput", pronunciation: "/ˈθruː.pʊt/", meaning: "The actual amount of data or goods that a system successfully processes per second.", example: "High-speed SSD drives deliver incredible read throughput of over 5,000 MB per second." }
+    { word: "Transistor", pronunciation: "/trænˈzɪs.tər/", meaning: "A microscopic electronic switch that forms the building block of all CPUs.", example: "Modern phone processors contain over 15 billion microscopic transistors." },
+    { word: "Thermodynamics", pronunciation: "/ˌθɜː.məʊ.daɪˈnæm.ɪks/", meaning: "The science studying relations between heat, energy, work, and temperature.", example: "Refrigerators and car engines operate on the laws of thermodynamics." },
+    { word: "Torque", pronunciation: "/tɔːk/", meaning: "The twisting rotational force that causes an object or wheel to spin.", example: "Electric vehicles accelerate quickly because electric motors deliver instant torque." },
+    { word: "Topology", pronunciation: "/təˈpɒl.ə.dʒi/", meaning: "The geometric layout and connection pattern of devices in a network.", example: "A star network topology links all office PCs to one central switch." },
+    { word: "Telemetry", pronunciation: "/təˈlem.ə.tri/", meaning: "Automatically measuring sensor data and sending it wirelessly to base.", example: "Spacecraft beam telemetry data on speed and fuel levels back to mission control." },
+    { word: "Turbine", pronunciation: "/ˈtɜː.baɪn/", meaning: "A machine with rotating blades driven by water, steam, or gas to make power.", example: "Hydroelectric dams use water turbines to generate clean electricity." },
+    { word: "Tensor", pronunciation: "/ˈten.sər/", meaning: "A multi-dimensional grid array of numbers used in AI and machine learning.", example: "AI image models store photos as 3D number tensors (height, width, color)." },
+    { word: "Tensile", pronunciation: "/ˈten.saɪl/", meaning: "Relating to tension and the ability to withstand pulling forces without breaking.", example: "Steel has high tensile strength, which is why it is used in suspension bridges." },
+    { word: "Throttle", pronunciation: "/ˈθrɒt.əl/", meaning: "A valve controlling the flow of power or fuel to regulate engine speed.", example: "Pressing the gas pedal opens the engine throttle to speed up the car." },
+    { word: "Throughput", pronunciation: "/ˈθruː.pʊt/", meaning: "The actual amount of data or tasks processed successfully per second.", example: "Fast SSD drives deliver data throughput of over 5,000 megabytes per second." }
   ],
 
   U: [
-    { word: "Ultrasound", pronunciation: "/ˈʌl.trə.saʊnd/", meaning: "High-pitched sound waves above human hearing (over 20,000 Hz) used for medical scans and sensors.", example: "Doctors use safe ultrasound scans to view unborn babies during pregnancy." },
-    { word: "Unicast", pronunciation: "/ˈjuː.nɪ.kɑːst/", meaning: "Sending internet data directly from one specific sender to one specific receiver.", example: "Standard one-on-one web browsing sessions use unicast packet delivery." },
-    { word: "Ubiquitous", pronunciation: "/juːˈbɪk.wɪ.təs/", meaning: "Found everywhere at all times; in computing, having technology embedded all around us.", example: "Smartphones have made high-speed internet access ubiquitous around the world." },
-    { word: "Upstream", pronunciation: "/ˈʌp.striːm/", meaning: "Data traveling from your computer up to the internet (uploading files).", example: "Fiber connections provide fast upstream speeds for uploading large video files." },
-    { word: "Unicode", pronunciation: "/ˈjuː.nɪ.kəʊd/", meaning: "The global international standard that assigns a unique number to every letter, symbol, and emoji.", example: "Unicode ensures emojis and international alphabets display correctly on all phones." },
-    { word: "Ultimate", pronunciation: "/ˈʌl.tɪ.mət/", meaning: "The highest maximum stress a material or beam can take before it breaks completely.", example: "Cables are tested to find their ultimate breaking strength for safety ratings." },
-    { word: "Underflow", pronunciation: "/ˈʌn.də.fləʊ/", meaning: "When a calculated number is so microscopic that a computer memory register rounds it to zero.", example: "Scientific simulation software uses double precision math to prevent number underflow." },
-    { word: "Ultrasonic", pronunciation: "/ˌʌl.trəˈsɒn.ɪk/", meaning: "Involving sound vibrations above human hearing, used in sensors, cleaners, and sonars.", example: "Car parking sensors use ultrasonic chirps to detect how close you are to a wall." },
-    { word: "Uncertainty", pronunciation: "/ʌnˈsɜː.tən.ti/", meaning: "The small estimated range of margin within which a true measurement reading lies.", example: "Every scientific measurement includes a plus-or-minus uncertainty value." },
-    { word: "Unit", pronunciation: "/ˈjuː.nɪt/", meaning: "A standard quantity used to measure physical properties like meters, seconds, and kilograms.", example: "Scientists always include the correct measurement unit next to every calculated number." }
+    { word: "Ultrasound", pronunciation: "/ˈʌl.trə.saʊnd/", meaning: "High-frequency sound waves above human hearing used for medical scans.", example: "Doctors use safe ultrasound scans to monitor babies during pregnancy." },
+    { word: "Unicast", pronunciation: "/ˈjuː.nɪ.kɑːst/", meaning: "Sending network data directly from one specific sender to one receiver.", example: "Standard one-on-one web browsing sessions use unicast transmission." },
+    { word: "Ubiquitous", pronunciation: "/juːˈbɪk.wɪ.təs/", meaning: "Present and found everywhere; technology embedded in everyday life.", example: "Smartphones have made high-speed internet access ubiquitous globally." },
+    { word: "Upstream", pronunciation: "/ˈʌp.striːm/", meaning: "Data traveling from your device up to the internet (uploading).", example: "Fast upstream speeds allow smooth video uploading to the cloud." },
+    { word: "Unicode", pronunciation: "/ˈjuː.nɪ.kəʊd/", meaning: "The global international standard assigning unique numbers to all letters and emojis.", example: "Unicode ensures emojis and global alphabets display correctly everywhere." },
+    { word: "Ultimate", pronunciation: "/ˈʌl.tɪ.mət/", meaning: "The highest maximum stress a material can take before breaking completely.", example: "Cables are tested to find their ultimate breaking strength for safety." },
+    { word: "Underflow", pronunciation: "/ˈʌn.də.fləʊ/", meaning: "When a calculated number is so tiny that computer memory rounds it to zero.", example: "Scientific simulation software uses high-precision math to prevent underflow." },
+    { word: "Ultrasonic", pronunciation: "/ˌʌl.trəˈsɒn.ɪk/", meaning: "Sound frequencies above human hearing used in parking sensors and sonar.", example: "Car parking sensors use ultrasonic chirps to detect nearby obstacles." },
+    { word: "Uncertainty", pronunciation: "/ʌnˈsɜː.tən.ti/", meaning: "The small estimated margin of error within which a true measurement lies.", example: "Scientific measurements always include a plus-or-minus uncertainty value." },
+    { word: "Unit", pronunciation: "/ˈjuː.nɪt/", meaning: "A standard quantity used to measure physical properties like meters and seconds.", example: "Engineers always write the correct measurement unit next to calculated numbers." }
   ],
 
   V: [
-    { word: "Voltage", pronunciation: "/ˈvəʊl.tɪdʒ/", meaning: "The electrical pushing pressure that forces electric current to flow through a wire, measured in Volts.", example: "Standard USB ports provide a steady 5 volts of electrical power for charging phones." },
-    { word: "Vector", pronunciation: "/ˈvek.tər/", meaning: "A quantity in math and physics that has both a size (magnitude) and a direction.", example: "Wind velocity is a vector because it has both a speed (30 km/h) and a direction (North)." },
-    { word: "Viscosity", pronunciation: "/vɪˈskɒs.ə.ti/", meaning: "A liquid's thickness and resistance to flowing smoothly (honey has high viscosity; water has low).", example: "Motor oil has the right viscosity to coat engine parts without dripping away." },
-    { word: "Virtualization", pronunciation: "/ˌvɜː.tʃu.əl.aɪˈzeɪ.ʃən/", meaning: "Running multiple virtual software computers inside a single physical host computer.", example: "Cloud servers use virtualization to run multiple websites safely on one big machine." },
-    { word: "Valve", pronunciation: "/vælv/", meaning: "A mechanical device that opens, closes, or throttles to control the flow of liquid or gas in a pipe.", example: "Turning the bathroom water faucet opens a valve to let water flow." },
-    { word: "Vibration", pronunciation: "/vaɪˈbreɪ.ʃən/", meaning: "A rapid back-and-forth shaking motion around a central position.", example: "Your phone uses a tiny spinning motor with an off-center weight to create silent vibrations." },
-    { word: "Variance", pronunciation: "/ˈveə.ri.əns/", meaning: "A statistical number showing how spread out a group of numbers is from their average value.", example: "Low variance in factory part sizes means manufacturing is precise and consistent." },
-    { word: "Velocity", pronunciation: "/vəˈlɒs.ə.ti/", meaning: "The speed of a moving object combined with its specific direction of travel.", example: "The airplane was flying at a cruising velocity of 850 km/h heading East." },
-    { word: "Volatile", pronunciation: "/ˈvɒl.ə.taɪl/", meaning: "Computer memory (like RAM) that loses all its stored data when the power is turned off.", example: "RAM is volatile memory, while your SSD storage holds files permanently." },
-    { word: "Voltmeter", pronunciation: "/ˈvəʊltˌmiː.tər/", meaning: "An electronic tool used to measure electrical voltage between two points in a circuit.", example: "The technician used a digital voltmeter to check if the car battery had 12 volts." }
+    { word: "Voltage", pronunciation: "/ˈvəʊl.tɪdʒ/", meaning: "The electrical pushing pressure that forces electric current through wires.", example: "USB ports supply 5 volts of electrical power for charging smartphones." },
+    { word: "Vector", pronunciation: "/ˈvek.tər/", meaning: "A quantity in math and physics that has both a size (magnitude) and a direction.", example: "Wind velocity is a vector because it has both a speed and a direction." },
+    { word: "Viscosity", pronunciation: "/vɪˈskɒs.ə.ti/", meaning: "A liquid's thickness and resistance to flowing (honey has high viscosity).", example: "Motor oil has the right viscosity to coat engine parts smoothly." },
+    { word: "Virtualization", pronunciation: "/ˌvɜː.tʃu.əl.aɪˈzeɪ.ʃən/", meaning: "Running multiple virtual software computers inside one physical machine.", example: "Cloud servers use virtualization to run multiple websites safely together." },
+    { word: "Valve", pronunciation: "/vælv/", meaning: "A mechanical device that opens or closes to control fluid flow in pipes.", example: "Turning the sink water faucet opens a valve to allow water to flow." },
+    { word: "Vibration", pronunciation: "/vaɪˈbreɪ.ʃən/", meaning: "A rapid back-and-forth shaking motion around a central position.", example: "Smartphones use small vibrating motors for silent call notifications." },
+    { word: "Variance", pronunciation: "/ˈveə.ri.əns/", meaning: "A statistical number showing how spread out numbers are from the average.", example: "Low variance in factory part sizes means manufacturing is consistent." },
+    { word: "Velocity", pronunciation: "/vəˈlɒs.ə.ti/", meaning: "The speed of a moving object combined with its specific travel direction.", example: "The airplane was flying at a cruising velocity of 850 km/h heading East." },
+    { word: "Volatile", pronunciation: "/ˈvɒl.ə.taɪl/", meaning: "Computer memory (like RAM) that clears when the power is turned off.", example: "RAM is volatile memory, while SSD storage saves files permanently." },
+    { word: "Voltmeter", pronunciation: "/ˈvəʊltˌmiː.tər/", meaning: "An electronic tool used to measure electrical voltage in a circuit.", example: "The technician used a digital voltmeter to check the 12V car battery." }
   ],
 
   W: [
-    { word: "Wavelength", pronunciation: "/ˈweɪv.leŋθ/", meaning: "The distance from the peak of one wave to the peak of the very next wave.", example: "Red light has a longer wavelength than violet light." },
-    { word: "Waveform", pronunciation: "/ˈweɪv.fɔːm/", meaning: "The visual graph shape of a sound, light, or electrical wave over time.", example: "Audio editors show the sound waveform so you can see volume changes visually." },
-    { word: "Wattage", pronunciation: "/ˈwɒt.ɪdʒ/", meaning: "The amount of electrical power consumed or produced by a device, measured in Watts.", example: "LED bulbs give the same brightness as old bulbs while using only 10 watts of power." },
-    { word: "Wear", pronunciation: "/weər/", meaning: "The gradual loss of surface material and damage caused by friction and daily rubbing.", example: "Tire tread wear shows when it is time to replace car tires for safety." },
-    { word: "Webhook", pronunciation: "/ˈweb.hʊk/", meaning: "An automated message sent from one website to another when a specific event happens.", example: "When a customer buys an item, a webhook alerts the shipping department automatically." },
-    { word: "Wireless", pronunciation: "/ˈwaɪə.ləs/", meaning: "Sending and receiving information through radio waves without needing connecting cables.", example: "Wireless headphones connect to your phone seamlessly over Bluetooth." },
-    { word: "Wireframe", pronunciation: "/ˈwaɪə.freɪm/", meaning: "A simple visual outline sketch of an app or website screen layout before designing.", example: "Designers draw wireframes on paper to plan button placements before writing code." },
-    { word: "Workbench", pronunciation: "/ˈwɜːk.bentʃ/", meaning: "A sturdy table equipped with tools and meters for assembling and testing projects.", example: "The electronics workbench had a soldering iron, magnifying lamp, and multimeter." },
-    { word: "Workflow", pronunciation: "/ˈwɜːk.fləʊ/", meaning: "The sequence of organized steps a project follows from start to finish.", example: "Automated testing is part of the development workflow before releasing app updates." },
-    { word: "Windlass", pronunciation: "/ˈwɪnd.ləs/", meaning: "A mechanical winch drum with a crank used to pull up heavy weights like ship anchors.", example: "Sailors use an electric windlass to haul the heavy anchor up from the ocean bed." }
+    { word: "Wavelength", pronunciation: "/ˈweɪv.leŋθ/", meaning: "The distance from the peak of one wave to the peak of the next wave.", example: "Red light has a longer wavelength than violet light in the spectrum." },
+    { word: "Waveform", pronunciation: "/ˈweɪv.fɔːm/", meaning: "The visual wave graph shape of sound, light, or electrical signals over time.", example: "Audio editors display the sound waveform to view volume levels visually." },
+    { word: "Wattage", pronunciation: "/ˈwɒt.ɪdʒ/", meaning: "The amount of electrical power used or produced by a device, in Watts.", example: "LED bulbs give bright room lighting while consuming only 10 watts." },
+    { word: "Wear", pronunciation: "/weər/", meaning: "The gradual loss of surface material caused by daily friction and rubbing.", example: "Tire tread wear indicates when it is time to replace car tires." },
+    { word: "Webhook", pronunciation: "/ˈweb.hʊk/", meaning: "An automated message sent from one website to another when an event happens.", example: "When an order is placed, a webhook alerts the warehouse automatically." },
+    { word: "Wireless", pronunciation: "/ˈwaɪə.ləs/", meaning: "Transmitting information through radio waves without physical cables.", example: "Wireless headphones connect to your phone seamlessly over Bluetooth." },
+    { word: "Wireframe", pronunciation: "/ˈwaɪə.freɪm/", meaning: "A simple visual outline sketch of an app screen layout before coding.", example: "Designers draw wireframes to plan button placements clearly." },
+    { word: "Workbench", pronunciation: "/ˈwɜːk.bentʃ/", meaning: "A sturdy table equipped with tools and meters for testing projects.", example: "The electronics workbench had a soldering iron, magnifying lamp, and meter." },
+    { word: "Workflow", pronunciation: "/ˈwɜːk.fləʊ/", meaning: "The sequence of organized steps a project follows from start to finish.", example: "Automated testing is part of the development workflow before releasing updates." },
+    { word: "Windlass", pronunciation: "/ˈwɪnd.ləs/", meaning: "A mechanical winch drum used to haul up heavy weights like ship anchors.", example: "Sailors use an electric windlass to pull the heavy anchor up easily." }
   ],
 
   X: [
-    { word: "XOR", pronunciation: "/ˌeks.ɔːr/", meaning: "Exclusive OR; a logic gate that turns ON only when one input is true, but not both.", example: "XOR logic gates are used in digital adders to calculate binary addition." },
-    { word: "X-Ray", pronunciation: "/ˈeks.reɪ/", meaning: "A powerful, invisible form of light wave that can pass through skin to show bones inside.", example: "Doctors take X-ray images to check if an injured arm has broken bones." },
-    { word: "Xenon", pronunciation: "/ˈzen.ɒn/", meaning: "A noble gas element that produces a bright white glow when electricity passes through it.", example: "Luxury car headlights and camera flash tubes use xenon gas for bright white illumination." },
-    { word: "XML", pronunciation: "/ˌeks.emˈel/", meaning: "A structured text format with custom tags used to store and transfer data between systems.", example: "Android apps store screen layout designs inside formatted XML files." },
-    { word: "Xylene", pronunciation: "/ˈzaɪ.liːn/", meaning: "A clear industrial chemical solvent used in paints, cleaning, and manufacturing plastics.", example: "Xylene is used by technicians to clean printed circuit boards and remove adhesives." },
-    { word: "Xerography", pronunciation: "/zɪəˈrɒɡ.rə.fi/", meaning: "The dry photocopying process that uses static electricity and toner powder to make paper copies.", example: "Office photocopiers and laser printers use xerography to print documents quickly." },
-    { word: "Crossbar", pronunciation: "/ˈkrɒs.bɑːr/", meaning: "A grid of crossing switches enabling any incoming line to connect with any outgoing line.", example: "Telephone exchanges originally used crossbar switch grids to route phone calls." },
-    { word: "Xylometer", pronunciation: "/zaɪˈlɒm.ɪ.tər/", meaning: "A scientific tool that measures the volume and density of wood by measuring displaced water.", example: "Foresters use xylometers to determine wood density and moisture content." },
-    { word: "X-Axis", pronunciation: "/ˈeks.æk.sɪs/", meaning: "The horizontal line (left-to-right) on a graph or 2D coordinate grid.", example: "On line charts, time is usually plotted horizontally along the X-axis." },
-    { word: "Xylem", pronunciation: "/ˈzaɪ.ləm/", meaning: "The internal plant veins that transport water from roots up to leaves, studied for microfluidic chips.", example: "Engineers study xylem structures to design energy-free water pumping channels." }
+    { word: "XOR", pronunciation: "/ˌeks.ɔːr/", meaning: "Exclusive OR; a logic gate outputting true only when one input is true.", example: "XOR logic gates are used inside digital computer adders for binary math." },
+    { word: "X-Ray", pronunciation: "/ˈeks.reɪ/", meaning: "A powerful form of light wave that passes through skin to reveal bones.", example: "Doctors take X-ray scans to check if an injured arm has broken bones." },
+    { word: "Xenon", pronunciation: "/ˈzen.ɒn/", meaning: "A noble gas that gives a bright white glow when electric current passes.", example: "High-end car headlights use xenon gas for bright white illumination." },
+    { word: "XML", pronunciation: "/ˌeks.emˈel/", meaning: "A structured text format with custom tags used to store and transfer data.", example: "Android apps store screen layout designs inside formatted XML files." },
+    { word: "Xylene", pronunciation: "/ˈzaɪ.liːn/", meaning: "A clear industrial solvent used in paints and cleaning circuit boards.", example: "Technicians use xylene to clean printed circuit boards and adhesives." },
+    { word: "Xerography", pronunciation: "/zɪəˈrɒɡ.rə.fi/", meaning: "The dry photocopying process using static electricity and toner powder.", example: "Office photocopiers and laser printers use xerography to copy pages." },
+    { word: "Crossbar", pronunciation: "/ˈkrɒs.bɑːr/", meaning: "A grid of crossing switches connecting any input line to any output line.", example: "Telephone networks originally used crossbar switch grids to route calls." },
+    { word: "Xylometer", pronunciation: "/zaɪˈlɒm.ɪ.tər/", meaning: "A tool measuring the volume of wood samples through displaced water.", example: "Foresters use xylometers to determine wood density and moisture." },
+    { word: "X-Axis", pronunciation: "/ˈeks.æk.sɪs/", meaning: "The horizontal line (left to right) on a graph or 2D coordinate grid.", example: "On line charts, time is plotted horizontally along the X-axis." },
+    { word: "Xylem", pronunciation: "/ˈzaɪ.ləm/", meaning: "Plant veins transporting water from roots to leaves, studied for microchips.", example: "Engineers study xylem structures to design energy-free cooling channels." }
   ],
 
   Y: [
-    { word: "Yield", pronunciation: "/jiːld/", meaning: "The amount of stress at which a material stops springing back and bends permanently.", example: "Steel beams are designed so building loads never reach the metal's yield point." },
-    { word: "Yoke", pronunciation: "/jəʊk/", meaning: "A structural cross-piece or frame that holds parts together or guides magnetic fields.", example: "Airplane control yokes allow pilots to control climb, descent, and turns." },
-    { word: "Yottabyte", pronunciation: "/ˈjɒt.ə.baɪt/", meaning: "An astronomical unit of data storage equal to one trillion terabytes (10^24 bytes).", example: "All the information created by humanity combined is approaching yottabytes." },
-    { word: "Yaw", pronunciation: "/jɔː/", meaning: "The twisting rotation of an airplane, car, or drone to the left or right around its vertical axis.", example: "Drone pilots adjust the yaw stick to rotate the camera left or right in place." },
-    { word: "Y-Axis", pronunciation: "/ˈwaɪ.æk.sɪs/", meaning: "The vertical line (bottom-to-top) on a mathematical graph or 2D coordinate plane.", example: "On a temperature chart, heat levels are plotted vertically on the Y-axis." },
-    { word: "Ytterbium", pronunciation: "/ɪˈtɜː.bi.əm/", meaning: "A rare chemical metal element used inside high-power industrial laser cutters.", example: "Ytterbium fiber lasers produce intense cutting beams that slice metal like butter." },
-    { word: "YAML", pronunciation: "/ˈjæm.əl/", meaning: "A clean, human-friendly text format used to write configuration settings for programs.", example: "Developers write simple YAML files to configure how websites are hosted in the cloud." },
-    { word: "Yagi", pronunciation: "/ˈjɑː.ɡi/", meaning: "A popular directional antenna made of metal rods that focuses radio signals in one direction.", example: "Rooftop TV antennas with horizontal crossbars are classic Yagi antennas." },
-    { word: "Yielding", pronunciation: "/ˈjiːl.dɪŋ/", meaning: "The process of a structural material bending under high stress without snapping instantly.", example: "Steel rebar yielding gives a visual warning before concrete structures fail." },
-    { word: "Y-Delta", pronunciation: "/ˌwaɪˈdel.tə/", meaning: "A starter wiring method used to start big electric motors smoothly without blowing fuses.", example: "Factory water pumps use Y-Delta starters to reduce starting power surges." }
+    { word: "Yield", pronunciation: "/jiːld/", meaning: "The stress level at which a material stops springing back and bends permanently.", example: "Steel beams are designed so building loads never reach the yield point." },
+    { word: "Yoke", pronunciation: "/jəʊk/", meaning: "A structural cross-piece connecting parts together or guiding magnetic fields.", example: "Airplane control yokes allow pilots to control climb, descent, and turns." },
+    { word: "Yottabyte", pronunciation: "/ˈjɒt.ə.baɪt/", meaning: "A massive unit of data storage equal to one trillion terabytes (10^24 bytes).", example: "All digital data created by humanity combined is approaching yottabytes." },
+    { word: "Yaw", pronunciation: "/jɔː/", meaning: "The twisting rotation of a plane or drone to left or right around its vertical axis.", example: "Drone pilots adjust the yaw stick to rotate the camera left or right." },
+    { word: "Y-Axis", pronunciation: "/ˈwaɪ.æk.sɪs/", meaning: "The vertical line (bottom to top) on a math graph or coordinate plane.", example: "On a temperature graph, heat degrees are plotted vertically on the Y-axis." },
+    { word: "Ytterbium", pronunciation: "/ɪˈtɜː.bi.əm/", meaning: "A rare chemical metal element used inside high-power industrial lasers.", example: "Ytterbium fiber lasers produce intense cutting beams slicing thick metal." },
+    { word: "YAML", pronunciation: "/ˈjæm.əl/", meaning: "A clean, human-friendly text format used to write configuration settings.", example: "Developers write simple YAML files to configure cloud server hosting." },
+    { word: "Yagi", pronunciation: "/ˈjɑː.ɡi/", meaning: "A directional antenna made of metal rods focusing radio signals in one path.", example: "Rooftop TV antennas with horizontal crossbars are classic Yagi antennas." },
+    { word: "Yielding", pronunciation: "/ˈjiːl.dɪŋ/", meaning: "The process of a structural material bending under stress without snapping.", example: "Steel rebar yielding gives a visual safety warning before concrete fails." },
+    { word: "Y-Delta", pronunciation: "/ˌwaɪˈdel.tə/", meaning: "A starter wiring method to start big electric motors without blowing fuses.", example: "Factory water pumps use Y-Delta starters to reduce starting power surges." }
   ],
 
   Z: [
-    { word: "Zener", pronunciation: "/ˈziː.nər/", meaning: "A special semiconductor diode that holds a steady, reliable voltage when connected in reverse.", example: "Zener diodes provide clean reference voltages to protect delicate electronics." },
-    { word: "Zero-Day", pronunciation: "/ˌzɪə.rəʊˈdeɪ/", meaning: "A newly discovered software bug or security vulnerability that has no existing patch yet.", example: "Security researchers work fast to fix zero-day bugs before hackers can exploit them." },
-    { word: "Impedance", pronunciation: "/ɪmˈpiː.dəns/", meaning: "Denoted by symbol 'Z'; the total complex resistance of an alternating current circuit.", example: "Audio engineers match speaker impedance Z to get maximum clear sound output." },
-    { word: "Zenith", pronunciation: "/ˈzen.ɪθ/", meaning: "The highest point directly above an observer in the sky (elevation angle of 90 degrees).", example: "At noon in summer, the sun reaches near its highest zenith in the sky." },
-    { word: "Zinc", pronunciation: "/zɪŋk/", meaning: "A protective metal element used to coat steel and make household batteries.", example: "Galvanized metal buckets are dipped in molten zinc to prevent outdoor rusting." },
-    { word: "Zip", pronunciation: "/zɪp/", meaning: "A popular compressed file format that shrinks file sizes and packages multiple files together.", example: "Sending multiple project documents inside a Zip file makes emailing fast and easy." },
-    { word: "Zettabyte", pronunciation: "/ˈzet.ə.baɪt/", meaning: "A massive unit of digital data storage equal to one billion terabytes (10^21 bytes).", example: "Annual global internet traffic now exceeds multiple zettabytes of data." },
-    { word: "Zirconium", pronunciation: "/zɜːˈkəʊ.ni.əm/", meaning: "A strong, heat-resistant metal used inside nuclear power stations and fake diamond jewelry.", example: "Zirconium alloys house nuclear fuel safely because they withstand extreme heat." },
-    { word: "Zoom", pronunciation: "/zuːm/", meaning: "Changing a camera lens focal length to make faraway objects look close up.", example: "Camera zoom lenses let photographers take clear photos of distant wildlife." },
-    { word: "Zero-Crossing", pronunciation: "/ˌzɪə.rəʊˈkrɒs.ɪŋ/", meaning: "The exact moment when an alternating electrical wave crosses the zero-volt line.", example: "Dimmer switches switch power at the zero-crossing point to prevent electrical buzzing." }
+    { word: "Zener", pronunciation: "/ˈziː.nər/", meaning: "A special semiconductor diode holding a steady voltage in reverse bias.", example: "Zener diodes provide clean reference voltages to protect delicate chips." },
+    { word: "Zero-Day", pronunciation: "/ˌzɪə.rəʊˈdeɪ/", meaning: "A newly discovered software bug that has no existing security patch yet.", example: "Security researchers work fast to fix zero-day bugs before hackers exploit them." },
+    { word: "Impedance", pronunciation: "/ɪmˈpiː.dəns/", meaning: "Represented by symbol 'Z'; the total complex resistance of an AC circuit.", example: "Audio engineers match speaker impedance Z to get maximum clear sound." },
+    { word: "Zenith", pronunciation: "/ˈzen.ɪθ/", meaning: "The highest point directly overhead in the sky (elevation angle of 90°).", example: "At noon in summer, the sun reaches near its highest zenith in the sky." },
+    { word: "Zinc", pronunciation: "/zɪŋk/", meaning: "A protective metal element used to coat steel and prevent rusting.", example: "Galvanized metal buckets are dipped in molten zinc to prevent rust." },
+    { word: "Zip", pronunciation: "/zɪp/", meaning: "A popular compressed file format shrinking file sizes and bundling files.", example: "Sending multiple project documents inside a Zip file makes emailing fast." },
+    { word: "Zettabyte", pronunciation: "/ˈzet.ə.baɪt/", meaning: "A giant unit of digital data storage equal to one billion terabytes (10^21 bytes).", example: "Annual global internet traffic now exceeds multiple zettabytes of data." },
+    { word: "Zirconium", pronunciation: "/zɜːˈkəʊ.ni.əm/", meaning: "A strong, heat-resistant metal used inside nuclear power stations.", example: "Zirconium alloys house nuclear fuel safely because they withstand extreme heat." },
+    { word: "Zoom", pronunciation: "/zuːm/", meaning: "Changing camera lens focal length to make faraway objects appear close.", example: "Camera zoom lenses let photographers take sharp photos of distant wildlife." },
+    { word: "Zero-Crossing", pronunciation: "/ˌzɪə.rəʊˈkrɒs.ɪŋ/", meaning: "The exact moment when an alternating AC wave intersects the zero-volt line.", example: "Light dimmers switch power at the zero-crossing point to prevent electrical buzz." }
   ]
 };
 
@@ -361,13 +361,12 @@ const STORAGE_KEYS = {
 
 const state = {
   onboardingCompleted: false,
-  masteredWords: new Set(), // Keys formatted as `${letter}_${index}` e.g. "A_0"
+  masteredWords: new Set(),
   bookmarks: new Set(),
   currentLetter: 'A',
   currentIndex: 0,
   currentScreen: 'home',
-  searchQuery: '',
-  isSpeaking: false
+  searchQuery: ''
 };
 
 function initStorage() {
@@ -375,19 +374,13 @@ function initStorage() {
     state.onboardingCompleted = localStorage.getItem(STORAGE_KEYS.ONBOARDING) === 'true';
 
     const savedMastered = localStorage.getItem(STORAGE_KEYS.MASTERED_WORDS);
-    if (savedMastered) {
-      state.masteredWords = new Set(JSON.parse(savedMastered));
-    }
+    if (savedMastered) state.masteredWords = new Set(JSON.parse(savedMastered));
 
     const savedBookmarks = localStorage.getItem(STORAGE_KEYS.BOOKMARKS);
-    if (savedBookmarks) {
-      state.bookmarks = new Set(JSON.parse(savedBookmarks));
-    }
+    if (savedBookmarks) state.bookmarks = new Set(JSON.parse(savedBookmarks));
 
     const savedLetter = localStorage.getItem(STORAGE_KEYS.CURRENT_LETTER);
-    if (savedLetter && TECHNICAL_VOCABULARY[savedLetter]) {
-      state.currentLetter = savedLetter;
-    }
+    if (savedLetter && TECHNICAL_VOCABULARY[savedLetter]) state.currentLetter = savedLetter;
 
     const savedIndex = localStorage.getItem(STORAGE_KEYS.CURRENT_INDEX);
     if (savedIndex !== null) {
@@ -397,7 +390,7 @@ function initStorage() {
       }
     }
   } catch (err) {
-    console.warn('Storage init issue:', err);
+    console.warn('Storage issue:', err);
   }
 }
 
@@ -414,7 +407,7 @@ function saveState() {
 }
 
 /* ==========================================================================
-   3. WEB SPEECH API — PRONUNCIATION ENGINE
+   3. SPEECH AUDIO ENGINE
    ========================================================================== */
 class AudioEngine {
   constructor() {
@@ -425,19 +418,15 @@ class AudioEngine {
 
   initVoices() {
     if (!this.synth) return;
-
     const findVoice = () => {
       const voices = this.synth.getVoices();
       if (!voices || voices.length === 0) return;
-
       this.selectedVoice =
         voices.find(v => v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Daniel'))) ||
         voices.find(v => v.lang === 'en-US') ||
-        voices.find(v => v.lang === 'en-GB') ||
         voices.find(v => v.lang.startsWith('en')) ||
         voices[0];
     };
-
     findVoice();
     if (this.synth.onvoiceschanged !== undefined) {
       this.synth.onvoiceschanged = findVoice;
@@ -449,38 +438,21 @@ class AudioEngine {
       showToast('Audio speech is not supported in this browser.');
       return;
     }
-
     try {
       this.synth.cancel();
-
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = 0.88; // Clear, comfortable speaking rate
+      utterance.rate = 0.88;
       utterance.pitch = 1.0;
       utterance.lang = 'en-US';
+      if (this.selectedVoice) utterance.voice = this.selectedVoice;
 
-      if (this.selectedVoice) {
-        utterance.voice = this.selectedVoice;
-      }
-
-      utterance.onstart = () => {
-        state.isSpeaking = true;
-        if (typeof onStart === 'function') onStart();
-      };
-
-      utterance.onend = () => {
-        state.isSpeaking = false;
-        if (typeof onEnd === 'function') onEnd();
-      };
-
-      utterance.onerror = () => {
-        state.isSpeaking = false;
-        if (typeof onEnd === 'function') onEnd();
-      };
+      utterance.onstart = () => { if (typeof onStart === 'function') onStart(); };
+      utterance.onend = () => { if (typeof onEnd === 'function') onEnd(); };
+      utterance.onerror = () => { if (typeof onEnd === 'function') onEnd(); };
 
       this.synth.speak(utterance);
     } catch (err) {
-      console.warn('Speech synthesis error:', err);
-      state.isSpeaking = false;
+      console.warn('Audio speak error:', err);
       if (typeof onEnd === 'function') onEnd();
     }
   }
@@ -491,7 +463,6 @@ class AudioEngine {
       this.synth.cancel();
       const utterance = new SpeechSynthesisUtterance(char);
       utterance.rate = 0.95;
-      utterance.pitch = 1.05;
       utterance.lang = 'en-US';
       if (this.selectedVoice) utterance.voice = this.selectedVoice;
       this.synth.speak(utterance);
@@ -507,7 +478,6 @@ const audioEngine = new AudioEngine();
    4. DOM MAPPINGS
    ========================================================================== */
 const DOM = {
-  // Screens
   onboarding: document.getElementById('screen-onboarding'),
   viewHome: document.getElementById('view-home'),
   viewLearn: document.getElementById('view-learn'),
@@ -516,19 +486,15 @@ const DOM = {
   viewSearch: document.getElementById('view-search'),
   viewProgress: document.getElementById('view-progress'),
 
-  // Navigation
   ribbonContainer: document.getElementById('ribbon-letters-container'),
-  desktopNavTabs: document.querySelectorAll('.desktop-nav-tabs .nav-tab-btn'),
-  mobileNavTabs: document.querySelectorAll('.mobile-bottom-bar .mobile-tab-btn'),
+  desktopNavTabs: document.querySelectorAll('.desktop-nav .nav-btn'),
+  mobileNavTabs: document.querySelectorAll('.mobile-bottom-nav .mobile-nav-btn'),
   headerBranding: document.getElementById('header-branding-btn'),
   btnHeaderSearch: document.getElementById('btn-header-search'),
 
-  // Onboarding Buttons
   btnOnboardingStart: document.getElementById('btn-onboarding-start'),
-  btnOnboardingContinue: document.getElementById('btn-onboarding-continue'),
   btnOnboardingSkip: document.getElementById('btn-onboarding-skip'),
 
-  // Home Screen Elements
   homeContinueCard: document.getElementById('home-continue-card'),
   homeContinueLetterBadge: document.getElementById('home-continue-letter-badge'),
   homeContinueWordPreview: document.getElementById('home-continue-word-preview'),
@@ -538,20 +504,16 @@ const DOM = {
   homeStatLearned: document.getElementById('home-stat-learned'),
   homeStatRemaining: document.getElementById('home-stat-remaining'),
   homeStatPercent: document.getElementById('home-stat-percent'),
-  btnHomeSeeAllLearn: document.getElementById('btn-home-see-all-learn'),
   homeAlphabetQuickGrid: document.getElementById('home-alphabet-quick-grid'),
 
-  // Learn Screen Elements
   learnAlphabetCardsList: document.getElementById('learn-alphabet-cards-list'),
 
-  // Word List Screen Elements
   btnWordlistBack: document.getElementById('btn-wordlist-back'),
   wordlistTitle: document.getElementById('wordlist-title'),
   wordlistProgressBadge: document.getElementById('wordlist-progress-badge'),
   btnWordlistStartLearning: document.getElementById('btn-wordlist-start-learning'),
   wordItemsContainer: document.getElementById('word-items-container'),
 
-  // Word Learn Screen Elements
   btnLearnScreenBack: document.getElementById('btn-learn-screen-back'),
   learnCounterText: document.getElementById('learn-counter-text'),
   learnProgressFill: document.getElementById('learn-progress-fill'),
@@ -571,13 +533,11 @@ const DOM = {
   btnLearnPrev: document.getElementById('btn-learn-prev'),
   btnLearnNext: document.getElementById('btn-learn-next'),
 
-  // Search Screen Elements
   searchInputField: document.getElementById('search-input-field'),
   btnSearchClear: document.getElementById('btn-search-clear'),
   searchResultsCount: document.getElementById('search-results-count'),
   searchResultsList: document.getElementById('search-results-list'),
 
-  // Progress Screen Elements
   progressCircleFill: document.getElementById('progress-circle-fill'),
   progressTotalPercent: document.getElementById('progress-total-percent'),
   progStatTotal: document.getElementById('prog-stat-total'),
@@ -586,7 +546,6 @@ const DOM = {
   progressAlphabetBreakdown: document.getElementById('progress-alphabet-breakdown'),
   btnResetProgress: document.getElementById('btn-reset-progress'),
 
-  // Modals & Toast
   modalCompletion: document.getElementById('modal-completion'),
   completionTitle: document.getElementById('completion-title'),
   completionMessage: document.getElementById('completion-message'),
@@ -671,7 +630,7 @@ function navigateTo(screenId, options = {}) {
 }
 
 /* ==========================================================================
-   5. QUICK A–Z RIBBON BAR
+   5. QUICK ALPHABET RIBBON (A THROUGH Z)
    ========================================================================== */
 function buildAlphabetRibbon() {
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -680,10 +639,10 @@ function buildAlphabetRibbon() {
   letters.forEach(char => {
     const btn = document.createElement('button');
     btn.type = 'button';
-    btn.className = 'ribbon-letter-pill';
+    btn.className = 'ribbon-btn';
     btn.textContent = char;
     btn.dataset.letter = char;
-    btn.setAttribute('aria-label', `Navigate to Letter ${char}`);
+    btn.setAttribute('aria-label', `Letter ${char}`);
 
     btn.addEventListener('click', () => {
       state.currentLetter = char;
@@ -697,7 +656,7 @@ function buildAlphabetRibbon() {
 }
 
 function updateRibbonHighlight() {
-  const ribbonBtns = DOM.ribbonContainer.querySelectorAll('.ribbon-letter-pill');
+  const ribbonBtns = DOM.ribbonContainer.querySelectorAll('.ribbon-btn');
   ribbonBtns.forEach(btn => {
     if (btn.dataset.letter === state.currentLetter) {
       btn.classList.add('active');
@@ -749,7 +708,6 @@ function getTotalProgress() {
    7. HOME SCREEN RENDERING
    ========================================================================== */
 function renderHomeScreen() {
-  // Continue Learning Card
   const currentWords = TECHNICAL_VOCABULARY[state.currentLetter] || TECHNICAL_VOCABULARY.A;
   const wordObj = currentWords[state.currentIndex] || currentWords[0];
   const letterProgress = getLetterProgress(state.currentLetter);
@@ -757,37 +715,32 @@ function renderHomeScreen() {
   DOM.homeContinueLetterBadge.textContent = `Letter ${state.currentLetter}`;
   DOM.homeContinueWordPreview.textContent = wordObj.word;
   DOM.homeContinueCounter.textContent = `Word ${state.currentIndex + 1} of ${currentWords.length}`;
-  DOM.homeContinueProgressBar.style.width = `${Math.max(3, letterProgress.percent)}%`;
+  DOM.homeContinueProgressBar.style.width = `${Math.max(4, letterProgress.percent)}%`;
 
-  // Quick Stats
   const totalProg = getTotalProgress();
   DOM.homeStatLearned.textContent = totalProg.learned;
   DOM.homeStatRemaining.textContent = totalProg.remaining;
   DOM.homeStatPercent.textContent = `${totalProg.percent}%`;
 
-  // 26 Alphabet Cards Grid (A to Z)
   DOM.homeAlphabetQuickGrid.innerHTML = '';
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
   letters.forEach(char => {
     const p = getLetterProgress(char);
     const card = document.createElement('div');
-    card.className = 'alphabet-card-clean';
+    card.className = 'alphabet-card';
     card.setAttribute('role', 'button');
     card.setAttribute('tabindex', '0');
-    card.setAttribute('aria-label', `Letter ${char}, ${p.learned} of ${p.total} learned`);
 
     card.innerHTML = `
-      <div class="card-top-info">
-        <div class="letter-avatar-box">${char}</div>
-        <span class="letter-percent-tag">${p.percent}%</span>
+      <div class="card-top">
+        <div class="letter-circle">${char}</div>
+        <span class="percent-badge">${p.percent}%</span>
       </div>
-      <div class="card-bottom-info">
-        <h4 class="letter-title-text">Letter ${char}</h4>
-        <span class="letter-word-count">${p.learned} / ${p.total} Words Learned</span>
-        <div class="letter-bar-track">
-          <div class="letter-bar-fill" style="width: ${p.percent}%"></div>
-        </div>
+      <h4 class="card-title">Letter ${char}</h4>
+      <span class="card-count">${p.learned} / ${p.total} Learned</span>
+      <div class="card-bar-bg">
+        <div class="card-bar-fill" style="width: ${p.percent}%"></div>
       </div>
     `;
 
@@ -801,7 +754,7 @@ function renderHomeScreen() {
 }
 
 /* ==========================================================================
-   8. LEARN SCREEN (A–Z HUB) RENDERING
+   8. LEARN SCREEN (A–Z HUB)
    ========================================================================== */
 function renderLearnHubScreen() {
   DOM.learnAlphabetCardsList.innerHTML = '';
@@ -810,22 +763,19 @@ function renderLearnHubScreen() {
   letters.forEach(char => {
     const p = getLetterProgress(char);
     const card = document.createElement('div');
-    card.className = 'alphabet-card-clean';
-    card.style.padding = '20px';
+    card.className = 'alphabet-card';
     card.setAttribute('role', 'button');
     card.setAttribute('tabindex', '0');
 
     card.innerHTML = `
-      <div class="card-top-info">
-        <div class="letter-avatar-box" style="width: 48px; height: 48px; font-size: 1.5rem;">${char}</div>
-        <span class="letter-percent-tag" style="color: var(--violet-700); font-weight: 800;">${p.percent}% Learned</span>
+      <div class="card-top">
+        <div class="letter-circle">${char}</div>
+        <span class="percent-badge" style="color: var(--violet-700);">${p.percent}%</span>
       </div>
-      <div class="card-bottom-info">
-        <h4 class="letter-title-text" style="font-size: 1.2rem;">Letter ${char} Words</h4>
-        <span class="letter-word-count">${p.learned} of ${p.total} Words Mastered</span>
-        <div class="letter-bar-track" style="height: 6px; margin-top: 6px;">
-          <div class="letter-bar-fill" style="width: ${p.percent}%"></div>
-        </div>
+      <h4 class="card-title">Letter ${char}</h4>
+      <span class="card-count">${p.learned} of ${p.total} Words Mastered</span>
+      <div class="card-bar-bg">
+        <div class="card-bar-fill" style="width: ${p.percent}%"></div>
       </div>
     `;
 
@@ -839,7 +789,7 @@ function renderLearnHubScreen() {
 }
 
 /* ==========================================================================
-   9. WORD LIST SCREEN RENDERING
+   9. WORD LIST SCREEN
    ========================================================================== */
 function renderWordListScreen() {
   const letter = state.currentLetter;
@@ -847,32 +797,32 @@ function renderWordListScreen() {
   const p = getLetterProgress(letter);
 
   DOM.wordlistTitle.textContent = `Letter ${letter} Words`;
-  DOM.wordlistProgressBadge.textContent = `${p.learned} of ${p.total} Learned`;
+  DOM.wordlistProgressBadge.textContent = `${p.learned} / ${p.total} Learned`;
   DOM.wordItemsContainer.innerHTML = '';
 
   words.forEach((item, index) => {
     const isLearned = state.masteredWords.has(`${letter}_${index}`);
 
     const card = document.createElement('div');
-    card.className = `clean-word-item ${isLearned ? 'learned' : ''}`;
+    card.className = `word-row-card ${isLearned ? 'is-learned' : ''}`;
     card.setAttribute('role', 'button');
     card.setAttribute('tabindex', '0');
 
     card.innerHTML = `
-      <div class="word-item-info">
-        <div class="word-item-header">
-          <h4 class="word-item-title">${item.word}</h4>
-          <span class="word-item-phonetic">${item.pronunciation}</span>
+      <div class="word-row-left">
+        <div class="word-row-head">
+          <h4 class="word-row-title">${item.word}</h4>
+          <span class="word-row-phonetic">${item.pronunciation}</span>
         </div>
-        <p class="word-item-meaning">${item.meaning}</p>
+        <p class="word-row-meaning">${item.meaning}</p>
       </div>
-      <button type="button" class="btn-speaker-mini" aria-label="Listen to ${item.word}">
-        <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-speaker"></use></svg>
+      <button type="button" class="btn-speaker-pill" aria-label="Listen">
+        <svg viewBox="0 0 24 24" width="16" height="16"><use href="#icon-speaker"></use></svg>
       </button>
     `;
 
     card.addEventListener('click', (e) => {
-      if (e.target.closest('.btn-speaker-mini')) {
+      if (e.target.closest('.btn-speaker-pill')) {
         e.stopPropagation();
         audioEngine.speak(item.word);
         return;
@@ -885,7 +835,7 @@ function renderWordListScreen() {
 }
 
 /* ==========================================================================
-   10. WORD LEARNING FOCUS SCREEN RENDERING
+   10. WORD LEARNING FOCUS SCREEN
    ========================================================================== */
 function renderWordLearnScreen() {
   const letter = state.currentLetter;
@@ -899,33 +849,29 @@ function renderWordLearnScreen() {
   const isLearned = state.masteredWords.has(wordKey);
   const isBookmarked = state.bookmarks.has(wordKey);
 
-  // Counter & Progress
-  DOM.learnCounterText.textContent = `Letter ${letter} — Word ${index + 1} of ${words.length}`;
+  DOM.learnCounterText.textContent = `Letter ${letter} • Word ${index + 1} of ${words.length}`;
   DOM.learnProgressFill.style.width = `${((index + 1) / words.length) * 100}%`;
 
   DOM.learnLetterPill.textContent = `Letter ${letter}`;
 
   if (isLearned) {
     DOM.learnStatusPill.textContent = 'Learned ✓';
-    DOM.learnStatusPill.className = 'learned-status-badge learned';
+    DOM.learnStatusPill.className = 'badge-status learned';
   } else {
     DOM.learnStatusPill.textContent = 'To Learn';
-    DOM.learnStatusPill.className = 'learned-status-badge unlearned';
+    DOM.learnStatusPill.className = 'badge-status unlearned';
   }
 
-  // Word Heading & Phonetics
   DOM.learnWordHeading.textContent = wordObj.word.toUpperCase();
   DOM.learnPhonetic.textContent = wordObj.pronunciation;
 
-  // Audio Button
   DOM.btnLearnPronounce.classList.remove('speaking');
-  DOM.learnPronounceLabel.textContent = 'Listen to Pronunciation';
+  DOM.learnPronounceLabel.textContent = 'Pronounce Word';
 
-  // Meaning & Example
   DOM.learnMeaningText.textContent = wordObj.meaning;
   DOM.learnExampleText.textContent = `"${wordObj.example}"`;
 
-  // Interactive Spelling Letter Tiles
+  // Letter tiles
   DOM.learnSpellingTiles.innerHTML = '';
   const cleanWord = wordObj.word.toUpperCase().replace(/[^A-Z]/g, '');
 
@@ -933,46 +879,40 @@ function renderWordLearnScreen() {
     const char = cleanWord[i];
     const tile = document.createElement('button');
     tile.type = 'button';
-    tile.className = 'spell-letter-tile';
+    tile.className = 'spell-tile';
     tile.textContent = char;
     tile.setAttribute('aria-label', `Pronounce letter ${char}`);
 
     tile.addEventListener('click', () => {
-      tile.classList.add('active-tile');
+      tile.classList.add('tile-active');
       audioEngine.speakLetter(char);
-      setTimeout(() => tile.classList.remove('active-tile'), 350);
+      setTimeout(() => tile.classList.remove('tile-active'), 300);
     });
 
     DOM.learnSpellingTiles.appendChild(tile);
   }
 
-  // Mark Learned Button State
   if (isLearned) {
     DOM.btnMarkLearned.classList.add('is-learned');
-    DOM.btnMarkLearnedText.textContent = 'Word Learned ✓';
+    DOM.btnMarkLearnedText.textContent = 'Learned ✓';
   } else {
     DOM.btnMarkLearned.classList.remove('is-learned');
     DOM.btnMarkLearnedText.textContent = 'Mark as Learned';
   }
 
-  // Bookmark Button State
-  if (isBookmarked) {
-    DOM.btnLearnBookmark.classList.add('active');
-  } else {
-    DOM.btnLearnBookmark.classList.remove('active');
-  }
+  if (isBookmarked) DOM.btnLearnBookmark.classList.add('active');
+  else DOM.btnLearnBookmark.classList.remove('active');
 
-  // Prev & Next Buttons
   DOM.btnLearnPrev.disabled = index === 0;
 
   if (index === words.length - 1) {
     DOM.btnLearnNext.innerHTML = `
-      <span>Complete Letter ${letter}</span>
+      <span>Finish</span>
       <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-check"></use></svg>
     `;
   } else {
     DOM.btnLearnNext.innerHTML = `
-      <span>Next Word</span>
+      <span>Next</span>
       <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-chevron-right"></use></svg>
     `;
   }
@@ -988,12 +928,10 @@ function handlePronounceWord() {
 
   audioEngine.speak(
     wordObj.word,
-    () => {
-      DOM.btnLearnPronounce.classList.add('speaking');
-    },
+    () => { DOM.btnLearnPronounce.classList.add('speaking'); },
     () => {
       DOM.btnLearnPronounce.classList.remove('speaking');
-      DOM.learnPronounceLabel.textContent = 'Listen to Pronunciation';
+      DOM.learnPronounceLabel.textContent = 'Pronounce Word';
     }
   );
 }
@@ -1005,7 +943,7 @@ function toggleMasteredStatus() {
 
   if (state.masteredWords.has(wordKey)) {
     state.masteredWords.delete(wordKey);
-    showToast(`Removed "${wordObj.word}" from learned words`);
+    showToast(`Removed "${wordObj.word}"`);
   } else {
     state.masteredWords.add(wordKey);
     showToast(`Marked "${wordObj.word}" as learned! ⭐`);
@@ -1035,8 +973,8 @@ function handlePrevWord() {
 }
 
 function showCompletionCelebration() {
-  DOM.completionTitle.textContent = `Letter ${state.currentLetter} Completed!`;
-  DOM.completionMessage.textContent = `You have reviewed all words in Letter ${state.currentLetter}.`;
+  DOM.completionTitle.textContent = `Letter ${state.currentLetter} Done!`;
+  DOM.completionMessage.textContent = `You have learned all words in Letter ${state.currentLetter}.`;
   DOM.modalCompletion.classList.add('active');
   DOM.modalCompletion.setAttribute('aria-hidden', 'false');
 }
@@ -1060,9 +998,8 @@ function renderSearchResults() {
     list.forEach((item, index) => {
       const matchWord = item.word.toLowerCase().includes(query);
       const matchMeaning = item.meaning.toLowerCase().includes(query);
-      const matchExample = item.example.toLowerCase().includes(query);
 
-      if (!query || matchWord || matchMeaning || matchExample) {
+      if (!query || matchWord || matchMeaning) {
         matches.push({
           ...item,
           letter: lettr,
@@ -1072,24 +1009,24 @@ function renderSearchResults() {
     });
   });
 
-  DOM.searchResultsCount.textContent = `${matches.length} word${matches.length === 1 ? '' : 's'} found in dictionary`;
+  DOM.searchResultsCount.textContent = `${matches.length} word${matches.length === 1 ? '' : 's'} available`;
   DOM.searchResultsList.innerHTML = '';
 
   if (matches.length === 0) {
     DOM.searchResultsList.innerHTML = `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 48px 20px; color: var(--text-muted);">
-        <h3 style="color: var(--text-primary); margin-bottom: 8px;">No words found</h3>
-        <p>Try searching for a different word or letter.</p>
+      <div style="grid-column: 1 / -1; text-align: center; padding: 40px 16px; color: var(--text-muted);">
+        <h3 style="color: var(--text-primary); margin-bottom: 4px;">No words found</h3>
+        <p>Try searching another keyword.</p>
       </div>
     `;
     return;
   }
 
-  const displayMatches = matches.slice(0, 100);
+  const displayMatches = matches.slice(0, 80);
 
   displayMatches.forEach(res => {
     const card = document.createElement('div');
-    card.className = 'clean-word-item';
+    card.className = 'word-row-card';
     card.setAttribute('role', 'button');
     card.setAttribute('tabindex', '0');
 
@@ -1100,20 +1037,20 @@ function renderSearchResults() {
     }
 
     card.innerHTML = `
-      <div class="word-item-info">
-        <div class="word-item-header">
-          <h4 class="word-item-title">${highlightedWord}</h4>
-          <span class="word-item-phonetic">${res.pronunciation} • Letter ${res.letter}</span>
+      <div class="word-row-left">
+        <div class="word-row-head">
+          <h4 class="word-row-title">${highlightedWord}</h4>
+          <span class="word-row-phonetic">${res.pronunciation} • Letter ${res.letter}</span>
         </div>
-        <p class="word-item-meaning">${res.meaning}</p>
+        <p class="word-row-meaning">${res.meaning}</p>
       </div>
-      <button type="button" class="btn-speaker-mini" aria-label="Listen to ${res.word}">
-        <svg viewBox="0 0 24 24" width="18" height="18"><use href="#icon-speaker"></use></svg>
+      <button type="button" class="btn-speaker-pill" aria-label="Listen">
+        <svg viewBox="0 0 24 24" width="16" height="16"><use href="#icon-speaker"></use></svg>
       </button>
     `;
 
     card.addEventListener('click', (e) => {
-      if (e.target.closest('.btn-speaker-mini')) {
+      if (e.target.closest('.btn-speaker-pill')) {
         e.stopPropagation();
         audioEngine.speak(res.word);
         return;
@@ -1136,7 +1073,7 @@ function renderProgressDashboard() {
   DOM.progStatRemaining.textContent = totalProg.remaining;
   DOM.progressTotalPercent.textContent = `${totalProg.percent}%`;
 
-  const circumference = 2 * Math.PI * 54;
+  const circumference = 2 * Math.PI * 50;
   const offset = circumference - (totalProg.percent / 100) * circumference;
   DOM.progressCircleFill.style.strokeDashoffset = offset;
 
@@ -1145,28 +1082,27 @@ function renderProgressDashboard() {
 
   letters.forEach(char => {
     const p = getLetterProgress(char);
-    const card = document.createElement('div');
-    card.className = 'alphabet-card-clean';
-    card.style.padding = '16px';
-    card.setAttribute('role', 'button');
-    card.setAttribute('tabindex', '0');
+    const tile = document.createElement('div');
+    tile.className = 'progress-tile';
+    tile.setAttribute('role', 'button');
+    tile.setAttribute('tabindex', '0');
 
-    card.innerHTML = `
-      <div class="card-top-info" style="margin-bottom: 8px;">
-        <span class="letter-title-text" style="font-size: 1rem;">Letter ${char}</span>
-        <span class="letter-percent-tag">${p.learned} / ${p.total} (${p.percent}%)</span>
+    tile.innerHTML = `
+      <div class="progress-tile-top">
+        <span>Letter ${char}</span>
+        <span style="color: var(--violet-700);">${p.percent}%</span>
       </div>
-      <div class="letter-bar-track">
-        <div class="letter-bar-fill" style="width: ${p.percent}%"></div>
+      <div class="card-bar-bg">
+        <div class="card-bar-fill" style="width: ${p.percent}%"></div>
       </div>
     `;
 
-    card.addEventListener('click', () => {
+    tile.addEventListener('click', () => {
       state.currentLetter = char;
       navigateTo('word-list', { letter: char });
     });
 
-    DOM.progressAlphabetBreakdown.appendChild(card);
+    DOM.progressAlphabetBreakdown.appendChild(tile);
   });
 }
 
@@ -1180,14 +1116,13 @@ function showToast(message) {
   DOM.appToast.classList.add('active');
   toastTimeout = setTimeout(() => {
     DOM.appToast.classList.remove('active');
-  }, 2400);
+  }, 2000);
 }
 
 /* ==========================================================================
    14. EVENT BINDINGS
    ========================================================================== */
 function bindEvents() {
-  // Onboarding
   const completeOnboarding = () => {
     state.onboardingCompleted = true;
     saveState();
@@ -1196,10 +1131,8 @@ function bindEvents() {
   };
 
   DOM.btnOnboardingStart.addEventListener('click', completeOnboarding);
-  DOM.btnOnboardingContinue.addEventListener('click', completeOnboarding);
   DOM.btnOnboardingSkip.addEventListener('click', completeOnboarding);
 
-  // Nav Tabs
   DOM.desktopNavTabs.forEach(tab => {
     tab.addEventListener('click', () => navigateTo(tab.dataset.tab));
   });
@@ -1211,7 +1144,6 @@ function bindEvents() {
   DOM.headerBranding.addEventListener('click', () => navigateTo('home'));
   DOM.btnHeaderSearch.addEventListener('click', () => navigateTo('search', { focusSearch: true }));
 
-  // Home actions
   DOM.btnHomeContinueAction.addEventListener('click', () => {
     navigateTo('word-learn', { letter: state.currentLetter, index: state.currentIndex });
   });
@@ -1220,15 +1152,12 @@ function bindEvents() {
       navigateTo('word-learn', { letter: state.currentLetter, index: state.currentIndex });
     }
   });
-  DOM.btnHomeSeeAllLearn.addEventListener('click', () => navigateTo('learn'));
 
-  // Wordlist actions
   DOM.btnWordlistBack.addEventListener('click', () => navigateTo('learn'));
   DOM.btnWordlistStartLearning.addEventListener('click', () => {
     navigateTo('word-learn', { letter: state.currentLetter, index: 0 });
   });
 
-  // Word Learn actions
   DOM.btnLearnScreenBack.addEventListener('click', () => {
     navigateTo('word-list', { letter: state.currentLetter });
   });
@@ -1249,12 +1178,11 @@ function bindEvents() {
     } else {
       state.bookmarks.add(key);
       DOM.btnLearnBookmark.classList.add('active');
-      showToast('Word saved to bookmarks! ⭐');
+      showToast('Saved to bookmarks! ⭐');
     }
     saveState();
   });
 
-  // Keyboard Shortcuts (Arrow keys to navigate words, Space to pronounce)
   window.addEventListener('keydown', (e) => {
     if (state.currentScreen === 'word-learn' && !DOM.modalCompletion.classList.contains('active')) {
       if (e.key === 'ArrowRight') handleNextWord();
@@ -1266,7 +1194,6 @@ function bindEvents() {
     }
   });
 
-  // Celebration Modal
   DOM.btnCompletionReview.addEventListener('click', () => {
     hideCompletionCelebration();
     state.currentIndex = 0;
@@ -1279,7 +1206,6 @@ function bindEvents() {
     navigateTo('learn');
   });
 
-  // Search actions
   DOM.searchInputField.addEventListener('input', (e) => {
     state.searchQuery = e.target.value;
     if (state.searchQuery.length > 0) DOM.btnSearchClear.classList.add('visible');
@@ -1295,7 +1221,6 @@ function bindEvents() {
     DOM.searchInputField.focus();
   });
 
-  // Reset progress
   DOM.btnResetProgress.addEventListener('click', () => {
     DOM.modalResetConfirm.classList.add('active');
     DOM.modalResetConfirm.setAttribute('aria-hidden', 'false');
@@ -1314,7 +1239,7 @@ function bindEvents() {
     DOM.modalResetConfirm.classList.remove('active');
     DOM.modalResetConfirm.setAttribute('aria-hidden', 'true');
     renderProgressDashboard();
-    showToast('All learning progress has been reset.');
+    showToast('All progress reset.');
   });
 }
 
