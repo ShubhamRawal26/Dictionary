@@ -255,6 +255,20 @@ input {
   justify-content: space-between;
 }
 
+.onboarding-brand-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.onboarding-logo-img {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-xs);
+  object-fit: contain;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
 .header-branding {
   display: flex;
   align-items: center;
@@ -263,8 +277,12 @@ input {
   user-select: none;
 }
 
-.header-logo {
-  filter: drop-shadow(0 2px 4px rgba(124, 58, 237, 0.25));
+.header-logo-img {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-xs);
+  object-fit: contain;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
 }
 
 .brand-title {

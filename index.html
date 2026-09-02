@@ -6,6 +6,8 @@
   <meta name="theme-color" content="#7c3aed">
   <meta name="description" content="Wordly — Simple & Clean English & Technical Dictionary (A to Z). Learn words with audio pronunciation, simple meanings, and example sentences.">
   <title>Wordly — English & Technical Dictionary</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
   
   <!-- Modern Clean Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,16 +21,6 @@
   <!-- SVG Icon Sprites -->
   <svg style="display: none;">
     <defs>
-      <g id="icon-logo">
-        <rect width="36" height="36" rx="10" fill="url(#violet-grad)"/>
-        <path d="M10 26L18 10L26 26H21.5L19.5 21.5H16.5L14.5 26H10ZM17.2 18.2H18.8L18 14.5L17.2 18.2Z" fill="#FFFFFF"/>
-        <circle cx="26" cy="10" r="3.5" fill="#C084FC"/>
-      </g>
-      <linearGradient id="violet-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#7C3AED"/>
-        <stop offset="100%" stop-color="#4F46E5"/>
-      </linearGradient>
-
       <g id="icon-home">
         <path d="M3 9.5L12 3L21 9.5V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         <path d="M9 21V12H15V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
@@ -91,7 +83,10 @@
     <section class="onboarding-screen active" id="screen-onboarding" aria-label="Welcome">
       <div class="onboarding-card">
         <div class="onboarding-top">
-          <span class="badge-pill">✨ A to Z Dictionary</span>
+          <div class="onboarding-brand-head">
+            <img src="logo.png" alt="Wordly Logo" class="onboarding-logo-img">
+            <span class="badge-pill">✨ A to Z Dictionary</span>
+          </div>
           <button type="button" class="btn-skip" id="btn-onboarding-skip">Skip →</button>
         </div>
 
@@ -115,9 +110,7 @@
     <header class="app-header" id="app-header">
       <div class="header-inner">
         <div class="header-branding" id="header-branding-btn" role="button" tabindex="0">
-          <svg viewBox="0 0 36 36" width="34" height="34" class="header-logo">
-            <use href="#icon-logo"></use>
-          </svg>
+          <img src="logo.png" alt="Wordly" class="header-logo-img" width="34" height="34">
           <span class="brand-title">Wordly</span>
         </div>
 
