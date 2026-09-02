@@ -1,10 +1,11 @@
 /* ==========================================================================
-   WORDLY — CLEAN & MINIMALIST WHITE & VIOLET DICTIONARY
-   100% Mobile & Desktop Responsive • Fast & Smooth • Zero Horizontal Overflow
+   WORDLY — COLORFUL, CLEAN & MINIMALIST WHITE & MULTI-COLOR DICTIONARY
+   100% Mobile & Offline Ready • Web2APK Optimized • High-Contrast Aesthetics
    ========================================================================== */
 
-/* --- 1. Design Tokens --- */
+/* --- 1. Global Color Tokens --- */
 :root {
+  /* Brand Base */
   --violet-50: #faf5ff;
   --violet-100: #f3e8ff;
   --violet-200: #e9d5ff;
@@ -12,7 +13,7 @@
   --violet-400: #c084fc;
   --violet-500: #a855f7;
   --violet-600: #9333ea;
-  --violet-700: #7c3aed; /* Primary Brand Accent */
+  --violet-700: #7c3aed;
   --violet-800: #6b21a8;
 
   --emerald-50: #ecfdf5;
@@ -24,7 +25,6 @@
   --surface-white: #ffffff;
   --surface-subtle: #f1f5f9;
   --border-light: #e2e8f0;
-  --border-violet: #ede9fe;
 
   --text-primary: #0f172a;
   --text-secondary: #334155;
@@ -35,9 +35,8 @@
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 8px 20px -3px rgba(124, 58, 237, 0.08);
-  --shadow-lg: 0 16px 32px -4px rgba(124, 58, 237, 0.12);
-  --shadow-violet: 0 4px 14px rgba(124, 58, 237, 0.3);
+  --shadow-md: 0 8px 20px -3px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 32px -4px rgba(15, 23, 42, 0.12);
 
   --radius-xs: 8px;
   --radius-sm: 12px;
@@ -88,7 +87,7 @@ button {
 
 input {
   font-family: inherit;
-  font-size: 16px; /* Prevents auto-zoom on iOS/Android */
+  font-size: 16px; /* Prevents auto-zoom on mobile */
   border: none;
   outline: none;
   touch-action: manipulation;
@@ -133,7 +132,7 @@ input {
   width: 100%;
   max-width: 460px;
   background: var(--surface-white);
-  border: 1.5px solid var(--border-violet);
+  border: 1.5px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: 28px 24px;
   box-shadow: var(--shadow-lg);
@@ -169,10 +168,6 @@ input {
   color: var(--text-muted);
 }
 
-.btn-skip:hover {
-  color: var(--violet-700);
-}
-
 .onboarding-title {
   font-family: var(--font-brand);
   font-size: 1.85rem;
@@ -183,7 +178,7 @@ input {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+  background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -213,12 +208,8 @@ input {
   font-size: 1rem;
   font-weight: 800;
   border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-violet);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
   transition: var(--trans);
-}
-
-.btn-primary:hover {
-  background: var(--violet-800);
 }
 
 .btn-primary:active {
@@ -238,10 +229,6 @@ input {
   border-radius: var(--radius-sm);
   border: 1.5px solid var(--border-light);
   transition: var(--trans);
-}
-
-.btn-secondary:hover {
-  background: var(--border-light);
 }
 
 /* ==========================================================================
@@ -296,7 +283,7 @@ input {
   background: var(--violet-50);
   padding: 4px 6px;
   border-radius: var(--radius-full);
-  border: 1px solid var(--border-violet);
+  border: 1px solid var(--border-light);
 }
 
 @media (min-width: 769px) {
@@ -314,10 +301,6 @@ input {
   transition: var(--trans);
 }
 
-.nav-btn:hover {
-  color: var(--violet-700);
-}
-
 .nav-btn.active {
   color: var(--text-white);
   background: var(--violet-700);
@@ -333,7 +316,7 @@ input {
   justify-content: center;
   color: var(--violet-700);
   background: var(--violet-50);
-  border: 1px solid var(--border-violet);
+  border: 1px solid var(--border-light);
   transition: var(--trans);
 }
 
@@ -342,13 +325,13 @@ input {
 }
 
 /* ==========================================================================
-   6. QUICK ALPHABET RIBBON (A THROUGH Z)
+   6. QUICK ALPHABET RIBBON (A THROUGH Z WITH DISTINCT COLORS)
    ========================================================================== */
 .az-ribbon {
   width: 100%;
   background: var(--surface-white);
   border-bottom: 1px solid var(--border-light);
-  padding: 6px 12px;
+  padding: 8px 14px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -363,38 +346,30 @@ input {
 
 .az-ribbon-scroll {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   max-width: 1040px;
   margin: 0 auto;
 }
 
 .ribbon-btn {
-  min-width: 34px;
-  height: 34px;
+  min-width: 36px;
+  height: 36px;
   flex-shrink: 0;
   border-radius: var(--radius-xs);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-brand);
-  font-size: 0.875rem;
-  font-weight: 800;
+  font-size: 0.938rem;
+  font-weight: 900;
   color: var(--text-secondary);
   background: var(--bg-page);
-  border: 1px solid var(--border-light);
+  border: 1.5px solid var(--border-light);
   transition: var(--trans);
 }
 
-.ribbon-btn:hover {
-  color: var(--violet-700);
-  border-color: var(--violet-300);
-  background: var(--violet-50);
-}
-
-.ribbon-btn.active {
-  color: var(--text-white);
-  background: var(--violet-700);
-  border-color: var(--violet-700);
+.ribbon-btn:active {
+  transform: scale(0.92);
 }
 
 /* ==========================================================================
@@ -408,7 +383,7 @@ input {
 .screen-view {
   display: none;
   width: 100%;
-  padding-bottom: 84px; /* Space for mobile nav */
+  padding-bottom: 84px; /* Space for mobile bottom bar */
 }
 
 @media (min-width: 769px) {
@@ -435,10 +410,10 @@ input {
 }
 
 /* ==========================================================================
-   8. HOME SCREEN
+   8. HOME SCREEN (COLORFUL & CLEAN)
    ========================================================================== */
 .home-hero-card {
-  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+  background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
   border-radius: var(--radius-md);
   padding: 20px 22px;
   color: var(--text-white);
@@ -466,7 +441,7 @@ input {
 
 .hero-letter-badge {
   font-size: 0.813rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #fef08a;
 }
 
@@ -486,7 +461,7 @@ input {
 
 .hero-word-title {
   font-family: var(--font-brand);
-  font-size: 1.6rem;
+  font-size: 1.65rem;
   font-weight: 900;
   color: var(--text-white);
   margin: 2px 0;
@@ -509,10 +484,6 @@ input {
   border-radius: var(--radius-full);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   transition: var(--trans);
-}
-
-.btn-hero-action:active {
-  transform: scale(0.96);
 }
 
 .progress-bar-bg {
@@ -540,7 +511,7 @@ input {
 
 .stat-pill {
   background: var(--surface-white);
-  border: 1px solid var(--border-violet);
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-sm);
   padding: 12px 8px;
   text-align: center;
@@ -600,7 +571,7 @@ input {
 
 .alphabet-card {
   background: var(--surface-white);
-  border: 1px solid var(--border-violet);
+  border: 1.5px solid var(--border-light);
   border-radius: var(--radius-sm);
   padding: 14px;
   display: flex;
@@ -611,7 +582,6 @@ input {
 }
 
 .alphabet-card:hover {
-  border-color: var(--violet-300);
   transform: translateY(-2px);
 }
 
@@ -627,25 +597,21 @@ input {
 }
 
 .letter-circle {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-xs);
-  background: var(--violet-50);
-  color: var(--violet-700);
-  border: 1px solid var(--violet-200);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-brand);
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 900;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
 .percent-badge {
   font-size: 0.75rem;
   font-weight: 800;
-  color: var(--text-secondary);
-  background: var(--surface-subtle);
   padding: 3px 8px;
   border-radius: var(--radius-full);
 }
@@ -675,7 +641,6 @@ input {
 
 .card-bar-fill {
   height: 100%;
-  background: var(--violet-700);
   border-radius: var(--radius-full);
   transition: width 0.3s ease;
 }
@@ -701,7 +666,7 @@ input {
 }
 
 /* ==========================================================================
-   10. WORD LIST SCREEN
+   10. WORD LIST SCREEN & SEARCH LIST (NO CLIPPING, FULL TEXT)
    ========================================================================== */
 .sub-header-bar {
   display: flex;
@@ -740,98 +705,111 @@ input {
 
 .sub-header-badge {
   font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--violet-700);
+  font-weight: 800;
 }
 
 .btn-start-pill {
-  padding: 6px 14px;
+  padding: 6px 16px;
   border-radius: var(--radius-full);
-  background: var(--violet-700);
   color: var(--text-white);
   font-size: 0.813rem;
   font-weight: 800;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .words-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 12px;
 }
 
 @media (min-width: 768px) {
   .words-list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 14px;
   }
 }
 
 .word-row-card {
   background: var(--surface-white);
-  border: 1px solid var(--border-violet);
+  border: 1.5px solid var(--border-light);
   border-radius: var(--radius-sm);
-  padding: 14px 16px;
+  padding: 16px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
   transition: var(--trans);
+  min-height: 80px;
 }
 
 .word-row-card:hover {
-  border-color: var(--violet-300);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .word-row-card.is-learned {
-  border-left: 4px solid var(--emerald-500);
+  border-left: 5px solid var(--emerald-500);
 }
 
 .word-row-left {
   flex: 1;
   min-width: 0;
+  padding-right: 12px;
 }
 
 .word-row-head {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 2px;
+  margin-bottom: 6px;
 }
 
 .word-row-title {
   font-family: var(--font-brand);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 800;
   color: var(--text-primary);
+  line-height: 1.2;
 }
 
 .word-row-phonetic {
   font-size: 0.813rem;
-  color: var(--violet-700);
   font-weight: 600;
 }
 
+.word-row-letter-tag {
+  font-size: 0.688rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+/* Full clean wrapping text (Never cut off or clipped) */
 .word-row-meaning {
-  font-size: 0.813rem;
+  font-size: 0.875rem;
   color: var(--text-secondary);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.5;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .btn-speaker-pill {
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--violet-50);
-  color: var(--violet-700);
-  border: 1px solid var(--violet-200);
-  margin-left: 10px;
   flex-shrink: 0;
+  transition: var(--trans);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.btn-speaker-pill:active {
+  transform: scale(0.9);
 }
 
 /* ==========================================================================
@@ -849,8 +827,8 @@ input {
 }
 
 .btn-back-round {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
@@ -875,8 +853,8 @@ input {
 }
 
 .btn-bookmark {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
@@ -895,7 +873,7 @@ input {
 /* Word Card */
 .word-card {
   background: var(--surface-white);
-  border: 1.5px solid var(--border-violet);
+  border: 1.5px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: 24px 20px;
   box-shadow: var(--shadow-md);
@@ -912,11 +890,9 @@ input {
 }
 
 .badge-letter {
-  font-size: 0.75rem;
+  font-size: 0.813rem;
   font-weight: 800;
-  color: var(--violet-700);
-  background: var(--violet-100);
-  padding: 4px 10px;
+  padding: 5px 14px;
   border-radius: var(--radius-full);
 }
 
@@ -945,7 +921,7 @@ input {
 
 .word-heading {
   font-family: var(--font-brand);
-  font-size: 2.25rem;
+  font-size: 2.35rem;
   font-weight: 900;
   color: var(--text-primary);
   line-height: 1.1;
@@ -954,16 +930,13 @@ input {
 
 .phonetic-tag {
   display: inline-block;
-  background: var(--violet-50);
-  border: 1px solid var(--violet-200);
-  padding: 3px 12px;
+  padding: 4px 14px;
   border-radius: var(--radius-full);
 }
 
 .phonetic-val {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--violet-700);
 }
 
 /* Audio Pronounce Button */
@@ -979,13 +952,12 @@ input {
   align-items: center;
   gap: 8px;
   min-height: 48px;
-  padding: 10px 24px;
-  background: var(--violet-700);
+  padding: 10px 26px;
   color: var(--text-white);
   border-radius: var(--radius-full);
   font-size: 0.95rem;
   font-weight: 800;
-  box-shadow: var(--shadow-violet);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: var(--trans);
 }
 
@@ -998,8 +970,8 @@ input {
 }
 
 @keyframes pulseSpeaking {
-  from { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.5); }
-  to { box-shadow: 0 0 0 12px rgba(124, 58, 237, 0); }
+  from { opacity: 0.85; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1.02); }
 }
 
 .wave-svg { display: none; }
@@ -1018,27 +990,16 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--violet-50);
-  border: 1px solid var(--violet-200);
-  color: var(--violet-700);
+  border: 1.5px solid var(--border-light);
+  background: var(--surface-white);
 }
 
 /* Clean Info Boxes */
 .clean-info-box {
   border-radius: var(--radius-sm);
-  padding: 14px 16px;
+  padding: 16px;
   margin-bottom: 12px;
   border: 1px solid var(--border-light);
-}
-
-.meaning-box {
-  background: var(--surface-subtle);
-  border-left: 4px solid var(--violet-700);
-}
-
-.example-box {
-  background: var(--violet-50);
-  border-left: 4px solid #9333ea;
 }
 
 .info-label {
@@ -1046,13 +1007,12 @@ input {
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: var(--violet-800);
   margin-bottom: 4px;
 }
 
 .info-text {
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--text-primary);
   font-weight: 500;
 }
@@ -1064,11 +1024,10 @@ input {
 
 /* Spelling Section */
 .spelling-box {
-  background: var(--violet-50);
-  border: 1px dashed var(--violet-300);
   border-radius: var(--radius-sm);
   padding: 14px;
   margin-bottom: 16px;
+  border: 1.5px dashed var(--border-light);
 }
 
 .spelling-label-row {
@@ -1081,14 +1040,12 @@ input {
 .spelling-label {
   font-size: 0.813rem;
   font-weight: 800;
-  color: var(--violet-900);
   text-transform: uppercase;
 }
 
 .spelling-hint {
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--violet-700);
 }
 
 .spelling-tiles {
@@ -1099,36 +1056,33 @@ input {
 }
 
 .spell-tile {
-  min-width: 36px;
-  height: 40px;
+  min-width: 38px;
+  height: 42px;
   padding: 0 8px;
   border-radius: var(--radius-xs);
   background: var(--surface-white);
-  border: 1.5px solid var(--violet-300);
+  border: 1.5px solid var(--border-light);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-brand);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 900;
-  color: var(--violet-800);
-  box-shadow: 0 1px 3px rgba(124, 58, 237, 0.08);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
 .spell-tile:active, .spell-tile.tile-active {
-  background: var(--violet-700);
   color: #ffffff;
-  border-color: var(--violet-700);
   transform: scale(1.15);
 }
 
 /* Mark Learned Toggle */
 .btn-learned-toggle {
   width: 100%;
-  min-height: 46px;
+  min-height: 48px;
   border-radius: var(--radius-sm);
   background: var(--surface-subtle);
-  border: 1px solid var(--border-light);
+  border: 1.5px solid var(--border-light);
   color: var(--text-primary);
   font-size: 0.95rem;
   font-weight: 800;
@@ -1152,7 +1106,7 @@ input {
 
 .btn-nav-step {
   flex: 1;
-  min-height: 48px;
+  min-height: 50px;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -1164,7 +1118,7 @@ input {
 
 .btn-prev {
   background: var(--surface-white);
-  border: 1px solid var(--border-light);
+  border: 1.5px solid var(--border-light);
   color: var(--text-primary);
 }
 
@@ -1174,7 +1128,6 @@ input {
 }
 
 .btn-next {
-  background: var(--violet-700);
   color: var(--text-white);
 }
 
@@ -1197,9 +1150,9 @@ input {
 
 .search-input {
   width: 100%;
-  height: 48px;
+  height: 50px;
   background: var(--surface-white);
-  border: 1.5px solid var(--border-violet);
+  border: 1.5px solid var(--border-light);
   border-radius: var(--radius-sm);
   padding: 0 42px 0 44px;
   font-size: 16px;
@@ -1348,7 +1301,7 @@ input {
 
 .progress-tile {
   background: var(--surface-white);
-  border: 1px solid var(--border-violet);
+  border: 1.5px solid var(--border-light);
   border-radius: var(--radius-sm);
   padding: 12px;
   cursor: pointer;
@@ -1454,7 +1407,7 @@ input {
   padding: 24px;
   box-shadow: var(--shadow-lg);
   text-align: center;
-  border: 1px solid var(--border-violet);
+  border: 1px solid var(--border-light);
 }
 
 .modal-icon {
