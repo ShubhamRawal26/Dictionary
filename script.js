@@ -443,15 +443,21 @@ function saveState() {
 }
 
 /* ==========================================================================
-   4. ROBUST WEB2APK & MOBILE AUDIO SPEECH ENGINE (REAL VOICE + OFFLINE)
+   4. ROBUST WEB2APK & MOBILE AUDIO SPEECH ENGINE (100% REAL SPEECH)
    ========================================================================== */
+const PHONETIC_ALPHABET = {
+  A: 'Ay', B: 'Bee', C: 'See', D: 'Dee', E: 'Ee', F: 'Eff', G: 'Jee',
+  H: 'Aytch', I: 'Eye', J: 'Jay', K: 'Kay', L: 'Ell', M: 'Emm', N: 'Enn',
+  O: 'Oh', P: 'Pee', Q: 'Cue', R: 'Arr', S: 'Ess', T: 'Tee', U: 'You',
+  V: 'Vee', W: 'Double you', X: 'Ex', Y: 'Wye', Z: 'Zed'
+};
+
 class AudioEngine {
   constructor() {
     this.synth = ('speechSynthesis' in window) ? window.speechSynthesis : null;
     this.selectedVoice = null;
-    this.audioCtx = null;
-    this.isWarmedUp = false;
     this.currentHtmlAudio = null;
+    this.isWarmedUp = false;
 
     this.initVoices();
     this.setupTouchUnlock();
@@ -462,32 +468,17 @@ class AudioEngine {
       if (this.isWarmedUp) return;
       this.isWarmedUp = true;
 
-      // Unlock Web Audio Context for Android WebView
-      try {
-        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-        if (AudioContextClass && !this.audioCtx) {
-          this.audioCtx = new AudioContextClass();
-        }
-        if (this.audioCtx && this.audioCtx.state === 'suspended') {
-          this.audioCtx.resume();
-        }
-      } catch (e) {}
-
-      // Unlock SpeechSynthesis in Android WebView
+      // Unlock SpeechSynthesis on Android WebView
       if (this.synth) {
         try {
           this.synth.resume();
-          const warm = new SpeechSynthesisUtterance('');
-          warm.volume = 0;
-          this.synth.speak(warm);
         } catch (e) {}
       }
 
       // Pre-warm HTML5 audio element
       try {
-        const silentAudio = new Audio();
-        silentAudio.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
-        silentAudio.play().catch(() => {});
+        const silent = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA');
+        silent.play().catch(() => {});
       } catch (e) {}
     };
 
@@ -497,12 +488,15 @@ class AudioEngine {
 
   initVoices() {
     if (!this.synth) return;
+
     const findVoice = () => {
       try {
         const voices = this.synth.getVoices();
         if (!voices || voices.length === 0) return;
+
+        // Prefer natural English voices (Google US English, Samantha, Daniel, Android Speech)
         this.selectedVoice =
-          voices.find(v => v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Daniel') || v.name.includes('English'))) ||
+          voices.find(v => v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Daniel'))) ||
           voices.find(v => v.lang === 'en-US') ||
           voices.find(v => v.lang.startsWith('en')) ||
           voices[0];
@@ -516,6 +510,9 @@ class AudioEngine {
   }
 
   speak(text, onStart, onEnd) {
+    if (!text || typeof text !== 'string') return;
+    const spokenText = text.trim();
+
     // Stop any previously playing audio
     if (this.currentHtmlAudio) {
       try {
@@ -540,18 +537,26 @@ class AudioEngine {
       if (typeof onEnd === 'function') onEnd();
     };
 
-    // STRATEGY 1: Real Human Voice via Native HTML5 Audio (Guaranteed on Android Web2APK)
-    const cleanQuery = encodeURIComponent(text.trim());
+    // If device is strictly offline, immediately use native SpeechSynthesis
+    if (typeof navigator !== 'undefined' && navigator.onLine === false) {
+      this.speakOfflineTTS(spokenText, notifyStart, notifyEnd);
+      return;
+    }
+
+    // ONLINE STRATEGY: High-Quality Studio Pronunciation MP3 Stream
+    const cleanQuery = encodeURIComponent(spokenText);
     const audioUrls = [
       `https://dict.youdao.com/dictvoice?type=0&audio=${cleanQuery}`,
       `https://translate.google.com/translate_tts?ie=UTF-8&tl=en&client=tw-ob&q=${cleanQuery}`
     ];
 
     let currentUrlIndex = 0;
+    let audioAttemptFailed = false;
+
     const tryPlayHtmlAudio = () => {
-      if (currentUrlIndex >= audioUrls.length) {
-        // All online streams failed or device is offline -> Fallback to SpeechSynthesis & WebAudio
-        this.fallbackOfflineSpeech(text, notifyStart, notifyEnd);
+      if (currentUrlIndex >= audioUrls.length || audioAttemptFailed) {
+        // Fallback to 100% genuine Android native TTS
+        this.speakOfflineTTS(spokenText, notifyStart, notifyEnd);
         return;
       }
 
@@ -562,11 +567,10 @@ class AudioEngine {
       let playStarted = false;
       const playTimer = setTimeout(() => {
         if (!playStarted) {
-          // If network audio is slow or hung, proceed to next source
-          currentUrlIndex++;
+          audioAttemptFailed = true;
           tryPlayHtmlAudio();
         }
-      }, 1200);
+      }, 900); // Fast 900ms timeout for instant responsiveness
 
       audio.onplay = () => {
         playStarted = true;
@@ -599,113 +603,61 @@ class AudioEngine {
     tryPlayHtmlAudio();
   }
 
-  fallbackOfflineSpeech(text, notifyStart, notifyEnd) {
+  speakOfflineTTS(text, notifyStart, notifyEnd) {
     notifyStart();
 
-    // Try SpeechSynthesis first
     if (this.synth) {
       try {
         this.synth.resume();
-        this.synth.cancel();
 
         const utterance = new SpeechSynthesisUtterance(text);
-        utterance.rate = 0.9;
+        utterance.lang = 'en-US';
+        utterance.rate = 0.92;
         utterance.pitch = 1.0;
         utterance.volume = 1.0;
-        utterance.lang = 'en-US';
-        if (this.selectedVoice) utterance.voice = this.selectedVoice;
 
+        if (this.selectedVoice) {
+          utterance.voice = this.selectedVoice;
+        }
+
+        // Keep reference on window to prevent V8 garbage collection on Android WebViews
         window._activeUtterance = utterance;
+
+        utterance.onstart = () => {
+          notifyStart();
+        };
 
         utterance.onend = () => {
           window._activeUtterance = null;
           notifyEnd();
         };
 
-        utterance.onerror = () => {
+        utterance.onerror = (e) => {
           window._activeUtterance = null;
-          this.synthesizeFormantAudio(text, notifyEnd);
+          notifyEnd();
         };
 
         this.synth.speak(utterance);
 
-        // Fallback timer if WebView TTS stays silent without firing onend
+        // Safety timeout so UI equalizer animation always resets smoothly
+        const safetyDuration = Math.max(1200, text.length * 90);
         setTimeout(() => {
           if (!this.synth.speaking && !this.synth.pending) {
             notifyEnd();
           }
-        }, 3000);
+        }, safetyDuration);
         return;
       } catch (err) {
-        console.warn('SpeechSynthesis offline error:', err);
+        console.warn('SpeechSynthesis error:', err);
       }
     }
 
-    // Pure Web Audio Formant Synthesizer
-    this.synthesizeFormantAudio(text, notifyEnd);
-  }
-
-  synthesizeFormantAudio(text, callback) {
-    try {
-      if (!this.audioCtx) {
-        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-        if (AudioContextClass) this.audioCtx = new AudioContextClass();
-      }
-      if (!this.audioCtx) {
-        if (typeof callback === 'function') callback();
-        return;
-      }
-      if (this.audioCtx.state === 'suspended') this.audioCtx.resume();
-
-      const ctx = this.audioCtx;
-      const now = ctx.currentTime;
-      const duration = Math.min(1.2, Math.max(0.4, text.length * 0.08));
-
-      // Voice fundamental oscillator
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-
-      // Formant filters (vocal tract simulation)
-      const f1 = ctx.createBiquadFilter();
-      const f2 = ctx.createBiquadFilter();
-
-      f1.type = 'bandpass';
-      f1.frequency.setValueAtTime(600, now);
-      f1.Q.setValueAtTime(4.0, now);
-
-      f2.type = 'bandpass';
-      f2.frequency.setValueAtTime(1750, now);
-      f2.Q.setValueAtTime(6.0, now);
-
-      osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(130, now); // Natural male/female pitch contour
-      osc.frequency.exponentialRampToValueAtTime(110, now + duration);
-
-      gain.gain.setValueAtTime(0.001, now);
-      gain.gain.linearRampToValueAtTime(0.18, now + 0.05);
-      gain.gain.setValueAtTime(0.18, now + duration - 0.08);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
-
-      osc.connect(f1);
-      osc.connect(f2);
-      f1.connect(gain);
-      f2.connect(gain);
-      gain.connect(ctx.destination);
-
-      osc.start(now);
-      osc.stop(now + duration);
-
-      setTimeout(() => {
-        if (typeof callback === 'function') callback();
-      }, duration * 1000);
-
-    } catch (e) {
-      if (typeof callback === 'function') callback();
-    }
+    notifyEnd();
   }
 
   speakLetter(char) {
-    this.speak(char);
+    const spokenLetter = PHONETIC_ALPHABET[char] || char;
+    this.speak(spokenLetter);
   }
 }
 
