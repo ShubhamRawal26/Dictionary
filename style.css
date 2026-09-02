@@ -478,6 +478,13 @@ input {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 14px;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.hero-word-row > div {
+  min-width: 0;
+  flex: 1;
 }
 
 .hero-sub {
@@ -485,19 +492,25 @@ input {
   font-weight: 800;
   color: #ede9fe;
   letter-spacing: 0.04em;
+  display: block;
 }
 
 .hero-word-title {
   font-family: var(--font-brand);
-  font-size: 1.65rem;
+  font-size: clamp(1.2rem, 5.2vw, 1.65rem);
   font-weight: 900;
   color: var(--text-white);
   margin: 2px 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.15;
+  max-width: 100%;
 }
 
 .hero-counter {
   font-size: 0.813rem;
   color: #ede9fe;
+  display: block;
 }
 
 .btn-hero-action {
@@ -797,10 +810,12 @@ input {
 
 .word-row-title {
   font-family: var(--font-brand);
-  font-size: 1.15rem;
+  font-size: clamp(1.05rem, 4.2vw, 1.22rem);
   font-weight: 800;
   color: var(--text-primary);
-  line-height: 1.2;
+  line-height: 1.25;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .word-row-phonetic {
@@ -945,26 +960,35 @@ input {
 .word-title-wrap {
   text-align: center;
   margin-bottom: 16px;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .word-heading {
   font-family: var(--font-brand);
-  font-size: 2.35rem;
+  font-size: clamp(1.4rem, 6.5vw, 2.35rem);
   font-weight: 900;
   color: var(--text-primary);
-  line-height: 1.1;
+  line-height: 1.15;
   margin-bottom: 6px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
 }
 
 .phonetic-tag {
   display: inline-block;
   padding: 4px 14px;
   border-radius: var(--radius-full);
+  max-width: 100%;
+  word-break: break-word;
 }
 
 .phonetic-val {
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 3.8vw, 1rem);
   font-weight: 700;
+  word-break: break-word;
 }
 
 /* Audio Pronounce Button */
@@ -1293,12 +1317,13 @@ input {
   gap: 6px;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 100%;
 }
 
 .spell-tile {
-  min-width: 38px;
-  height: 42px;
-  padding: 0 8px;
+  min-width: 32px;
+  height: 38px;
+  padding: 0 6px;
   border-radius: var(--radius-xs);
   background: var(--surface-white);
   border: 1.5px solid var(--border-light);
@@ -1306,9 +1331,10 @@ input {
   align-items: center;
   justify-content: center;
   font-family: var(--font-brand);
-  font-size: 1.2rem;
+  font-size: clamp(0.95rem, 3.8vw, 1.15rem);
   font-weight: 900;
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  flex-shrink: 0;
 }
 
 .spell-tile:active, .spell-tile.tile-active {

@@ -513,15 +513,6 @@ class AudioEngine {
     if (!text || typeof text !== 'string') return;
     const spokenText = text.trim();
 
-    // Stop any previously playing audio
-    if (this.currentHtmlAudio) {
-      try {
-        this.currentHtmlAudio.pause();
-        this.currentHtmlAudio.currentTime = 0;
-      } catch (e) {}
-      this.currentHtmlAudio = null;
-    }
-
     let hasStarted = false;
     let hasFinished = false;
 
@@ -537,70 +528,78 @@ class AudioEngine {
       if (typeof onEnd === 'function') onEnd();
     };
 
-    // If device is strictly offline, immediately use native SpeechSynthesis
-    if (typeof navigator !== 'undefined' && navigator.onLine === false) {
-      this.speakOfflineTTS(spokenText, notifyStart, notifyEnd);
-      return;
-    }
+    // 1. NATIVE ANDROID WEBVIEW BRIDGE (If using an APK with native TTS bridge)
+    try {
+      if (window.AndroidTTS && typeof window.AndroidTTS.speak === 'function') {
+        notifyStart();
+        window.AndroidTTS.speak(spokenText);
+        setTimeout(notifyEnd, Math.max(1000, spokenText.length * 80));
+        return;
+      }
+      if (window.Android && typeof window.Android.speak === 'function') {
+        notifyStart();
+        window.Android.speak(spokenText);
+        setTimeout(notifyEnd, Math.max(1000, spokenText.length * 80));
+        return;
+      }
+    } catch (e) {}
 
-    // ONLINE STRATEGY: High-Quality Studio Pronunciation MP3 Stream
-    const cleanQuery = encodeURIComponent(spokenText);
+    // 2. SYNCHRONOUS DOM HTML5 AUDIO (Works 100% in Android WebViews on tap)
+    let audio = document.getElementById('app-speech-audio');
+    if (!audio) {
+      audio = new Audio();
+      audio.id = 'app-speech-audio';
+      document.body.appendChild(audio);
+    }
+    this.currentHtmlAudio = audio;
+
+    const cleanWord = spokenText.toLowerCase().replace(/[^a-z0-9\s-]/g, '');
+    const cleanQuery = encodeURIComponent(cleanWord);
     const audioUrls = [
       `https://dict.youdao.com/dictvoice?type=0&audio=${cleanQuery}`,
       `https://translate.google.com/translate_tts?ie=UTF-8&tl=en&client=tw-ob&q=${cleanQuery}`
     ];
 
     let currentUrlIndex = 0;
-    let audioAttemptFailed = false;
 
-    const tryPlayHtmlAudio = () => {
-      if (currentUrlIndex >= audioUrls.length || audioAttemptFailed) {
-        // Fallback to 100% genuine Android native TTS
+    const tryPlay = (index) => {
+      if (index >= audioUrls.length) {
+        // Fallback to Web Speech API
         this.speakOfflineTTS(spokenText, notifyStart, notifyEnd);
         return;
       }
 
-      const audio = new Audio();
-      this.currentHtmlAudio = audio;
-      audio.crossOrigin = 'anonymous';
-
-      let playStarted = false;
-      const playTimer = setTimeout(() => {
-        if (!playStarted) {
-          audioAttemptFailed = true;
-          tryPlayHtmlAudio();
-        }
-      }, 900); // Fast 900ms timeout for instant responsiveness
-
       audio.onplay = () => {
-        playStarted = true;
-        clearTimeout(playTimer);
         notifyStart();
       };
 
       audio.onended = () => {
-        clearTimeout(playTimer);
         notifyEnd();
       };
 
       audio.onerror = () => {
-        clearTimeout(playTimer);
-        currentUrlIndex++;
-        tryPlayHtmlAudio();
+        tryPlay(index + 1);
       };
 
-      audio.src = audioUrls[currentUrlIndex];
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          clearTimeout(playTimer);
-          currentUrlIndex++;
-          tryPlayHtmlAudio();
-        });
+      try {
+        audio.src = audioUrls[index];
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              notifyStart();
+            })
+            .catch(() => {
+              tryPlay(index + 1);
+            });
+        }
+      } catch (err) {
+        tryPlay(index + 1);
       }
     };
 
-    tryPlayHtmlAudio();
+    // Trigger synchronously within user gesture
+    tryPlay(0);
   }
 
   speakOfflineTTS(text, notifyStart, notifyEnd) {
